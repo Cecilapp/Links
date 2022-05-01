@@ -1,0 +1,40 @@
+title: Arnaud Ligny
+baseurl: 'https://ligny.fr/'
+description: 'Quelques liens à propos de Arnaud Ligny.'
+author:
+  name: 'Arnaud Ligny'
+  url: 'https://arnaudligny.fr'
+image: avatar.jpeg
+language: fr
+languages:
+  - code: fr
+    locale: fr_FR
+    name: Français
+  - code: en
+    locale: en_US
+    name: English
+source: https://github.com/ArnaudLigny/ligny.fr
+metatags:
+  favicon:
+    image: avatar.jpeg
+taxonomies:
+  categories: disabled
+  tags: disabled
+pagination:
+  enabled: false
+output:
+  pagetypeformats:
+    homepage: html
+theme:
+  #- serviceworker
+  #- netlify
+manifest:
+  background_color: '#1E293B'
+  theme_color: '#1E293B'
+serviceworker:
+  enabled: true
+defaultpages:
+  404:
+    published: false
+  sitemap:
+    published: false

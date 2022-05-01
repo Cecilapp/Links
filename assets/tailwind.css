@@ -1,0 +1,14 @@
+/* Tailwind CSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  a {
+    @apply text-link;
+  }
+}
+
+html {
+  font-size: 18px
+}

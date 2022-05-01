@@ -1,0 +1,6 @@
+_site
+.cache
+.cecil
+themes
+vendor
+node_modules

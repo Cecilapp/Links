@@ -1,0 +1,82 @@
+{%- set avatar = asset('avatar.jpeg') -%}
+{%- set hex_array = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'] -%}
+<!DOCTYPE html>
+<html lang="{{ site.language }}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {%~ include 'partials/metatags.html.twig' with {page, site} only %}
+    <style>{{ asset('styles.css')|inline }}</style>
+    {{ asset('fontawesome/css/fontawesome.css')|html({}, {preload: true}) }}
+    {{ asset('fontawesome/css/brands.css')|html({}, {preload: true}) }}
+    {{ asset('fontawesome/css/solid.css')|html({}, {preload: true}) }}
+    <link rel="manifest" href="{{ url('manifest') }}">
+    <meta name="theme-color" content="{{ site.manifest.theme_color }}">
+  </head>
+  <body style="background-color: {{ site.manifest.background_color }}" class="text-primary">
+    <div class="mx-auto my-auto flex flex-col py-8 px-8">
+      <button class="absolute top-3 right-4 text-link" id="share-button" type="button" title="{% trans %}Share{% endtrans %}">
+        <i class="fa-solid fa-share-nodes text-xl" title="{% trans %}Share{% endtrans %}"></i><span class="sr-only">{% trans %}Share{% endtrans %}</span>
+      </button>
+      <header class="text-center">
+        {{ avatar|html({class: 'w-1/2 md:w-1/3 lg:w-1/5 xl:w-1/6 rounded-full m-auto shadow-2xl md:border-2', alt: site.title}, {responsive: true, webp: true}) }}
+        <h1 class="text-4xl font-semibold pt-6 pb-2 border-b border-neutral">{{ site.title }}</h1>
+      </header>
+      <main class="text-center">
+        <div class="mt-4 text-secondary">
+          {{ page.content }}
+        </div>
+        <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8 md:gap-y-4 mt-8">
+          {%- for link in page.links ~%}
+            {%- set hex = random(hex_array) ~ random(hex_array) ~ random(hex_array) ~ random(hex_array) ~ random(hex_array) ~ random(hex_array) -%}
+            {%- set rgb = link.color|default('#' ~ hex)|hex_to_rgb ~%}
+          <style>
+            :root {
+              --button-{{ loop.index }}-color: calc(
+                (
+                  (
+                    (
+                      ({{ rgb.red }} * 299) +
+                      ({{ rgb.green }} * 587) +
+                      ({{ rgb.blue }} * 114)
+                    ) / 1000
+                  ) - 128
+                ) * -1000
+              );
+            }
+          </style>
+          <a style="background-color: {{ link.color|default('#' ~ hex) }}; color: rgb(var(--button-{{ loop.index }}-color), var(--button-{{ loop.index }}-color), var(--button-{{ loop.index }}-color))" class="flex justify-center items-center space-x-2 py-3 rounded-md transition ease-in-out hover:scale-105 duration-300 text-primary font-semibold" href="{{ link.url }}">
+            <i class="fa-{{ link.icon|default('solid:link')|split(':')[0] }} fa-{{ link.icon|default('solid:link')|split(':')[1] }}"></i>
+            <span>{{ link.title }}<span>
+          </a>
+          {%- endfor ~%}
+        </div>
+      </main>
+      <footer class="pt-8 text-center">
+        <div>
+          {% set powered_by -%}
+          <a href="{{ cecil.url }}">Cecil</a>, <a href="https://tailwindcss.com">Tailwind CSS</a>, <a href="https://fontawesome.com">Font Awesome</a>
+          {%- endset -%}
+          {%- trans %}Powered by {{ powered_by }}{% endtrans ~%}
+        </div>
+        <div>
+          <a href="{{ site.source }}" title="{% trans %}View source code{% endtrans %}"><i class="fa-brands fa-github" title="{% trans %}View source code{% endtrans %}"></i><span class="sr-only">{% trans %}View source code{% endtrans %}</span></a>
+        </div>
+      </footer>
+    </div>
+    <script>{% apply minify_js ~%}
+      const shareButton = document.getElementById('share-button');
+      if (navigator.share) {
+        shareButton.addEventListener('click', event => {
+          navigator.share({text: '{{ site.title }}', url: '{{ url(page, {canonical: true}) }}'}).then(() => {
+            console.log('Thanks for sharing.');
+          }).catch(console.error);
+        });
+      } else {
+        console.log('`navigator.share` not supported.');
+        shareButton.remove();
+      }
+    {% endapply %}</script>
+    {%~ include 'partials/regsw.js.twig' ignore missing with {site} only ~%}
+  </body>
+</html>
