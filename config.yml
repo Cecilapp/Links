@@ -1,5 +1,5 @@
 title: Arnaud Ligny
-baseurl: 'https://ligny.fr/'
+baseurl: 'https://cecil-links.netlify.app/'
 description: 'Quelques liens à propos de Arnaud Ligny.'
 author:
   name: 'Arnaud Ligny'
@@ -13,7 +13,7 @@ languages:
   - code: en
     locale: en_US
     name: English
-source: https://github.com/ArnaudLigny/ligny.fr
+source: https://github.com/Cecilapp/Links
 metatags:
   favicon:
     image: avatar.jpeg
@@ -26,8 +26,8 @@ output:
   pagetypeformats:
     homepage: html
 theme:
-  #- serviceworker
-  #- netlify
+  - serviceworker
+  - netlify
 manifest:
   background_color: '#1E293B'
   theme_color: '#1E293B'
