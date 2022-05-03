@@ -1,5 +1,7 @@
 **_Links_** is a [Linktree](https://linktr.ee) clone powered by [Cecil](https://cecil.app), [Tailwind CSS](https://tailwindcss.com) and [Font Awesome](https://fontawesome.com).
 
+[![Links example](docs/cecil-links.netlify.app.png)](https://cecil-links.netlify.app)
+
 ## Install
 
 ```bash
