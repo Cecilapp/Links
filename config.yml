@@ -27,6 +27,7 @@ manifest:
 serviceworker:
   enabled: true
 
+# disabled options
 defaultpages:
   404:
     published: false
