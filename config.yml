@@ -4,7 +4,6 @@ description: 'Quelques liens à propos de Arnaud Ligny.'
 author:
   name: 'Arnaud Ligny'
   url: 'https://arnaudligny.fr'
-image: avatar.jpeg
 language: fr
 languages:
   - code: fr
@@ -13,10 +12,25 @@ languages:
   - code: en
     locale: en_US
     name: English
-source: https://github.com/Cecilapp/Links
+image: avatar.jpeg
 metatags:
   favicon:
     image: avatar.jpeg
+source: https://github.com/Cecilapp/Links
+theme:
+  #- serviceworker
+  #- netlify
+manifest:
+  background_color: '#1E293B'
+  theme_color: '#1E293B'
+serviceworker:
+  enabled: true
+
+defaultpages:
+  404:
+    published: false
+  sitemap:
+    published: false
 taxonomies:
   categories: disabled
   tags: disabled
@@ -25,16 +39,3 @@ pagination:
 output:
   pagetypeformats:
     homepage: html
-theme:
-  - serviceworker
-  - netlify
-manifest:
-  background_color: '#1E293B'
-  theme_color: '#1E293B'
-serviceworker:
-  enabled: true
-defaultpages:
-  404:
-    published: false
-  sitemap:
-    published: false
