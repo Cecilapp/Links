@@ -12,7 +12,8 @@ languages:
   - code: en
     locale: en_US
     name: English
-image: avatar.jpeg
+avatar: avatar.jpeg
+image: avatar.jpeg # image used for the social share
 metatags:
   favicon:
     image: avatar.jpeg
