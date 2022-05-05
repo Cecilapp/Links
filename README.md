@@ -15,7 +15,7 @@ If you need to personalize colors of the theme, you must install `tailwindcss` p
 npm install
 ```
 
-If you want to use the utility themes (i.e.: _[serviceworker](https://github.com/Cecilapp/theme-serviceworker#readme)_ and _[netlity](https://github.com/Cecilapp/theme-netlify#readme)_), you must run the followinf command, then enable them in your config.):
+If you want to use the utility themes (i.e.: _[serviceworker](https://github.com/Cecilapp/theme-serviceworker#readme)_ and _[netlity](https://github.com/Cecilapp/theme-netlify#readme)_), you must run the following command, then enable them in your config.):
 
 ```bash
 composer install
