@@ -36,9 +36,10 @@ Edit `content/index.md` to add links in _front matter_ and short presentation in
 
 ### Configuration
 
-Define your site's configuration in `config.yml`.
+- Define the site's configuration in `config.yml`
+- Customize theme color in `tailwind.config.js`
 
-Cecil's documentation is available on [cecil.app](https://cecil.app/documentation/configuration/).
+> Cecil's documentation is available on [cecil.app](https://cecil.app/documentation/configuration/).
 
 ### Build and serve
 
