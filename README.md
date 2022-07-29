@@ -28,10 +28,11 @@ composer install
 Edit `content/index.md` to add links in _front matter_ and short presentation in _body_.
 
 ```yaml
-- title: Twitter # links title
-  url: https://twitter.com/ArnaudLigny/ # URL
-  color: '#1DA1F2' # hexadecimal color code
-  icon: brands:twitter # Font Awesome icon (https://fontawesome.com/icons): <brands|solid>:icon
+links:
+  - title: Twitter # links title
+    url: https://twitter.com/ArnaudLigny/ # URL
+    color: '#1DA1F2' # hexadecimal color code
+    icon: brands:twitter # Font Awesome icon (https://fontawesome.com/icons): <brands|solid>:icon
 ```
 
 ### Configuration
