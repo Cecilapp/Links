@@ -19,7 +19,7 @@ metatags:
     image: avatar.jpeg
 source: https://github.com/Cecilapp/Links
 theme:
-  #- serviceworker
+  #- pwa
   #- netlify
 manifest:
   background_color: '#1E293B'

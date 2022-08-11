@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b09e7dcd95f33fdba019755bd41ba0f8",
+    "content-hash": "f5322a95edf2962afe853ecb40a8b926",
     "packages": [
         {
             "name": "cecil/theme-installer",
@@ -131,17 +131,17 @@
             "time": "2022-03-28T22:52:59+00:00"
         },
         {
-            "name": "cecil/theme-serviceworker",
-            "version": "1.12.6",
+            "name": "cecil/theme-pwa",
+            "version": "1.13.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/Cecilapp/theme-serviceworker.git",
-                "reference": "350e9e39825b292d8820de3aa453fe31ef25ce45"
+                "url": "https://github.com/Cecilapp/theme-pwa.git",
+                "reference": "0d448e532b3825ee92e226f1db12ed7f954cbed0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Cecilapp/theme-serviceworker/zipball/350e9e39825b292d8820de3aa453fe31ef25ce45",
-                "reference": "350e9e39825b292d8820de3aa453fe31ef25ce45",
+                "url": "https://api.github.com/repos/Cecilapp/theme-pwa/zipball/0d448e532b3825ee92e226f1db12ed7f954cbed0",
+                "reference": "0d448e532b3825ee92e226f1db12ed7f954cbed0",
                 "shasum": ""
             },
             "require": {
@@ -149,7 +149,7 @@
             },
             "type": "cecil-theme",
             "extra": {
-                "name": "serviceworker",
+                "name": "pwa",
                 "branch-alias": {
                     "dev-master": "1.x-dev"
                 }
@@ -158,15 +158,15 @@
             "license": [
                 "MIT"
             ],
-            "description": "Cecil component theme service worker",
+            "description": "Cecil component theme PWA",
             "keywords": [
                 "cecil",
+                "pwa",
                 "service worker",
                 "theme"
             ],
             "support": {
-                "issues": "https://github.com/Cecilapp/theme-serviceworker/issues",
-                "source": "https://github.com/Cecilapp/theme-serviceworker/tree/1.12.6"
+                "source": "https://github.com/Cecilapp/theme-pwa/tree/1.13.0"
             },
             "funding": [
                 {
@@ -182,7 +182,7 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2022-05-03T13:58:40+00:00"
+            "time": "2022-07-04T16:33:18+00:00"
         }
     ],
     "packages-dev": [],
