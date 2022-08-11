@@ -25,7 +25,7 @@ composer install
 
 ### Manage links
 
-Edit `content/index.md` to add links in _front matter_ and short presentation in _body_.
+Edit `pages/index.md` to add links in _front matter_ and short presentation in _body_.
 
 ```yaml
 links:
