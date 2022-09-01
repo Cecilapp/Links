@@ -423,6 +423,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: none;
 }
 
+p {
+  margin-top: 1rem;
+}
+
 a {
   --tw-text-opacity: 1;
   color: rgb(97 148 199 / var(--tw-text-opacity));

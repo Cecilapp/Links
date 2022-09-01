@@ -4,6 +4,9 @@
 @tailwind utilities;
 
 @layer base {
+  p {
+    @apply mt-4;
+  }
   a {
     @apply text-link;
   }
