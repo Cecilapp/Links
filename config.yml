@@ -4,14 +4,14 @@ description: "Some links about John Doe."
 author:
   name: Arnaud Ligny
   url: https://arnaudligny.fr
-language: fr
+language: en
 languages:
-  - code: fr
-    locale: fr_FR
-    name: Français
   - code: en
     locale: en_US
     name: English
+  #- code: fr
+  #  locale: fr
+  #  name: Français
 avatar: avatar.png
 image: avatar.png # image used for the social share
 metatags:
