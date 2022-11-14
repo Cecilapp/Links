@@ -1,6 +1,6 @@
-title: Arnaud Ligny
-baseurl: https://cecil-links.netlify.app/
-description: "Quelques liens à propos de Arnaud Ligny."
+title: John Doe
+baseurl: https://cecil-links-demo.netlify.app/
+description: "Some links about John Doe."
 author:
   name: Arnaud Ligny
   url: https://arnaudligny.fr
@@ -12,11 +12,11 @@ languages:
   - code: en
     locale: en_US
     name: English
-avatar: avatar.jpeg
-image: avatar.jpeg # image used for the social share
+avatar: avatar.png
+image: avatar.png # image used for the social share
 metatags:
   favicon:
-    image: avatar.jpeg
+    image: avatar.png
 source: https://github.com/Cecilapp/Links
 theme:
   #- pwa
