@@ -57,7 +57,7 @@
           {% set powered_by -%}
           <a href="{{ cecil.url }}">Cecil</a>, <a href="https://tailwindcss.com">Tailwind CSS</a>, <a href="https://fontawesome.com">Font Awesome</a>
           {%- endset -%}
-          {%- trans %}Powered by {{ powered_by }}{% endtrans ~%}
+          {%- trans %}Powered by %powered_by%{% endtrans ~%}
         </div>
         <div>
           <a href="{{ site.source }}" title="{% trans %}View source code{% endtrans %}"><i class="fa-brands fa-github" title="{% trans %}View source code{% endtrans %}"></i><span class="sr-only">{% trans %}View source code{% endtrans %}</span></a>
