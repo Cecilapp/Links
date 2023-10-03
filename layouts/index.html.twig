@@ -13,7 +13,7 @@
     <link rel="manifest" href="{{ url('manifest') }}">
     <meta name="theme-color" content="{{ site.manifest.theme_color }}">
   </head>
-  <body style="background-color: {{ site.manifest.background_color }}" class="text-primary">
+  <body style="background-color: {{ site.manifest.background_color }}" class="text-primary max-w-screen-lg mx-auto">
     <div class="mx-auto my-auto flex flex-col py-8 px-8">
       <button class="absolute top-3 right-4 text-link" id="share-button" type="button" title="{% trans %}Share{% endtrans %}">
         <i class="fa-solid fa-share-nodes text-xl" title="{% trans %}Share{% endtrans %}"></i><span class="sr-only">{% trans %}Share{% endtrans %}</span>
