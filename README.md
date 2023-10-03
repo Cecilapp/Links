@@ -2,6 +2,8 @@
 
 [![Links example](docs/cecil-links.preview.png)](https://cecil-links.netlify.app)
 
+Demo: <https://cecil-links-demo.netlify.app>
+
 ## Install
 
 ```bash
@@ -59,3 +61,9 @@ php cecil.phar build
 ```
 
 Then deploy __site_ directory content to your web hosting solution.
+
+## License
+
+_Links_ is a free software distributed under the terms of the MIT license.
+
+© [Arnaud Ligny](https://arnaudligny.fr)
