@@ -1,5 +1,6 @@
 {%- set avatar = asset(site.avatar|default('avatar.jpeg')) -%}
 {%- set hex_array = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'] -%}
+{%- import 'macros/fontawesome.twig' as fontawesome -%}
 <!DOCTYPE html>
 <html lang="{{ site.language }}">
   <head>
@@ -7,9 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     {%- include 'partials/metatags.html.twig' with {page, site} only ~%}
     <style>{{ asset('styles.css')|inline }}</style>
-    {{ asset('fontawesome/css/fontawesome.css')|html({}, {preload: true}) }}
-    {{ asset('fontawesome/css/brands.css')|html({}, {preload: true}) }}
-    {{ asset('fontawesome/css/solid.css')|html({}, {preload: true}) }}
+    {%- include 'partials/fontawesome.twig' ~%}
     {%- if 'pwa' in site.theme|default({}) ~%}
     <link rel="manifest" href="{{ url('manifest', {language: site.language}) }}" />
     {%- endif ~%}
@@ -48,7 +47,7 @@
             }
           </style>
           <a style="background-color: {{ link.color|default('#' ~ hex) }}; color: rgb(var(--button-{{ loop.index }}-color), var(--button-{{ loop.index }}-color), var(--button-{{ loop.index }}-color))" class="flex justify-center items-center space-x-2 py-3 rounded-md transition ease-in-out hover:scale-105 duration-300 text-primary font-semibold" href="{{ link.url }}">
-            <i class="fa-{{ link.icon|default('solid:link')|split(':')[0] }} fa-{{ link.icon|default('solid:link')|split(':')[1] }}"></i>
+            {{ fontawesome.icon(link.icon|default('solid:link')|split(':')[0], link.icon|default('solid:link')|split(':')[1]) ~}}
             <span>{{ link.title }}<span>
           </a>
           {%- endfor ~%}

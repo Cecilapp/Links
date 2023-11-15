@@ -4,8 +4,59 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5f3d46bd98bb21bbd750378a4f27231f",
+    "content-hash": "78874187cb0674220e834b6d74516572",
     "packages": [
+        {
+            "name": "cecil/theme-fontawesome",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Cecilapp/theme-fontawesome.git",
+                "reference": "857425247bd8218779c393517bcb616621b37b25"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Cecilapp/theme-fontawesome/zipball/857425247bd8218779c393517bcb616621b37b25",
+                "reference": "857425247bd8218779c393517bcb616621b37b25",
+                "shasum": ""
+            },
+            "require": {
+                "cecil/theme-installer": "^1.4"
+            },
+            "type": "cecil-theme",
+            "extra": {
+                "name": "fontawesome",
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Cecil component theme Font Awesome",
+            "keywords": [
+                "cecil",
+                "font",
+                "icon",
+                "theme"
+            ],
+            "support": {
+                "issues": "https://github.com/Cecilapp/theme-fontawesome/issues",
+                "source": "https://github.com/Cecilapp/theme-fontawesome/tree/1.0.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/ArnaudLigny",
+                    "type": "github"
+                },
+                {
+                    "url": "https://opencollective.com/cecil",
+                    "type": "open_collective"
+                }
+            ],
+            "time": "2023-11-15T13:53:40+00:00"
+        },
         {
             "name": "cecil/theme-installer",
             "version": "1.4.5",
@@ -78,16 +129,16 @@
         },
         {
             "name": "cecil/theme-netlify",
-            "version": "1.4.0",
+            "version": "1.5.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Cecilapp/theme-netlify.git",
-                "reference": "e5fa01c7aac664d596709185fdb31b0a20031f13"
+                "reference": "5dee6bf92bb8332c646ad6ac5b1135832e02e1f8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Cecilapp/theme-netlify/zipball/e5fa01c7aac664d596709185fdb31b0a20031f13",
-                "reference": "e5fa01c7aac664d596709185fdb31b0a20031f13",
+                "url": "https://api.github.com/repos/Cecilapp/theme-netlify/zipball/5dee6bf92bb8332c646ad6ac5b1135832e02e1f8",
+                "reference": "5dee6bf92bb8332c646ad6ac5b1135832e02e1f8",
                 "shasum": ""
             },
             "require": {
@@ -112,13 +163,9 @@
             ],
             "support": {
                 "issues": "https://github.com/Cecilapp/theme-netlify/issues",
-                "source": "https://github.com/Cecilapp/theme-netlify/tree/1.4.0"
+                "source": "https://github.com/Cecilapp/theme-netlify/tree/1.5.3"
             },
             "funding": [
-                {
-                    "url": "https://www.paypal.me/narno",
-                    "type": "custom"
-                },
                 {
                     "url": "https://github.com/ArnaudLigny",
                     "type": "github"
@@ -128,20 +175,20 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2023-02-22T00:32:07+00:00"
+            "time": "2023-10-23T17:16:56+00:00"
         },
         {
             "name": "cecil/theme-pwa",
-            "version": "1.15.4",
+            "version": "1.18.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Cecilapp/theme-pwa.git",
-                "reference": "38531f4cb0fa696e66e3267f6996d9e2741c9b08"
+                "reference": "290fb84de406566736dfd3868731fc300614d4d5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Cecilapp/theme-pwa/zipball/38531f4cb0fa696e66e3267f6996d9e2741c9b08",
-                "reference": "38531f4cb0fa696e66e3267f6996d9e2741c9b08",
+                "url": "https://api.github.com/repos/Cecilapp/theme-pwa/zipball/290fb84de406566736dfd3868731fc300614d4d5",
+                "reference": "290fb84de406566736dfd3868731fc300614d4d5",
                 "shasum": ""
             },
             "require": {
@@ -166,7 +213,7 @@
                 "theme"
             ],
             "support": {
-                "source": "https://github.com/Cecilapp/theme-pwa/tree/1.15.4"
+                "source": "https://github.com/Cecilapp/theme-pwa/tree/1.18.1"
             },
             "funding": [
                 {
@@ -178,7 +225,7 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2023-09-17T00:18:47+00:00"
+            "time": "2023-11-15T09:54:15+00:00"
         }
     ],
     "packages-dev": [],
