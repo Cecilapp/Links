@@ -50,7 +50,7 @@
             {{ fontawesome.icon(link.icon|default('solid:link')|split(':')[0], link.icon|default('solid:link')|split(':')[1]) ~}}
             <span>{{ link.title }}<span>
           </a>
-          {% else %}
+          {%- else ~%}
           <div class="md:col-span-3 lg:col-span-4 content-center">{% trans %}No links found.{% endtrans %}</div>
           {%- endfor ~%}
         </div>
