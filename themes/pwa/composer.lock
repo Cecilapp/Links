@@ -1,0 +1,89 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "c67e36957569abfcdcb6ad857ee692ed",
+    "packages": [
+        {
+            "name": "cecil/theme-installer",
+            "version": "1.4.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Cecilapp/theme-installer.git",
+                "reference": "12b1d72ff38e1199eaca34877a64008b6a65e393"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Cecilapp/theme-installer/zipball/12b1d72ff38e1199eaca34877a64008b6a65e393",
+                "reference": "12b1d72ff38e1199eaca34877a64008b6a65e393",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": ">=1.0"
+            },
+            "require-dev": {
+                "composer/composer": ">=1.0"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "Cecil\\Installer\\Composer\\CecilPlugin",
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Cecil\\Installer\\Composer": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Arnaud Ligny",
+                    "email": "arnaud@ligny.fr",
+                    "homepage": "https://arnaudligny.fr",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Installer for Cecil's themes",
+            "keywords": [
+                "cecil",
+                "installer",
+                "themes"
+            ],
+            "support": {
+                "issues": "https://github.com/Cecilapp/theme-installer/issues",
+                "source": "https://github.com/Cecilapp/theme-installer/tree/1.4.5"
+            },
+            "funding": [
+                {
+                    "url": "https://www.paypal.me/narno",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/ArnaudLigny",
+                    "type": "github"
+                },
+                {
+                    "url": "https://opencollective.com/cecil",
+                    "type": "open_collective"
+                }
+            ],
+            "time": "2022-01-06T10:54:26+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": [],
+    "prefer-stable": true,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.6.0"
+}

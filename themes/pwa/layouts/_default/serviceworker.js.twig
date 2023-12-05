@@ -1,0 +1,169 @@
+var CACHE_VERSION = "{{ 'now'|date('U') }}";
+var CACHE_NAME = '{{ site.title|slugify }}';
+var CACHE = CACHE_NAME + '-v' + CACHE_VERSION;
+var PATH_TO_IGNORE = [];
+{% if site.serviceworker.ignore is defined and site.serviceworker.ignore %}
+var PATH_TO_IGNORE = [{{ site.serviceworker.ignore|map(i => "'#{i.path}'") | join(', ')}}];
+{% endif %}
+
+// Pages to cache
+var urlsToCache = [];
+{% for page in site.allpages|filter(p => p.published == true and p.redirect is not defined and p.serviceworker.precache ?? true != false)|sort((a, b) => a.path > b.path) %}
+urlsToCache.push('{{ url(page) }}');
+  {%- if site.debug|default(false) ~%}
+console.log('[SW] Page to cache "{{ url(page) }}"');
+  {%- endif ~%}
+{% endfor %}
+// Files to cache
+{%- block precache %}{% endblock -%}
+{% if site.serviceworker.precache is defined %}
+  {%- for file in site.serviceworker.precache ~%}
+urlsToCache.push('{{ asset(file)|url }}');
+    {%- if site.debug|default(false) ~%}
+console.log('[SW] File to cache "{{ asset(file)|url}}"');
+    {%- endif ~%}
+  {%- endfor ~%}
+{% endif %}
+
+// Pre-cache pages/files
+self.addEventListener('install', function(event) {
+  self.skipWaiting(); // install the new SW immediately
+  {%- if site.debug|default(false) ~%}
+  console.log('[SW] Install');
+  {%- endif ~%}
+  event.waitUntil(
+    caches.open(CACHE).then(function(cache) {
+      {%- if site.debug|default(false) ~%}
+      console.log('[SW] Pre-cache pages/files');
+      {%- endif ~%}
+      urlsToCache.forEach(function (url) {
+        cache.add(url).catch(error => console.error(`[SW] Can't add "${url}" to cache`));
+      });
+    })
+  );
+});
+
+// Remove old cache
+self.addEventListener('activate', function(event) {
+  {%- if site.debug|default(false) ~%}
+  console.log('[SW] Activate');
+  {%- endif ~%}
+  event.waitUntil(
+    caches.keys().then(function(keyList) {
+      return Promise.all(keyList.map(function(key) {
+        // New version?
+        if (key !== CACHE) {
+          {%- if site.serviceworker.notification.enabled|default(false) ~%}
+          // Notification
+          {%- if site.debug|default(false) ~%}
+          console.log('[SW] Notification enabled');
+          {%- endif ~%}
+          const title = "{{ site.serviceworker.notification.message|default('Website updated since your last visit.')|trans }}";
+          const options = {
+            icon: '{{ asset(site.manifest.icons|first) }}'
+          };
+          // Notification granted?
+          if (Notification && Notification.permission === 'granted') {
+            self.registration.showNotification(title, options);
+          } else if (Notification && Notification.permission !== 'denied') {
+            Notification.requestPermission(function (status) {
+              if (status === 'granted') {
+                self.registration.showNotification(title, options);
+              }
+            });
+          }
+          {%- endif ~%}
+          // Flush cache
+          {%- if site.debug|default(false) ~%}
+          console.log(`[SW] Remove old cache '${key}'`);
+          {%- endif ~%}
+          return caches.delete(key);
+        }
+      }));
+    })
+  );
+});
+
+// Fetch data
+self.addEventListener('fetch', function(event) {
+  url = new URL(event.request.url);
+  // Ignore non-GET requests
+  if (event.request.method !== 'GET') {
+    return;
+  }
+  // Ignore non-local resources (except images)
+  if (!(url.origin == location.origin) && event.request.headers.get('Accept').indexOf('image') === -1) {
+    return;
+  }
+  // Ignore Cecil's watcher
+  if (url.pathname == '/watcher') {
+    return;
+  }
+  // Ignore some paths (optional)
+  try {
+    PATH_TO_IGNORE.forEach(function (path) {
+      if (url.pathname.startsWith(path)) {
+        throw new Error('[SW] Path "' + path + '" ignored');
+      }
+    });
+  } catch (e) {
+    {%- if site.debug|default(false) ~%}
+    console.log(e.message);
+    {%- endif ~%}
+    return;
+  }
+  // Fetch
+  {%- if site.debug|default(false) ~%}
+  console.log('[SW] Fetch ', event.request.url);
+  {%- endif ~%}
+  event.respondWith(
+    caches.match(event.request).then(function(response) {
+      // Return response from cache if exists
+      if (response) {
+        return response;
+      }
+      // Store visited ressource to cache
+      var fetchRequest = event.request.clone();
+      return fetch(fetchRequest).then(function(response) {
+        // Ignore non-valid response
+        if (!response || response.status !== 200 || response.type !== 'basic') {
+          return response;
+        }
+        var responseToCache = response.clone();
+        caches.open(CACHE).then(function(cache) {
+          // Ignore non-HTTP protocols ("data:", "chrome-extension:, etc.)
+          if (!event.request.url.startsWith('http')) {
+            return;
+          }
+          {%- if site.debug|default(false) ~%}
+          console.log('[SW] Store ', event.request.url);
+          {%- endif ~%}
+          cache.put(event.request, responseToCache);
+        });
+        return response;
+      })
+      .catch(function(response) {
+        // Offline image
+        if (event.request.headers.get('Accept').indexOf('image') !== -1) {
+          return new Response('<svg role="img" aria-labelledby="offline-title" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><title id="offline-title">{{ 'Offline'|trans }}</title><g fill="none" fill-rule="evenodd"><path fill="#D8D8D8" d="M0 0h400v300H0z"/><text fill="#505050" font-family="Helvetica Neue,Arial,Helvetica,sans-serif" font-size="72" font-style="italic"><tspan x="{{ 400 // 'Offline'|trans|length }}" y="172">{{ 'Offline'|trans }}</tspan></text></g></svg>', { headers: { 'Content-Type': 'image/svg+xml' } });
+        }
+      });
+    })
+  );
+});
+
+// Notification click
+self.addEventListener('notificationclick', function (event) {
+  const clickedNotification = event.notification;
+  clickedNotification.close();
+  event.waitUntil(
+    clients.matchAll({ type: 'window' }).then((clientsArr) => {
+      const hadWindowToFocus = clientsArr.some((windowClient) =>
+        windowClient.url.startsWith('{{ site.baseurl }}') ? (windowClient.focus(), true) : false);
+      if (!hadWindowToFocus) {
+        clients.openWindow('{{ site.baseurl }}')
+          .then((windowClient) => (windowClient ? windowClient.focus() : null));
+      }
+    })
+  );
+});

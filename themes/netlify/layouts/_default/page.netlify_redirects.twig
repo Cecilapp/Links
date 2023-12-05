@@ -1,0 +1,23 @@
+# Cecil redirects' pages
+{%- for page in site.pages|filter(p => p.redirect is defined) ~%}
+{{ url(page, {'canonical': false}) }}    {{ url(page.redirect, {'canonical': false}) }}    301!
+{%- endfor -%}
+{%- if site.netlify.redirects is defined and site.netlify.redirects > 0 ~%}
+# Redirects defined in config
+  {%- for redirect in site.netlify.redirects ~%}
+{{ url(redirect.from, {'canonical': false}) }}    {{ url(redirect.to, {'canonical': false}) }}{% if redirect.status is defined %}    {{ redirect.status }}{% if redirect.force is defined and redirect.force %}!{% endif %}{% endif ~%}
+  {%- endfor ~%}
+{%- endif -%}
+{%- if site.netlify.redirect_by_language|default(false) and site.languages > 1 ~%}
+# Languages redirects
+  {%- for language in site.languages|filter(l => l.code != site.language) ~%}
+/    /{{ language.code }}/    302!    Language={{ language.code }}
+  {%- endfor -%}
+{%- endif ~%}
+# Custom 404 error pages
+{%- if site.languages > 1 -%}
+  {%- for language in site.languages|filter(l => l.code != site.language) ~%}
+/{{ language.code }}/*    {{ url(site.page('404', language.code), {'canonical': false}) }}    404
+  {%- endfor -%}
+{%- endif ~%}
+{{ url(site.home, {'canonical': false}) }}*    {{ url(site.page('404'), {'language': site.language, 'canonical': false}) }}    404

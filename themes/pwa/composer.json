@@ -1,0 +1,23 @@
+{
+  "name": "cecil/theme-pwa",
+  "type": "cecil-theme",
+  "description": "Cecil component theme PWA",
+  "keywords": ["Cecil", "theme", "pwa", "service worker"],
+  "license": "MIT",
+  "require": {
+    "cecil/theme-installer": "^1.4"
+  },
+  "extra": {
+    "name": "pwa",
+    "branch-alias": {
+      "dev-master": "1.x-dev"
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "config": {
+    "allow-plugins": {
+      "cecil/theme-installer": true
+    }
+  }
+}

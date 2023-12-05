@@ -1,0 +1,23 @@
+{
+  "name": "cecil/theme-fontawesome",
+  "type": "cecil-theme",
+  "description": "Cecil component theme Font Awesome",
+  "keywords": ["Cecil", "theme", "font", "icon"],
+  "license": "MIT",
+  "require": {
+    "cecil/theme-installer": "^1.4"
+  },
+  "extra": {
+    "name": "fontawesome",
+    "branch-alias": {
+      "dev-master": "1.x-dev"
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "config": {
+    "allow-plugins": {
+      "cecil/theme-installer": true
+    }
+  }
+}

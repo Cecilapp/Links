@@ -20,8 +20,8 @@ metatags:
 source: https://github.com/Cecilapp/Links
 theme:
   - fontawesome
-  #- pwa
-  #- netlify
+  - pwa
+  - netlify
 manifest:
   background_color: '#1E293B'
   theme_color: '#1E293B'
