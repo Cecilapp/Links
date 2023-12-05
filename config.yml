@@ -34,6 +34,10 @@ defaultpages:
     published: false
   sitemap:
     published: false
+  xsl/atom:
+    published: false
+  xsl/rss:
+    published: false
 taxonomies:
   categories: disabled
   tags: disabled
