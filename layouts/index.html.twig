@@ -28,7 +28,7 @@
           {{ page.content }}
         </div>
         <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8 md:gap-y-4 mt-8">
-          {%- for link in page.links ~%}
+          {%- for link in page.links|default ~%}
             {%- set hex = random(hex_array) ~ random(hex_array) ~ random(hex_array) ~ random(hex_array) ~ random(hex_array) ~ random(hex_array) -%}
             {%- set rgb = link.color|default('#' ~ hex)|hex_to_rgb ~%}
           <style>
@@ -50,6 +50,8 @@
             {{ fontawesome.icon(link.icon|default('solid:link')|split(':')[0], link.icon|default('solid:link')|split(':')[1]) ~}}
             <span>{{ link.title }}<span>
           </a>
+          {% else %}
+          <div class="md:col-span-3 lg:col-span-4 content-center">{% trans %}No links found.{% endtrans %}</div>
           {%- endfor ~%}
         </div>
       </main>
