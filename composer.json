@@ -1,8 +1,8 @@
 {
   "require": {
     "cecil/theme-fontawesome": "^1.0",
-    "cecil/theme-pwa": "^1.18",
-    "cecil/theme-netlify": "^1.5"
+    "cecil/theme-pwa": "^1.19",
+    "cecil/theme-netlify": "^1.6"
   },
   "config": {
     "allow-plugins": {
