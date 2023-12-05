@@ -17,7 +17,7 @@ If you need to personalize colors of the theme, you must install `tailwindcss` p
 npm install
 ```
 
-If you want to update the utility themes (i.e.: _[serviceworker](https://github.com/Cecilapp/theme-serviceworker#readme)_, _[netlity](https://github.com/Cecilapp/theme-netlify#readme)_ and _[fontawesome](https://github.com/Cecilapp/theme-fontawesome#readme)_), you must run the following command, then enable them in your config.):
+If you want to update the utility themes (i.e.:  _[fontawesome](https://github.com/Cecilapp/theme-fontawesome#readme)_, _[pwa](https://github.com/Cecilapp/theme-pwa#readme)_ and _[netlity](https://github.com/Cecilapp/theme-netlify#readme)_), you must run the following command, then enable them in your config.):
 
 ```bash
 composer install
