@@ -8,38 +8,23 @@
   }{% if loop.length > 1 and not loop.last %},{% endif %}
   {%- endfor %}
 {% endset -%}
-{%- set screenshots %}
-  {%- for screenshot in site.manifest.screenshots|default({}) -%}
-    {%- set screenshot_asset = asset(screenshot) -%}
-  {
-    "src": "{{ screenshot_asset|url }}",
-    "sizes": "{{ screenshot_asset.width }}x{{ screenshot_asset.height }}",
-    "type": "{{ screenshot_asset.subtype }}",
-    "form_factor": "{% if screenshot_asset.width < screenshot_asset.height %}narrow{% else %}wide{% endif %}"
-  }{% if loop.length > 1 and not loop.last %},{% endif %}
-  {%- endfor %}
-{% endset -%}
 {
   "name": "{{ site.title }}",
   "short_name": "{{ site.title }}",
   "description": "{{ site.description }}",
   "display": "{{ site.manifest.display|default('standalone') }}",
   "start_url": "{{ site.manifest.start_url|default(url('/', {canonical: true})) }}",
-  "id": "{{ site.manifest.id|default(url('/', {canonical: true})) }}",
-  "orientation": "{{ site.manifest.orientation|default('any') }}",
+  "orientation": "{{ site.manifest.orientation|default('portrait') }}",
   "background_color": "{{ site.manifest.background_color|default('#FFFFFF') }}",
   "theme_color": "{{ site.manifest.theme_color|default('#202020') }}",
   "lang": "{{ site.language|default('en') }}",
   "dir": "{{ site.manifest.dir|default('ltr') }}",
   "icons": [
-    {{- icons -}}
-  ],
-  "screenshots": [
-    {{- screenshots -}}
+    {{-  icons -}}
   ]
   {%- if site.serviceworker.enabled|default(false) %},
   "serviceworker": {
-    "src": "{{ url(site.page('serviceworker'), {canonical: false}) }}",
+    "src": "{{ site.serviceworker.file|default('serviceworker.js') }}",
     "scope": "/",
     "use_cache": false
   }
