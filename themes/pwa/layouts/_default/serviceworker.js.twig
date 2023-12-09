@@ -10,7 +10,7 @@ var PATH_TO_IGNORE = [{{ site.serviceworker.ignore|map(i => "'#{i.path}'") | joi
 var urlsToCache = [];
 {% for page in site.allpages|filter(p => p.published == true and p.redirect is not defined and p.serviceworker.precache ?? true != false)|sort((a, b) => a.path > b.path) %}
 urlsToCache.push('{{ url(page) }}');
-  {%- if site.serviceworker.debug|default(false) or getenv('CECIL_DEBUG')|default(false) ~%}
+  {%- if site.debug|default(false) ~%}
 console.log('[SW] Page to cache "{{ url(page) }}"');
   {%- endif ~%}
 {% endfor %}
@@ -19,7 +19,7 @@ console.log('[SW] Page to cache "{{ url(page) }}"');
 {% if site.serviceworker.precache is defined %}
   {%- for file in site.serviceworker.precache ~%}
 urlsToCache.push('{{ asset(file)|url }}');
-    {%- if site.serviceworker.debug|default(false) or getenv('CECIL_DEBUG')|default(false) ~%}
+    {%- if site.debug|default(false) ~%}
 console.log('[SW] File to cache "{{ asset(file)|url}}"');
     {%- endif ~%}
   {%- endfor ~%}
@@ -28,10 +28,14 @@ console.log('[SW] File to cache "{{ asset(file)|url}}"');
 // Pre-cache pages/files
 self.addEventListener('install', function(event) {
   self.skipWaiting(); // install the new SW immediately
+  {%- if site.debug|default(false) ~%}
   console.log('[SW] Install');
+  {%- endif ~%}
   event.waitUntil(
     caches.open(CACHE).then(function(cache) {
+      {%- if site.debug|default(false) ~%}
       console.log('[SW] Pre-cache pages/files');
+      {%- endif ~%}
       urlsToCache.forEach(function (url) {
         cache.add(url).catch(error => console.error(`[SW] Can't add "${url}" to cache`));
       });
@@ -41,7 +45,9 @@ self.addEventListener('install', function(event) {
 
 // Remove old cache
 self.addEventListener('activate', function(event) {
+  {%- if site.debug|default(false) ~%}
   console.log('[SW] Activate');
+  {%- endif ~%}
   event.waitUntil(
     caches.keys().then(function(keyList) {
       return Promise.all(keyList.map(function(key) {
@@ -49,7 +55,9 @@ self.addEventListener('activate', function(event) {
         if (key !== CACHE) {
           {%- if site.serviceworker.notification.enabled|default(false) ~%}
           // Notification
+          {%- if site.debug|default(false) ~%}
           console.log('[SW] Notification enabled');
+          {%- endif ~%}
           const title = "{{ site.serviceworker.notification.message|default('Website updated since your last visit.')|trans }}";
           const options = {
             icon: '{{ asset(site.manifest.icons|first) }}'
@@ -66,7 +74,9 @@ self.addEventListener('activate', function(event) {
           }
           {%- endif ~%}
           // Flush cache
+          {%- if site.debug|default(false) ~%}
           console.log(`[SW] Remove old cache '${key}'`);
+          {%- endif ~%}
           return caches.delete(key);
         }
       }));
@@ -97,13 +107,13 @@ self.addEventListener('fetch', function(event) {
       }
     });
   } catch (e) {
-    {%- if site.serviceworker.debug|default(false) or getenv('CECIL_DEBUG')|default(false) ~%}
+    {%- if site.debug|default(false) ~%}
     console.log(e.message);
     {%- endif ~%}
     return;
   }
   // Fetch
-  {%- if site.serviceworker.debug|default(false) or getenv('CECIL_DEBUG')|default(false) ~%}
+  {%- if site.debug|default(false) ~%}
   console.log('[SW] Fetch ', event.request.url);
   {%- endif ~%}
   event.respondWith(
@@ -125,7 +135,7 @@ self.addEventListener('fetch', function(event) {
           if (!event.request.url.startsWith('http')) {
             return;
           }
-          {%- if site.serviceworker.debug|default(false) or getenv('CECIL_DEBUG')|default(false) ~%}
+          {%- if site.debug|default(false) ~%}
           console.log('[SW] Store ', event.request.url);
           {%- endif ~%}
           cache.put(event.request, responseToCache);

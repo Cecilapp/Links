@@ -2,6 +2,11 @@
 
 The _Netlify_ component theme for [Cecil](https://cecil.app) provides support of Netlify's [`_redirects`](https://docs.netlify.com/routing/redirects/) and [`_header`](https://docs.netlify.com/routing/headers/).
 
+After installation and without any configuration, this component theme generate:
+
+1. a [`_redirects`](./layouts/page.netlify_redirects.twig) file containing HTML's redirections created by Cecil (automatic or created manually with the [`redirect`](https://cecil.app/documentation/content/#redirect) front matter variable)
+2. a [`_header`](./static/_headers) file containg a set of best praticies about security and assets cache control
+
 ## Installation
 
 ```bash

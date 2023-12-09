@@ -39,7 +39,7 @@ theme:
 Add the [web manifest](https://developer.mozilla.org/fr/docs/Web/Manifest) in the HTML `<header>` of the main template:
 
 ```twig
-<link rel="manifest" href="{{ url('manifest') }}">
+<link rel="manifest" href="{{ url('manifest', {language: site.language}) }}">
 ```
 
 Configure it:
@@ -60,6 +60,15 @@ Add [shortcuts](https://developer.mozilla.org/docs/Web/Manifest/shortcuts):
 ```yaml
 manifest:
   shortcuts: true
+```
+
+Add [installer screenshots](https://developer.mozilla.org/docs/Web/Manifest/screenshots):
+
+```yaml
+manifest:
+  screenshots:
+    - screenshots/screenshot-desktop.png
+    - screenshots/screenshot-mobile.png
 ```
 
 ### Service worker

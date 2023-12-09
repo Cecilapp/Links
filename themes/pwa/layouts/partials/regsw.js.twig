@@ -9,28 +9,34 @@
         })
         {%- endif ~%}
         {%- if site.serviceworker is defined and site.serviceworker.enabled ~%}
-        navigator.serviceWorker.register('{{ url("serviceworker.js") }}').then(function (registration) {
+        navigator.serviceWorker.register('{{ url(site.page("serviceworker"), {canonical: false}) }}').then(function (registration) {
+          {%- if site.debug|default(false) ~%}
           console.log('[SW] Registration successful with scope: ', registration.scope);
+          {%- endif ~%}
         }).catch(function (err) {
-          console.log('[SW] Failed: ', err);
+          console.log('[SW]', err);
         });
         {%- endif ~%}
         {%- if site.serviceworker is defined and not site.serviceworker.enabled ~%}
         caches.keys().then(function(keyList) {
           Promise.all(keyList.map(function(key) {
+            {%- if site.debug|default(false) ~%}
             console.log('[SW] Delete cache');
+            {%- endif ~%}
             caches.delete(key);
           }));
         });
         navigator.serviceWorker.getRegistrations().then(registrations => {
           registrations.forEach(registration => {
+            {%- if site.debug|default(false) ~%}
             console.log('[SW] Unregister');
+            {%- endif ~%}
             registration.unregister()
           })
         })
         {%- endif ~%}
       }
-      {%- if site.serviceworker is defined and site.serviceworker.debug|default(false) ~%}
+      {%- if site.serviceworker is defined and site.debug|default(false) ~%}
       navigator.webkitTemporaryStorage.queryUsageAndQuota(
         function (usedBytes, grantedBytes) {
           console.log('Cache size: ', (usedBytes / 1048576).toFixed(2), ' / ', (grantedBytes / 1048576).toFixed(2), 'Mo');

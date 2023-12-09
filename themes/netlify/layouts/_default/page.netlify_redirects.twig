@@ -9,8 +9,15 @@
   {%- endfor ~%}
 {%- endif -%}
 {%- if site.netlify.redirect_by_language|default(false) and site.languages > 1 ~%}
-# Language redirects
+# Languages redirects
   {%- for language in site.languages|filter(l => l.code != site.language) ~%}
-/  /{{ language.code }}/    302!    Language={{ language.code }}
+/    /{{ language.code }}/    302!    Language={{ language.code }}
   {%- endfor -%}
-{%- endif -%}
+{%- endif ~%}
+# Custom 404 error pages
+{%- if site.languages > 1 -%}
+  {%- for language in site.languages|filter(l => l.code != site.language) ~%}
+/{{ language.code }}/*    {{ url(site.page('404', language.code), {'canonical': false}) }}    404
+  {%- endfor -%}
+{%- endif ~%}
+{{ url(site.home, {'canonical': false}) }}*    {{ url(site.page('404'), {'language': site.language, 'canonical': false}) }}    404
