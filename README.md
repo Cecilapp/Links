@@ -17,10 +17,10 @@ If you need to personalize colors of the theme, you must install `tailwindcss` p
 npm install
 ```
 
-If you want to update utility themes (i.e.:  _[fontawesome](https://github.com/Cecilapp/theme-fontawesome#readme)_, _[pwa](https://github.com/Cecilapp/theme-pwa#readme)_ and _[netlity](https://github.com/Cecilapp/theme-netlify#readme)_) you must run the following command:
+If you want to update utility themes (i.e.: _[fontawesome](https://github.com/Cecilapp/theme-fontawesome#readme)_, _[pwa](https://github.com/Cecilapp/theme-pwa#readme)_ and _[netlity](https://github.com/Cecilapp/theme-netlify#readme)_) you must run the following command:
 
 ```bash
-composer install
+composer update
 ```
 
 ## Usage
@@ -31,10 +31,10 @@ Edit `pages/index.md` to add links in _front matter_ and short presentation in _
 
 ```yaml
 links:
-  - title: Twitter # links title
+  - title: Twitter                        # links title
     url: https://twitter.com/ArnaudLigny/ # URL
-    color: '#1DA1F2' # hexadecimal color code
-    icon: brands:twitter # Font Awesome icon (https://fontawesome.com/icons): <brands|solid>:icon
+    color: '#1DA1F2'                      # hexadecimal color code
+    icon: brands:twitter                  # Font Awesome icon (https://fontawesome.com/icons): <brands|solid>:icon
 ```
 
 ### Configuration
@@ -47,7 +47,7 @@ links:
 ### Build and serve
 
 ```bash
-# build CSS
+# build CSS (if necessary)
 npx tailwindcss -i ./assets/tailwind.css -o ./assets/styles.css --watch
 # build and serve static website
 php cecil.phar serve -v --clear-cache
