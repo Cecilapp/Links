@@ -16,6 +16,9 @@
     "cecil/theme-pwa": "^2.1",
     "cecil/theme-netlify": "^2.0"
   },
+  "scripts": {
+    "post-create-project-cmd": "curl -LO https://cecil.app/cecil.phar"
+  },
   "config": {
     "allow-plugins": {
       "cecil/theme-installer": true
