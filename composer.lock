@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0ad14047e79801a69dc9dbad4d672acf",
+    "content-hash": "11a0062feb9538122ede79e04accc39f",
     "packages": [
         {
             "name": "cecil/theme-fontawesome",
@@ -179,16 +179,16 @@
         },
         {
             "name": "cecil/theme-pwa",
-            "version": "2.0.0",
+            "version": "2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Cecilapp/theme-pwa.git",
-                "reference": "1fea4088d7c9eba4a4bd2a4e882f7ba4120001e8"
+                "reference": "264a34ae2867f356750fdc86bb495465314a11f2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Cecilapp/theme-pwa/zipball/1fea4088d7c9eba4a4bd2a4e882f7ba4120001e8",
-                "reference": "1fea4088d7c9eba4a4bd2a4e882f7ba4120001e8",
+                "url": "https://api.github.com/repos/Cecilapp/theme-pwa/zipball/264a34ae2867f356750fdc86bb495465314a11f2",
+                "reference": "264a34ae2867f356750fdc86bb495465314a11f2",
                 "shasum": ""
             },
             "require": {
@@ -198,7 +198,7 @@
             "extra": {
                 "name": "pwa",
                 "branch-alias": {
-                    "dev-master": "1.x-dev"
+                    "dev-master": "2.x-dev"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -213,7 +213,7 @@
                 "theme"
             ],
             "support": {
-                "source": "https://github.com/Cecilapp/theme-pwa/tree/2.0.0"
+                "source": "https://github.com/Cecilapp/theme-pwa/tree/2.1.1"
             },
             "funding": [
                 {
@@ -225,7 +225,7 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2023-12-09T01:02:22+00:00"
+            "time": "2024-01-01T23:37:06+00:00"
         }
     ],
     "packages-dev": [],

@@ -1,3 +1,4 @@
+    {#- register serviceWorker ~#}
     <script>{% apply minify_js ~%}
       if ('serviceWorker' in navigator) {
         {%- if site.serviceworker.notification.enabled|default(false) ~%}
@@ -9,7 +10,7 @@
         })
         {%- endif ~%}
         {%- if site.serviceworker is defined and site.serviceworker.enabled ~%}
-        navigator.serviceWorker.register('{{ url(site.page("serviceworker"), {canonical: false}) }}').then(function (registration) {
+        navigator.serviceWorker.register('{{ url(site.page("serviceworker"), {canonical: true}) }}', { scope: './' }).then(function (registration) {
           {%- if site.debug|default(false) ~%}
           console.log('[SW] Registration successful with scope: ', registration.scope);
           {%- endif ~%}

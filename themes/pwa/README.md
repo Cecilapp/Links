@@ -39,7 +39,7 @@ theme:
 Add the [web manifest](https://developer.mozilla.org/fr/docs/Web/Manifest) in the HTML `<header>` of the main template:
 
 ```twig
-<link rel="manifest" href="{{ url('manifest', {language: site.language}) }}">
+<link rel="manifest" href="{{ url('manifest') }}">
 ```
 
 Configure it:
@@ -51,6 +51,10 @@ manifest:
   icons:
     - icon-192x192.png
     - icon-512x512.png
+    - src: icon-192x192-maskable.png
+      purpose: maskable
+    - src: icon-512x512-maskable.png
+      purpose: maskable
 ```
 
 #### Web manifest Optional

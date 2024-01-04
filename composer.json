@@ -1,7 +1,19 @@
 {
+  "name": "cecil/links",
+  "description": "Links is a Linktree clone powered by Cecil, Tailwind CSS and Font Awesome.",
+  "license": "MIT",
+  "type": "project",
+  "authors": [
+    {
+      "name": "Arnaud Ligny",
+      "email": "arnaud@ligny.fr",
+      "homepage": "https://arnaudligny.fr",
+      "role": "Developer"
+    }
+  ],
   "require": {
     "cecil/theme-fontawesome": "^1.0",
-    "cecil/theme-pwa": "^2.0",
+    "cecil/theme-pwa": "^2.1",
     "cecil/theme-netlify": "^2.0"
   },
   "config": {

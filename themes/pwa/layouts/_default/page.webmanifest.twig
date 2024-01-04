@@ -1,11 +1,21 @@
 {%- set icons %}
-  {%- for icon in site.manifest.icons -%}
-    {%- set icon_asset = asset(icon) -%}
+  {%- for icon in site.manifest.icons %}
+    {%- if icon is iterable %}
+      {%- set icon_asset = asset(icon.src) -%}
+  {
+    "src": "{{ icon_asset|url }}",
+    "sizes": "{{ icon.sizes|default(icon_asset.width ~ 'x' ~ icon_asset.height) }}",
+    "type": "{{ icon.type|default(icon_asset.subtype) }}",
+    "purpose": "{{ icon.purpose|default('any') }}"
+  }{% if loop.length > 1 and not loop.last %},{% endif %}
+    {%- else %}
+      {%- set icon_asset = asset(icon) -%}
   {
     "src": "{{ icon_asset|url }}",
     "sizes": "{{ icon_asset.width }}x{{ icon_asset.height }}",
     "type": "{{ icon_asset.subtype }}"
   }{% if loop.length > 1 and not loop.last %},{% endif %}
+    {%- endif ~%}
   {%- endfor %}
 {% endset -%}
 {%- set screenshots %}
@@ -24,8 +34,8 @@
   "short_name": "{{ site.title }}",
   "description": "{{ site.description }}",
   "display": "{{ site.manifest.display|default('standalone') }}",
-  "start_url": "{{ site.manifest.start_url|default(url('/', {canonical: true})) }}",
-  "id": "{{ site.manifest.id|default(url('/', {canonical: true})) }}",
+  "start_url": "{{ site.manifest.start_url|default(url(site.home, {canonical: true})) }}",
+  "id": "{{ site.manifest.id|default(url(site.home, {canonical: true})) }}",
   "orientation": "{{ site.manifest.orientation|default('any') }}",
   "background_color": "{{ site.manifest.background_color|default('#FFFFFF') }}",
   "theme_color": "{{ site.manifest.theme_color|default('#202020') }}",
@@ -39,7 +49,7 @@
   ]
   {%- if site.serviceworker.enabled|default(false) %},
   "serviceworker": {
-    "src": "{{ url(site.page('serviceworker'), {canonical: false}) }}",
+    "src": "{{ url(site.page('serviceworker'), {canonical: true}) }}",
     "scope": "/",
     "use_cache": false
   }
