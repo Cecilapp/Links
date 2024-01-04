@@ -6,10 +6,15 @@ Demo: <https://cecil-links-demo.netlify.app>
 
 ## Install
 
+Clone or download this repository, or run `composer create-project cecil/links myproject`.
+
+Then install Cecil:
+
 ```bash
-# download Cecil
 curl -LO https://cecil.app/cecil.phar
 ```
+
+### Customize
 
 If you need to personalize colors of the theme, you must install `tailwindcss` package with npm:
 
@@ -56,7 +61,6 @@ php cecil.phar serve -v --clear-cache
 ### Publish
 
 ```bash
-# build
 php cecil.phar build
 ```
 
