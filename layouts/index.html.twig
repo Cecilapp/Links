@@ -34,8 +34,13 @@
         {%- if site.social|default([]) ~%}
         <div class="mt-4 flex flex-row justify-center space-x-2">
         {%- for social_name, social_values in site.social ~%}
-          {%- set color = socials_color[social_name]|default ~%}
-          <a href="{{ social_values['url']|default }}" title="{{ social_name|capitalize }}">{{ fontawesome.icon('brands', social_name, 'xl', {title: social_name|capitalize, style: 'color: ' ~ color|default ~ ';'}) ~}}<span class="sr-only">{{ social_name|capitalize }}</span></a>
+          {%- if social_values['url'] is defined ~%}
+            {%- set color, style, icon = 'inherit', 'solid', 'globe' ~%}
+            {%- if socials_color[social_name] is defined ~%}
+              {%- set color, style, icon = socials_color[social_name], 'brands', social_name ~%}
+            {%- endif ~%}
+          <a href="{{ social_values['url'] }}" title="{{ social_name|capitalize }}">{{ fontawesome.icon(icon, style, 'xl', {title: social_name|capitalize, style: 'color: ' ~ color|default ~ ';'}) ~}}<span class="sr-only">{{ social_name|capitalize }}</span></a>
+          {%- endif ~%}
         {%- endfor ~%}
         </div>
         {%- endif ~%}
@@ -105,8 +110,7 @@
         shareButton.addEventListener('click', async () => {
           try {
             const shareData = {
-              title: '{{ site.title }}',
-              text: '{{ site.baseline }}',
+              text: '{{ site.title }} - {{ site.baseline }}',
               url: '{{ url(page, {canonical: true}) }}',
             };
             await navigator.share(shareData);
