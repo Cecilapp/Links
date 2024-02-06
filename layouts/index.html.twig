@@ -25,12 +25,11 @@
       <header class="text-center">
         {#- avatar ~#}
         {{ avatar|html({class: 'w-1/2 max-w-36 rounded-full m-auto shadow-2xl', alt: 'Avatar of %name%'|trans({'%name%': site.title})}, {responsive: true, webp: true}) }}
-        {#- title ~#}
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold pt-6 pb-2">{{ site.title }}</h1>
-        {#- baseline ~#}
-        <div class="font-medium">
-          {{ site.baseline }}
-        </div>
+        {#- h1 ~#}
+        <h1>
+          <div class="text-4xl sm:text-5xl lg:text-6xl font-bold pt-6 pb-2">{{ site.title }}</div>
+          <div class="text-base font-medium">{{ site.baseline }}</div>
+        </h1>
         {#- social links ~#}
         {%- if site.social|default([]) ~%}
         <div class="mt-4 flex flex-row justify-center space-x-2">
