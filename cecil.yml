@@ -4,20 +4,20 @@ baseline: "Short description of John Doe."
 description: "Long description of John Doe."
 author:
   name: John Doe
-  url: https://johndoe.com
+  url: https://cecil.app
 social:
   twitter:
     creator: John Doe
-    url: https://twitter.com/JohnDoe
+    url: https://twitter.com/Cecil_Static
   github:
     username: John Doe
-    url: https://github.com/JohnDoe
+    url: https://github.com/Cecilapp
   linkedin:
-    url: https://linkedin.com/in/JohnDoe
+    url: https://linkedin.com/
   instagram:
-    url: https://www.instagram.com/JohnDoe
+    url: https://www.instagram.com/
   youtube:
-    url: https://www.youtube.com/JohnDoe
+    url: https://www.youtube.com/
 language: en
 languages:
   - code: en
@@ -40,7 +40,7 @@ theme:
 manifest:
   theme_color: '#1d4ed8'
 serviceworker:
-  enabled: false # enable PWA
+  enabled: false # enable PWA with "true"
 
 # Cecil disabled options
 taxonomies:
