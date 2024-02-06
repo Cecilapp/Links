@@ -24,7 +24,7 @@ languages:
     locale: en_US
     name: English
   - code: fr
-    enable: false
+    enable: false # enbale with "true"
     locale: fr
     name: Français
 avatar: avatar.png
@@ -42,7 +42,7 @@ manifest:
 serviceworker:
   enabled: false # enable PWA with "true"
 
-# Cecil disabled options
+# Cecil options
 taxonomies:
   categories: disabled
   tags: disabled
