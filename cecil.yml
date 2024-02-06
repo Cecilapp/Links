@@ -37,8 +37,8 @@ theme:
   - fontawesome
   - pwa
   - netlify
-manifest:
-  theme_color: '#1d4ed8'
+#manifest:
+  #theme_color: '#1d4ed8'
 serviceworker:
   enabled: false # enable PWA with "true"
 
