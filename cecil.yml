@@ -1,0 +1,63 @@
+title: John Doe
+baseurl: https://cecil-links-demo.netlify.app/
+baseline: "Short description of John Doe."
+description: "Long description of John Doe."
+author:
+  name: John Doe
+  url: https://johndoe.com
+social:
+  twitter:
+    creator: John Doe
+    url: https://twitter.com/JohnDoe
+  github:
+    username: John Doe
+    url: https://github.com/JohnDoe
+  linkedin:
+    url: https://linkedin.com/in/JohnDoe
+  instagram:
+    url: https://www.instagram.com/JohnDoe
+  youtube:
+    url: https://www.youtube.com/JohnDoe
+language: en
+languages:
+  - code: en
+    locale: en_US
+    name: English
+  - code: fr
+    enable: false
+    locale: fr
+    name: Français
+avatar: avatar.png
+image: avatar.png # Open Graph image
+metatags:
+  favicon:
+    image: avatar.png
+source: https://github.com/Cecilapp/Links
+theme:
+  - fontawesome
+  - pwa
+  - netlify
+manifest:
+  theme_color: '#1d4ed8'
+serviceworker:
+  enabled: false # enable PWA
+
+# Cecil disabled options
+taxonomies:
+  categories: disabled
+  tags: disabled
+pagination:
+  enabled: false
+pages:
+  default:
+    404:
+      published: false
+    sitemap:
+      published: false
+    xsl/atom:
+      published: false
+    xsl/rss:
+      published: false
+output:
+  pagetypeformats:
+    homepage: html

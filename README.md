@@ -1,26 +1,24 @@
 **_Links_** is a Linktree alternative powered by [Cecil](https://cecil.app), [Tailwind CSS](https://tailwindcss.com) and [Font Awesome](https://fontawesome.com).
 
-[![Links example](docs/cecil-links-preview.png)](https://cecil-links.netlify.app)
+[![Links example](docs/cecil-links-preview.png)](links.cecil.app)
 
 Demo: <https://cecil-links-demo.netlify.app>
 
 ## Install
 
-Clone or download this repository, or run `composer create-project cecil/links myproject`.
-
-Then install Cecil:
+The easiest way to create a new Links project is using [Composer](https://getcomposer.org):
 
 ```bash
-curl -LO https://cecil.app/cecil.phar
+composer create-project cecil/links my-project
 ```
 
-### Customize
-
-If you need to personalize colors of the theme, you must install `tailwindcss` package with npm:
+If you need to personalize theme color (see below), you must install `tailwindcss` package:
 
 ```bash
 npm install
 ```
+
+### Update
 
 If you want to update utility themes (i.e.: _[fontawesome](https://github.com/Cecilapp/theme-fontawesome#readme)_, _[pwa](https://github.com/Cecilapp/theme-pwa#readme)_ and _[netlity](https://github.com/Cecilapp/theme-netlify#readme)_) you must run the following command:
 
@@ -29,6 +27,12 @@ composer update
 ```
 
 ## Usage
+
+### Preview
+
+```bash
+php cecil.phar serve
+```
 
 ### Manage links
 
@@ -44,18 +48,17 @@ links:
 
 ### Configuration
 
-- Define the site's configuration in `config.yml`
-- Customize theme color in `tailwind.config.js`
+Define the configuration in `cecil.yml`.
 
-> Cecil's documentation is available on [cecil.app](https://cecil.app/documentation/configuration/).
+> [!TIP]
+> Full documentation is available at [cecil.app](https://cecil.app/documentation/configuration/).
 
-### Build and serve
+### Customize
+
+Customize theme color in `tailwind.config.js`, then rebuild CSS:
 
 ```bash
-# build CSS (if necessary)
-npx tailwindcss -i ./assets/tailwind.css -o ./assets/styles.css --watch
-# build and serve static website
-php cecil.phar serve -v --clear-cache
+npx tailwindcss -i ./assets/tailwind.css -o ./assets/styles.css
 ```
 
 ### Publish

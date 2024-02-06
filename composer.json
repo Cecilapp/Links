@@ -12,7 +12,7 @@
     }
   ],
   "require": {
-    "cecil/theme-fontawesome": "^1.0",
+    "cecil/theme-fontawesome": "^1.2",
     "cecil/theme-pwa": "^2.1",
     "cecil/theme-netlify": "^2.0"
   },

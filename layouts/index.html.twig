@@ -1,5 +1,6 @@
 {%- set avatar = asset(site.avatar|default('avatar.jpeg')) -%}
 {%- set hex_array = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'] -%}
+{%- set socials_color = {twitter: '#1da1f2', github: '#333', linkedin: '#0077b5', instagram: '#c13584', youtube: '#ff0000'} -%}
 {%- import 'macros/fontawesome.twig' as fontawesome -%}
 <!DOCTYPE html>
 <html lang="{{ site.language }}">
@@ -14,24 +15,47 @@
     {%- endif ~%}
     <meta name="theme-color" content="{{ site.manifest.theme_color }}" />
   </head>
-  <body style="background-color: {{ site.manifest.background_color }}" class="text-primary max-w-screen-lg mx-auto">
-    <div class="mx-auto my-auto flex flex-col py-8 px-8">
-      <button class="absolute top-3 right-4 text-link" id="share-button" type="button" title="{% trans %}Share{% endtrans %}">
-        <i class="fa-solid fa-share-nodes text-xl" title="{% trans %}Share{% endtrans %}"></i><span class="sr-only">{% trans %}Share{% endtrans %}</span>
+  <body class="max-w-screen-lg mx-auto">
+    <div class="flex flex-col mx-auto px-4 sm:px-8 pt-16 sm:pt-8 pb-8">
+      {#- share button ~#}
+      <button class="absolute top-3 right-4" id="share-button" type="button" title="{% trans %}Share{% endtrans %}">
+        {{ fontawesome.icon('share-nodes', 'solid', 'xl', {title: 'Share'|trans}) ~}}<span class="sr-only">{% trans %}Share{% endtrans %}</span>
       </button>
+      {#- header ~#}
       <header class="text-center">
-        {{ avatar|html({class: 'w-1/2 md:w-1/3 lg:w-1/5 xl:w-1/6 rounded-full m-auto shadow-2xl md:border-2', alt: site.title}, {responsive: true, webp: true}) }}
-        <h1 class="text-4xl font-semibold pt-6 pb-2 border-b border-neutral">{{ site.title }}</h1>
+        {#- avatar ~#}
+        {{ avatar|html({class: 'w-1/2 max-w-36 rounded-full m-auto shadow-2xl', alt: 'Avatar of %name%'|trans({'%name%': site.title})}, {responsive: true, webp: true}) }}
+        {#- title ~#}
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold pt-6 pb-2">{{ site.title }}</h1>
+        {#- baseline ~#}
+        <div class="font-medium">
+          {{ site.baseline }}
+        </div>
+        {#- social links ~#}
+        {%- if site.social|default([]) ~%}
+        <div class="mt-4 flex flex-row justify-center space-x-2">
+        {%- for social_name, social_values in site.social ~%}
+          {%- set color = socials_color[social_name]|default ~%}
+          <a href="{{ social_values['url']|default }}">{{ fontawesome.icon('brands', social_name, 'xl', {title: social_name|capitalize, style: 'color: ' ~ color|default ~ ';'}) ~}}</a>
+        {%- endfor ~%}
+        </div>
+        {%- endif ~%}
       </header>
-      <main class="text-center">
-        <div class="mt-4 text-secondary">
+      {#- main ~#}
+      <main class="mt-4 text-center">
+        {#- optional page content ~#}
+        {%- if page.content ~%}
+        <div class="font-normal">
           {{ page.content }}
         </div>
-        <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8 md:gap-y-4 mt-8">
+        {%- endif ~%}
+        {#- links grid ~#}
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8 md:gap-y-4 mt-8">
           {%- for link in page.links|default ~%}
             {%- set hex = random(hex_array) ~ random(hex_array) ~ random(hex_array) ~ random(hex_array) ~ random(hex_array) ~ random(hex_array) -%}
             {%- set rgb = link.color|default('#' ~ hex)|hex_to_rgb ~%}
           <style>
+            {%- apply minify_css ~%}
             :root {
               --button-{{ loop.index }}-color: calc(
                 (
@@ -45,41 +69,49 @@
                 ) * -1000
               );
             }
+            {%- endapply ~%}
           </style>
-          <a style="background-color: {{ link.color|default('#' ~ hex) }}; color: rgb(var(--button-{{ loop.index }}-color), var(--button-{{ loop.index }}-color), var(--button-{{ loop.index }}-color))" class="flex justify-center items-center space-x-2 py-3 rounded-md transition ease-in-out hover:scale-105 duration-300 text-primary font-semibold" href="{{ link.url }}">
-            {{ fontawesome.icon(link.icon|default('solid:link')|split(':')[0], link.icon|default('solid:link')|split(':')[1]) ~}}
-            <span>{{ link.title }}<span>
+          <a style="background-color: {{ link.color|default('#' ~ hex) }}; color: rgb(var(--button-{{ loop.index }}-color), var(--button-{{ loop.index }}-color), var(--button-{{ loop.index }}-color))" class="flex justify-center items-center space-x-2.5 py-3 rounded-md transition ease-in-out hover:scale-105 duration-300 font-semibold hover:no-underline" href="{{ link.url }}" title="{{ link.title }}">
+            {{ fontawesome.icon(link.icon|default('solid:link')|split(':')[1], link.icon|default('solid:link')|split(':')[0], 'lg', {title: link.title}) ~}}
+            <span class="text-lg">{{ link.title }}<span>
           </a>
           {%- else ~%}
           <div class="md:col-span-3 lg:col-span-4 content-center">{% trans %}No links found.{% endtrans %}</div>
           {%- endfor ~%}
         </div>
       </main>
-      <footer class="pt-8 text-center">
+      {#- footer ~#}
+      <footer class="mt-8 pt-4 text-center border-t border-neutral-300">
+        {%- if site.author.name|default(site.title) ~%}
         <div>
+          Copyright © {{ site.author.name|default(site.title) }}
+        </div>
+        {%- endif ~%}
+        <div class="text-sm">
           {% set powered_by -%}
           <a href="https://links.cecil.app">Links</a>, <a href="{{ cecil.url }}">Cecil</a>, <a href="https://tailwindcss.com">Tailwind CSS</a>, <a href="https://fontawesome.com">Font Awesome</a>
           {%- endset -%}
           {%- trans %}Powered by %powered_by%{% endtrans ~%}
         </div>
         <div>
-          <a href="{{ site.source }}" title="{% trans %}View source code{% endtrans %}"><i class="fa-brands fa-github" title="{% trans %}View source code{% endtrans %}"></i><span class="sr-only">{% trans %}View source code{% endtrans %}</span></a>
+          <a href="{{ site.source }}" title="{% trans %}View source code{% endtrans %}">{{ fontawesome.icon('brands', 'github', '', {title: 'View source code'|trans}) }}<span class="sr-only">{% trans %}View source code{% endtrans %}</span></a>
         </div>
       </footer>
     </div>
-    <script>{% apply minify_js ~%}
+    {#- scripts ~#}
+    <script>
+      {%- apply minify_js ~%}
       const shareButton = document.getElementById('share-button');
       if (navigator.share) {
         shareButton.addEventListener('click', event => {
-          navigator.share({text: '{{ site.title }}', url: '{{ url(page, {canonical: true}) }}'}).then(() => {
-            console.log('Thanks for sharing.');
-          }).catch(console.error);
+          navigator.share({text: '{{ site.title }}', url: '{{ url(page, {canonical: true}) }}'}).then.catch(console.error);
         });
       } else {
         console.log('`navigator.share` not supported.');
         shareButton.remove();
       }
-    {% endapply %}</script>
-    {%~ include 'partials/regsw.js.twig' ignore missing with {site} only ~%}
+      {%- endapply ~%}
+    </script>
+    {%- include 'partials/regsw.js.twig' ignore missing with {site} only ~%}
   </body>
 </html>

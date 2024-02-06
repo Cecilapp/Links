@@ -3,14 +3,14 @@
 @tailwind utilities;
 
 @layer base {
-  p {
-    @apply mt-4;
+  html {
+    @apply bg-primary-50 dark:bg-primary-950 text-primary-900 dark:text-primary-200;
+    @apply text-lg;
   }
-  a {
-    @apply text-link;
+  a, button {
+    @apply text-primary-700 dark:text-primary-50;
   }
-}
-
-html {
-  font-size: 18px
+  a:hover, button:hover {
+    @apply underline text-primary-500 dark:text-primary-50;
+  }
 }
