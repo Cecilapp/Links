@@ -102,8 +102,17 @@
       {%- apply minify_js ~%}
       const shareButton = document.getElementById('share-button');
       if (navigator.share) {
-        shareButton.addEventListener('click', event => {
-          navigator.share({text: '{{ site.title }}', url: '{{ url(page, {canonical: true}) }}'}).then.catch(console.error);
+        shareButton.addEventListener('click', async () => {
+          try {
+            const shareData = {
+              title: '{{ site.title }}',
+              text: '{{ site.baseline }}',
+              url: '{{ url(page, {canonical: true}) }}',
+            };
+            await navigator.share(shareData);
+          } catch (err) {
+            console.log('`navigator.share` error:', err);
+          }
         });
       } else {
         console.log('`navigator.share` not supported.');
