@@ -61,3 +61,11 @@ pages:
 output:
   pagetypeformats:
     homepage: html
+assets:
+  images:
+    optimize:
+      enabled: true
+    responsive:
+      enabled: true
+    webp:
+      enabled: true
