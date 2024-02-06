@@ -1,19 +1,19 @@
 ---
 links:
-  - title: Twitter
-    url: https://twitter.com/ArnaudLigny/
-    color: '#1DA1F2'
-    icon: brands:twitter
-  - title: GitHub
-    url: https://github.com/ArnaudLigny/
-    color: '#000'
-    icon: brands:github
-  - title: LinkedIn
-    url: https://linkedin.com/in/
-    color: '#0A66C2'
-    icon: brands:linkedin
+  #- title: Twitter
+  #  url: https://twitter.com/Cecil_Static/
+  #  color: '#1DA1F2'
+  #  icon: brands:twitter
+  #- title: GitHub
+  #  url: https://github.com/Cecilapp/
+  #  color: '#000'
+  #  icon: brands:github
+  #- title: LinkedIn
+  #  url: https://linkedin.com/
+  #  color: '#0A66C2'
+  #  icon: brands:linkedin
   - title: Blog
-    url: https://arnaudligny.fr/blog/
+    url: https://cecil/app
     color: '#1A4A91'
     icon: solid:blog
   - title: Cecil
