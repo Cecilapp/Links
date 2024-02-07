@@ -1,6 +1,6 @@
 _Links_ is a Linktree alternative powered by [Cecil](https://cecil.app), [Tailwind CSS](https://tailwindcss.com) and [Font Awesome](https://fontawesome.com).
 
-[![Links example](docs/screenshot.png)](links.cecil.app)
+[![Links website](docs/screenshot.png)](https://links.cecil.app)
 
 Demo: <https://cecil-links-demo.netlify.app>
 
