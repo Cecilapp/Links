@@ -59,8 +59,13 @@
         {#- links grid ~#}
         <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8 md:gap-y-4 mt-8">
           {%- for link in page.links|default ~%}
-            {%- set hex = random(hex_array) ~ random(hex_array) ~ random(hex_array) ~ random(hex_array) ~ random(hex_array) ~ random(hex_array) -%}
+            {#- button background color (randomized) ~#}
+            {%- set hex = '' -%}
+            {%- for i in 1..6 -%}
+              {%- set hex = hex ~ random(hex_array) -%}
+            {%- endfor -%}
             {%- set rgb = link.color|default('#' ~ hex)|hex_to_rgb ~%}
+          {#- button text color (auto contrast) ~#}
           <style>
             {%- apply minify_css ~%}
             :root {
@@ -78,7 +83,8 @@
             }
             {%- endapply ~%}
           </style>
-          <a style="background-color: {{ link.color|default('#' ~ hex) }}; color: rgb(var(--button-{{ loop.index }}-color), var(--button-{{ loop.index }}-color), var(--button-{{ loop.index }}-color))" class="flex justify-center items-center space-x-2.5 py-3 rounded-md transition ease-in-out hover:scale-105 duration-300 font-semibold hover:no-underline dark:brightness-90" href="{{ link.url }}">
+          {#- button ~#}
+          <a id="buton-{{ loop.index }}" style="background-color: {{ link.color|default('#' ~ hex) }}; color: rgb(var(--button-{{ loop.index }}-color), var(--button-{{ loop.index }}-color), var(--button-{{ loop.index }}-color))" class="flex justify-center items-center space-x-2.5 py-3 rounded-md transition ease-in-out hover:scale-105 duration-300 font-semibold hover:no-underline dark:brightness-90" href="{{ link.url }}">
             {{ fontawesome.icon(link.icon|default('solid:link')|split(':')[1], link.icon|default('solid:link')|split(':')[0], 'lg') ~}}
             <span class="text-lg">{{ link.title }}<span>
           </a>
