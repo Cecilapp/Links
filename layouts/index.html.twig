@@ -43,7 +43,7 @@
       {#- header ~#}
       <header class="text-center">
         {#- avatar ~#}
-        {{ asset(site.avatar|default('avatar.png'))|html({class: 'w-1/2 max-w-36 rounded-full m-auto shadow-2xl dark:brightness-90', alt: 'Avatar of %name%'|trans({'%name%': site.title})}, {responsive: true, webp: true}) }}
+        {{ asset(site.avatar|default('avatar.jpeg'))|html({class: 'w-1/2 max-w-36 rounded-full m-auto shadow-2xl dark:brightness-90', alt: 'Avatar of %name%'|trans({'%name%': site.title})}, {responsive: true, webp: true}) }}
         {#- h1 ~#}
         <h1>
           <div class="text-4xl sm:text-5xl lg:text-6xl font-bold pt-6 pb-2">{{ site.title }}</div>
