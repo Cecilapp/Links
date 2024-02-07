@@ -1,7 +1,7 @@
 title: John Doe
 baseurl: https://cecil-links-demo.netlify.app/
-baseline: "Short description of John Doe."
-description: "Long description of John Doe."
+baseline: "Short description"
+description: "Long description."
 author:
   name: John Doe
   url: https://cecil.app
@@ -18,6 +18,21 @@ social:
     url: https://www.instagram.com/
   youtube:
     url: https://www.youtube.com/
+avatar: avatar.png
+metatags:
+  favicon:
+    image: avatar.png
+image: avatar.png # Open Graph image
+source: https://github.com/Cecilapp/Links
+
+# PWA
+manifest:
+  #background_color: '#fff'
+  theme_color: '#0369a1' # https://tailwindcss.com/docs/customizing-colors "700"
+serviceworker:
+  enabled: false
+
+# languages
 language: en
 languages:
   - code: en
@@ -27,23 +42,12 @@ languages:
     enable: false # enbale with "true"
     locale: fr
     name: Français
-avatar: avatar.png
-image: avatar.png # Open Graph image
-metatags:
-  favicon:
-    image: avatar.png
-source: https://github.com/Cecilapp/Links
+
+# Cecil options
 theme:
   - fontawesome
   - pwa
   - netlify
-manifest:
-  #background_color: '#fff'
-  theme_color: '#0369a1'
-serviceworker:
-  enabled: false # enable PWA with "true"
-
-# Cecil options
 taxonomies:
   categories: disabled
   tags: disabled
