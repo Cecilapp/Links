@@ -7,6 +7,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        // https://tailwindcss.com/docs/customizing-colors
         primary: colors.sky,
         neutral: colors.slate,
         social: {
