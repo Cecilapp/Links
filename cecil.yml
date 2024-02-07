@@ -37,8 +37,9 @@ theme:
   - fontawesome
   - pwa
   - netlify
-#manifest:
-  #theme_color: '#1d4ed8'
+manifest:
+  #background_color: '#fff'
+  theme_color: '#0369a1'
 serviceworker:
   enabled: false # enable PWA with "true"
 
@@ -61,11 +62,3 @@ pages:
 output:
   pagetypeformats:
     homepage: html
-assets:
-  images:
-    optimize:
-      enabled: true
-    responsive:
-      enabled: true
-    webp:
-      enabled: true
