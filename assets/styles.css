@@ -782,6 +782,35 @@ a:hover, button:hover {
   text-transform: capitalize;
 }
 
+.text-inherit {
+  color: inherit;
+}
+
+.text-social-github {
+  --tw-text-opacity: 1;
+  color: rgb(51 51 51 / var(--tw-text-opacity));
+}
+
+.text-social-instagram {
+  --tw-text-opacity: 1;
+  color: rgb(193 53 132 / var(--tw-text-opacity));
+}
+
+.text-social-linkedin {
+  --tw-text-opacity: 1;
+  color: rgb(0 119 181 / var(--tw-text-opacity));
+}
+
+.text-social-twitter {
+  --tw-text-opacity: 1;
+  color: rgb(29 161 242 / var(--tw-text-opacity));
+}
+
+.text-social-youtube {
+  --tw-text-opacity: 1;
+  color: rgb(255 0 0 / var(--tw-text-opacity));
+}
+
 .shadow-2xl {
   --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
   --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
@@ -864,5 +893,16 @@ a:hover, button:hover {
   .lg\:text-6xl {
     font-size: 3.75rem;
     line-height: 1;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .dark\:text-inherit {
+    color: inherit;
+  }
+
+  .dark\:brightness-90 {
+    --tw-brightness: brightness(.9);
+    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
   }
 }
