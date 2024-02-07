@@ -15,14 +15,6 @@ The easiest way to create a new Links project is using Composer:
 composer create-project cecil/links my-project
 ```
 
-### Update
-
-If you want to update _component themes_ (i.e.: _[fontawesome](https://github.com/Cecilapp/theme-fontawesome#readme)_, _[pwa](https://github.com/Cecilapp/theme-pwa#readme)_ and _[netlity](https://github.com/Cecilapp/theme-netlify#readme)_) you must run the following command:
-
-```bash
-composer update
-```
-
 ## Usage
 
 ### Preview
@@ -98,6 +90,14 @@ php cecil.phar build
 ```
 
 Then just deploy the content of __site_ directory to your web hosting solution.
+
+## Update
+
+If you want to update _component themes_ (i.e.: _[fontawesome](https://github.com/Cecilapp/theme-fontawesome#readme)_, _[pwa](https://github.com/Cecilapp/theme-pwa#readme)_ and _[netlity](https://github.com/Cecilapp/theme-netlify#readme)_) you must run the following command:
+
+```bash
+composer update
+```
 
 ## License
 
