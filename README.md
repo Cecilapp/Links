@@ -72,16 +72,7 @@ links:
 Content here.
 ```
 
-### Customize color
-
-You can change the [theme color](ttps://tailwindcss.com/docs/customizing-colors) through the file `tailwind.config.js`, then rebuild CSS:
-
-```bash
-npm install
-npx tailwindcss -i ./assets/tailwind.css -o ./assets/styles.css
-```
-
-### Publish
+## Publish
 
 Run the following command:
 
@@ -90,6 +81,23 @@ php cecil.phar build
 ```
 
 Then just deploy the content of __site_ directory to your web hosting solution.
+
+## Customize color
+
+### Theme
+
+You can change the [theme color](ttps://tailwindcss.com/docs/customizing-colors) through the file `tailwind.config.js`, then rebuild CSS:
+
+```bash
+npm install
+npx tailwindcss -i ./assets/tailwind.css -o ./assets/styles.css
+```
+
+### Social links
+
+Out of the box, only the color of the following social providers are supported:
+
+Twitter, GitHub, LinkedIn, Instagram and YouTube.
 
 ## Update
 
