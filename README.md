@@ -6,16 +6,13 @@ Demo: <https://cecil-links-demo.netlify.app>
 
 ## Install
 
-The easiest way to create a new Links project is using [Composer](https://getcomposer.org):
+> [!IMPORTANT]
+> PHP 8.1 and [Composer](https://getcomposer.org) are required.
+
+The easiest way to create a new Links project is using Composer:
 
 ```bash
 composer create-project cecil/links my-project
-```
-
-If you want to personalize the theme color ([see below](#customize)), you must install `tailwindcss` too:
-
-```bash
-npm install
 ```
 
 ### Update
@@ -30,9 +27,40 @@ composer update
 
 ### Preview
 
+You can easily preview your site locally with the following command:
+
 ```bash
-php cecil.phar serve
+php cecil.phar serve --open
 ```
+
+> [!TIP]
+> The option `--open` automatically open your site in the default web browser.
+
+### Configuration
+
+Define site configuration and social links in [`cecil.yml`](cecil.yml):
+
+```yaml
+title: <main title>
+baseurl: <site URL, with a final backslash>
+baseline: "<short description>" # optional, recommended
+description: "<long description>" # optional, recommended
+author: # used by metatags, optional
+  name: <author name>
+  url: <url>
+social: # social links
+  <name>: # twitter, github, linkedin, instagram, youtube
+    url: <url>
+avatar: avatar.png
+metatags:
+  favicon:
+    image: avatar.png # optional, recommended
+image: avatar.png # Open Graph image, optional, recommended
+source: https://github.com/Cecilapp/Links # GitHub repository
+```
+
+> [!TIP]
+> The exhaustive [Cecil](https://cecil/app) documentation is available at [cecil.app](https://cecil.app/documentation/configuration/).
 
 ### Manage links
 
@@ -44,36 +72,32 @@ Edit file `pages/index.md` to:
 ```yaml
 ---
 links:
-  - title: Twitter                        # links title
-    url: https://twitter.com/ArnaudLigny/ # URL
-    color: '#1DA1F2'                      # hexadecimal color code (optional)
-    icon: brands:twitter                  # icon: <style>:<name> (optional, https://fontawesome.com/icons)
+  - title: <title>
+    url: <url>
+    color: "<hexa_code>" # hexadecimal color code, optional (e.g. "#1DA1F2")
+    icon: <style>:<name> # Font Awesome icon (https://fontawesome.com/icons), optional (e.g. "brands:github")
 ---
 Content here.
 ```
 
-### Configuration
+### Customize color
 
-Define the site configuration in [`cecil.yml`](cecil.yml).
-
-> [!TIP]
-> Full documentation is available at [cecil.app](https://cecil.app/documentation/configuration/).
-
-### Customize
-
-You can change the theme color through the file `tailwind.config.js`, then rebuild CSS:
+You can change the [theme color](ttps://tailwindcss.com/docs/customizing-colors) through the file `tailwind.config.js`, then rebuild CSS:
 
 ```bash
+npm install
 npx tailwindcss -i ./assets/tailwind.css -o ./assets/styles.css
 ```
 
 ### Publish
 
+Run the following command:
+
 ```bash
 php cecil.phar build
 ```
 
-Then deploy __site_ directory content to your web hosting solution.
+Then just deploy the content of __site_ directory to your web hosting solution.
 
 ## License
 
