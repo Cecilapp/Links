@@ -1,6 +1,6 @@
 {%- set avatar = asset(site.avatar|default('avatar.jpeg')) -%}
 {%- set hex_array = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'] -%}
-{%- set socials_color = {twitter: '#1da1f2', github: '#333', linkedin: '#0077b5', instagram: '#c13584', youtube: '#ff0000'} -%}
+{%- set socials_color = {twitter: 'text-social-twitter', github: 'text-social-github', linkedin: 'text-social-linkedin', instagram: 'text-social-instagram', youtube: 'text-social-youtube'} -%}
 {%- import 'macros/fontawesome.twig' as fontawesome -%}
 <!DOCTYPE html>
 <html lang="{{ site.language }}">
@@ -19,12 +19,12 @@
     <div class="flex flex-col mx-auto px-4 sm:px-8 pt-16 sm:pt-8 pb-8">
       {#- share button ~#}
       <button class="absolute top-3 right-4" id="share-button" type="button" title="{% trans %}Share{% endtrans %}">
-        {{ fontawesome.icon('share-nodes', 'solid', 'xl', {title: 'Share'|trans}) ~}}<span class="sr-only">{% trans %}Share{% endtrans %}</span>
+        {{ fontawesome.icon('share-nodes', 'solid', 'xl') ~}}<span class="sr-only">{% trans %}Share{% endtrans %}</span>
       </button>
       {#- header ~#}
       <header class="text-center">
         {#- avatar ~#}
-        {{ avatar|html({class: 'w-1/2 max-w-36 rounded-full m-auto shadow-2xl', alt: 'Avatar of %name%'|trans({'%name%': site.title})}, {responsive: true, webp: true}) }}
+        {{ avatar|html({class: 'w-1/2 max-w-36 rounded-full m-auto shadow-2xl dark:brightness-90', alt: 'Avatar of %name%'|trans({'%name%': site.title})}, {responsive: true, webp: true}) }}
         {#- h1 ~#}
         <h1>
           <div class="text-4xl sm:text-5xl lg:text-6xl font-bold pt-6 pb-2">{{ site.title }}</div>
@@ -35,11 +35,14 @@
         <div class="mt-4 flex flex-row justify-center space-x-2">
         {%- for social_name, social_values in site.social ~%}
           {%- if social_values['url'] is defined ~%}
-            {%- set color, style, icon = 'inherit', 'solid', 'globe' ~%}
+            {%- set color, style, icon = 'text-inherit', 'solid', 'globe' ~%}
             {%- if socials_color[social_name] is defined ~%}
               {%- set color, style, icon = socials_color[social_name], 'brands', social_name ~%}
             {%- endif ~%}
-          <a href="{{ social_values['url'] }}" title="{{ social_name|capitalize }}">{{ fontawesome.icon(icon, style, 'xl', {title: social_name|capitalize, style: 'color: ' ~ color|default ~ ';'}) ~}}<span class="sr-only">{{ social_name|capitalize }}</span></a>
+          <a href="{{ social_values['url'] }}" title="{{ social_name|capitalize }}">
+            <span class="{{ color }} dark:text-inherit">{{ fontawesome.icon(icon, style, 'xl') ~}}</span>
+            <span class="sr-only">{{ social_name|capitalize }}</span>
+          </a>
           {%- endif ~%}
         {%- endfor ~%}
         </div>
@@ -75,8 +78,8 @@
             }
             {%- endapply ~%}
           </style>
-          <a style="background-color: {{ link.color|default('#' ~ hex) }}; color: rgb(var(--button-{{ loop.index }}-color), var(--button-{{ loop.index }}-color), var(--button-{{ loop.index }}-color))" class="flex justify-center items-center space-x-2.5 py-3 rounded-md transition ease-in-out hover:scale-105 duration-300 font-semibold hover:no-underline" href="{{ link.url }}" title="{{ link.title }}">
-            {{ fontawesome.icon(link.icon|default('solid:link')|split(':')[1], link.icon|default('solid:link')|split(':')[0], 'lg', {title: link.title}) ~}}
+          <a style="background-color: {{ link.color|default('#' ~ hex) }}; color: rgb(var(--button-{{ loop.index }}-color), var(--button-{{ loop.index }}-color), var(--button-{{ loop.index }}-color))" class="flex justify-center items-center space-x-2.5 py-3 rounded-md transition ease-in-out hover:scale-105 duration-300 font-semibold hover:no-underline dark:brightness-90" href="{{ link.url }}">
+            {{ fontawesome.icon(link.icon|default('solid:link')|split(':')[1], link.icon|default('solid:link')|split(':')[0], 'lg') ~}}
             <span class="text-lg">{{ link.title }}<span>
           </a>
           {%- else ~%}
@@ -98,7 +101,7 @@
           {%- trans %}Powered by %powered_by%{% endtrans ~%}
         </div>
         <div>
-          <a href="{{ site.source }}" title="{% trans %}View source code{% endtrans %}">{{ fontawesome.icon('brands', 'github', '', {title: 'View source code'|trans}) }}<span class="sr-only">{% trans %}View source code{% endtrans %}</span></a>
+          <a href="{{ site.source }}" title="{% trans %}View source code{% endtrans %}">{{ fontawesome.icon('github', 'brands') }}<span class="sr-only">{% trans %}View source code{% endtrans %}</span></a>
         </div>
       </footer>
     </div>
