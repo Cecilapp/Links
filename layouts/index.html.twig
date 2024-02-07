@@ -1,10 +1,25 @@
-{%- set social_color = {
-  twitter: 'text-social-twitter',
-  github: 'text-social-github',
-  linkedin: 'text-social-linkedin',
-  instagram: 'text-social-instagram',
-  youtube: 'text-social-youtube'}
--%}
+{%- set social_icons = {
+  twitter: {
+    icon: 'twitter',
+    color: 'text-social-twitter',
+  },
+  github: {
+    icon: 'github',
+    color: 'text-social-github',
+  },
+  linkedin: {
+    icon: 'linkedin',
+    color: 'text-social-linkedin',
+  },
+  instagram: {
+    icon: 'instagram',
+    color: 'text-social-instagram',
+  },
+  youtube: {
+    icon: 'youtube',
+    color: 'text-social-youtube',
+  },
+} -%}
 {%- import 'macros/fontawesome.twig' as fontawesome -%}
 <!DOCTYPE html>
 <html lang="{{ site.language }}">
@@ -39,12 +54,9 @@
         <div class="mt-4 flex flex-row justify-center space-x-2">
           {%- for social_name, social_values in site.social ~%}
             {%- if social_values['url'] is defined ~%}
-              {%- set color, style, icon = 'text-inherit', 'solid', 'globe' ~%}
-              {%- if social_color[social_name] is defined ~%}
-                {%- set color, style, icon = social_color[social_name], 'brands', social_name ~%}
-              {%- endif ~%}
+              {%- set icon, color = social_icons[social_name]['icon']|default(social_name), social_icons[social_name]['color']|default('text-inherit') ~%}
           <a href="{{ social_values['url'] }}" title="{{ social_name|capitalize }}">
-            <span class="{{ color }} dark:text-inherit">{{ fontawesome.icon(icon, style, 'xl') ~}}</span>
+            <span class="{{ color }} dark:text-inherit">{{ fontawesome.icon(icon, 'brands', 'xl') ~}}</span>
             <span class="sr-only">{{ social_name|capitalize }}</span>
           </a>
             {%- endif ~%}
