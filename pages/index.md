@@ -13,7 +13,7 @@ links:
   #  color: '#0A66C2'
   #  icon: brands:linkedin
   - title: Blog
-    url: https://cecil/app
+    url: https://cecil.app
     color: '#1A4A91'
     icon: solid:blog
   - title: Cecil
