@@ -786,6 +786,11 @@ a:hover, button:hover {
   color: inherit;
 }
 
+.text-social-bluesky {
+  --tw-text-opacity: 1;
+  color: rgb(18 133 254 / var(--tw-text-opacity));
+}
+
 .text-social-github {
   --tw-text-opacity: 1;
   color: rgb(51 51 51 / var(--tw-text-opacity));
@@ -799,6 +804,21 @@ a:hover, button:hover {
 .text-social-linkedin {
   --tw-text-opacity: 1;
   color: rgb(0 119 181 / var(--tw-text-opacity));
+}
+
+.text-social-mastodon {
+  --tw-text-opacity: 1;
+  color: rgb(99 100 255 / var(--tw-text-opacity));
+}
+
+.text-social-steam {
+  --tw-text-opacity: 1;
+  color: rgb(23 26 33 / var(--tw-text-opacity));
+}
+
+.text-social-threads {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
 .text-social-twitter {
