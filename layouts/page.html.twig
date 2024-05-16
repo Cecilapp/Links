@@ -52,18 +52,19 @@
   </head>
   <body class="max-w-screen-lg mx-auto">
     <div class="flex flex-col mx-auto px-4 sm:px-8 pt-16 sm:pt-8 pb-8">
-      {#- share button ~#}
+      {%- block share ~%}
       <button class="absolute top-3 right-4" id="share-button" type="button" title="{% trans %}Share{% endtrans %}">
         {{ fontawesome.icon('share-nodes', 'solid', 'xl') ~}}<span class="sr-only">{% trans %}Share{% endtrans %}</span>
       </button>
-      {#- header ~#}
+      {%- endblock share ~%}
       <header class="text-center">
+        {%- block header ~%}
         {#- avatar ~#}
         {{ asset(site.avatar|default('avatar.jpeg'))|html({class: 'w-1/2 max-w-36 rounded-full m-auto shadow-2xl dark:brightness-90', alt: 'Avatar of %name%'|trans({'%name%': site.title})}, {responsive: true, webp: true}) }}
         {#- h1 ~#}
         <h1>
-          <span class="block text-4xl sm:text-5xl lg:text-6xl font-bold pt-6 pb-2">{{ site.title }}</span>
-          <span class="block text-base font-medium">{{ site.baseline }}</span>
+          <div class="text-4xl sm:text-5xl lg:text-6xl font-bold pt-6 pb-2">{{ site.title }}</div>
+          <div class="text-base font-medium">{{ site.baseline }}</div>
         </h1>
         {#- social links ~#}
         {%- if site.social|default([]) ~%}
@@ -79,57 +80,19 @@
           {%- endfor ~%}
         </div>
         {%- endif ~%}
+        {%- endblock header ~%}
       </header>
-      {#- main ~#}
       <main class="mt-4 text-center">
-        {#- optional page content ~#}
-        {%- if page.content ~%}
+        {%- block main ~%}
         <div class="font-normal">
+          {%- block content ~%}
           {{ page.content }}
+          {%- endblock content ~%}
         </div>
-        {%- endif ~%}
-        {#- links grid ~#}
-        <ol class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8 md:gap-y-4 mt-8">
-          {%- set hex_array = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'] -%}
-          {%- for link in page.links|default ~%}
-            {#- button background color (randomized) ~#}
-            {%- set hex = '' -%}
-            {%- for i in 1..6 -%}
-              {%- set hex = hex ~ random(hex_array) -%}
-            {%- endfor -%}
-            {%- set rgb = link.color|default('#' ~ hex)|hex_to_rgb ~%}
-          {#- button text color (auto contrast) ~#}
-          <style>
-            {%- apply minify_css ~%}
-            :root {
-              --button-{{ loop.index }}-color: calc(
-                (
-                  (
-                    (
-                      ({{ rgb.red }} * 299) +
-                      ({{ rgb.green }} * 587) +
-                      ({{ rgb.blue }} * 114)
-                    ) / 1000
-                  ) - 128
-                ) * -1000
-              );
-            }
-            {%- endapply ~%}
-          </style>
-          {#- button ~#}
-          <li>
-            <a id="button-{{ loop.index }}" style="background-color: {{ link.color|default('#' ~ hex) }}; color: rgb(var(--button-{{ loop.index }}-color), var(--button-{{ loop.index }}-color), var(--button-{{ loop.index }}-color))" class="flex justify-center items-center space-x-2.5 py-3 rounded-md transition ease-in-out hover:scale-105 duration-300 font-semibold hover:no-underline dark:brightness-90" href="{{ link.url }}">
-              {{ fontawesome.icon(link.icon|default('solid:link')|split(':')[1], link.icon|default('solid:link')|split(':')[0], 'lg') ~}}
-              <span class="text-lg">{{ link.title }}</span>
-            </a>
-          </li>
-          {%- else ~%}
-          <!--<li class="md:col-span-3 lg:col-span-4 content-center">{% trans %}No links found.{% endtrans %}</li>-->
-          {%- endfor ~%}
-        </ol>
+        {%- endblock main ~%}
       </main>
-      {#- footer ~#}
       <footer class="mt-8 pt-4 text-center border-t border-neutral-300">
+        {%- block footer ~%}
         {%- if site.author.name|default(site.title) ~%}
         <div>
           Copyright © {{ site.author.name|default(site.title) }}
@@ -144,9 +107,10 @@
         <div>
           <a href="{{ site.source }}" title="{% trans %}View source code{% endtrans %}">{{ fontawesome.icon('github', 'brands') }}<span class="sr-only">{% trans %}View source code{% endtrans %}</span></a>
         </div>
+        {%- endblock footer ~%}
       </footer>
     </div>
-    {#- scripts ~#}
+    {%- block scripts ~%}
     <script>
       {%- apply minify_js ~%}
       const shareButton = document.getElementById('share-button');
@@ -169,5 +133,6 @@
       {%- endapply ~%}
     </script>
     {%- include 'partials/regsw.js.twig' ignore missing with {site} only ~%}
+    {%- endblock scripts ~%}
   </body>
 </html>
