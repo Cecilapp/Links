@@ -12,7 +12,7 @@ Demo: <https://cecil-links-demo.netlify.app>
 The easiest way to create a new Links project is using Composer:
 
 ```bash
-composer create-project cecil/links my-project
+composer create-project cecil/links --ask
 ```
 
 ## Usage
