@@ -55,8 +55,6 @@ pagination:
   enabled: false
 pages:
   default:
-    sitemap:
-      published: false
     xsl/atom:
       published: false
     xsl/rss:
