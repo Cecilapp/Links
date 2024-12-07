@@ -840,6 +840,11 @@ a:hover, button:hover {
   color: rgb(29 161 242 / var(--tw-text-opacity, 1));
 }
 
+.text-social-x {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity, 1));
+}
+
 .text-social-youtube {
   --tw-text-opacity: 1;
   color: rgb(255 0 0 / var(--tw-text-opacity, 1));

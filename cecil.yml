@@ -6,18 +6,29 @@ author:
   name: John Doe
   url: https://cecil.app
 social:
-  twitter:
-    creator: John Doe
-    url: https://twitter.com/Cecil_Static
   github:
+    url: https://github.com/
     username: John Doe
-    url: https://github.com/Cecilapp
   linkedin:
     url: https://linkedin.com/
   instagram:
     url: https://www.instagram.com/
   youtube:
     url: https://www.youtube.com/
+  mastodon:
+    url: https://mastodon.social/
+  bluesky:
+    url: https://bsky.app/
+  threads:
+    url: https://www.threads.net/
+  twitter:
+    url: https://twitter.com/
+    site: John Doe
+    creator: John Doe
+  x:
+    url: https://x.com/
+    site: John Doe
+    creator: John Doe
 avatar: avatar.png
 metatags:
   favicon:

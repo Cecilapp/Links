@@ -41,7 +41,7 @@ author: # used by metatags, optional
   name: <author name>
   url: <url>
 social: # social links
-  <name>: # twitter, github, linkedin, instagram, youtube
+  <name>: # github, linkedin, instagram, youtube, mastodon, bluesky, threads, twitter or x
     url: <url>
 avatar: avatar.png
 metatags:
