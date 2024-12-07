@@ -46,9 +46,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    {%- include 'partials/metatags.html.twig' with {page, site} only ~%}
+    {{- include('partials/metatags.html.twig', {page, site}, with_context = false) ~}}
     <style>{{ asset('styles.css')|inline }}</style>
-    {%- include 'partials/fontawesome.twig' ~%}
+    {{- include('partials/fontawesome.twig') ~}}
     {%- if 'pwa' in site.theme|default({}) ~%}
     <link rel="manifest" href="{{ url('manifest', {language: site.language}) }}" />
     {%- endif ~%}
@@ -136,7 +136,7 @@
       }
       {%- endapply ~%}
     </script>
-    {%- include 'partials/regsw.js.twig' ignore missing with {site} only ~%}
+    {{- include('partials/regsw.js.twig', {site}, ignore_missing = true, with_context = false) ~}}
     {%- endblock scripts ~%}
   </body>
 </html>
