@@ -107,7 +107,7 @@
 }
 
 /*
-! tailwindcss v3.4.15 | MIT License | https://tailwindcss.com
+! tailwindcss v3.4.16 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -667,6 +667,10 @@ a:hover, button:hover {
 
 .max-w-screen-lg {
   max-width: 1024px;
+}
+
+.resize {
+  resize: both;
 }
 
 .flex-row {
