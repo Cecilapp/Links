@@ -30,7 +30,7 @@ php cecil.phar serve --open
 
 ### Configuration
 
-Define site configuration and social links in [`cecil.yml`](cecil.yml):
+Define site configuration and social identities in [`cecil.yml`](cecil.yml):
 
 ```yaml
 title: <main title>
@@ -40,27 +40,24 @@ description: "<SEO description>" # optional, recommended
 author: # used by metatags, optional
   name: <author name>
   url: <url>
-  email: <email> # used in social links block, optional
-social: # social links
+  email: <email> # used in social identities block, optional
+social: # social identities
   <name>: # github, linkedin, instagram, youtube, mastodon, bluesky, threads, twitter or x
     url: <url>
 avatar: avatar.png
-metatags:
-  favicon:
-    image: avatar.png # optional, recommended
 image: avatar.png # Open Graph image, optional, recommended
-source: https://github.com/Cecilapp/Links # GitHub repository
 ```
 
 > [!TIP]
 > The exhaustive [Cecil](https://cecil/app) documentation is available at [cecil.app](https://cecil.app/documentation/configuration/).
 
-### Manage links
+### Manage page
 
-Edit file `pages/index.md` to:
+From `pages/index.md` file you can:
 
 1. add links in _front matter_
-2. free content in _body_ (optional)
+2. change page structure with _blocks_ array in _front matter_
+3. add rich content authoring in Markdown in page _body_ (optional)
 
 ```yaml
 ---
