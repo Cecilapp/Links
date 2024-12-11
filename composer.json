@@ -1,6 +1,6 @@
 {
   "name": "cecil/links",
-  "description": "Links is a Linktree clone powered by Cecil, Tailwind CSS and Font Awesome.",
+  "description": "Links is a Linktree alternative powered by Cecil, Tailwind CSS and Font Awesome.",
   "license": "MIT",
   "type": "project",
   "authors": [
