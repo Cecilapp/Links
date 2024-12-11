@@ -35,8 +35,8 @@ Define site configuration and social links in [`cecil.yml`](cecil.yml):
 ```yaml
 title: <main title>
 baseurl: <site URL, with a final backslash>
-baseline: "<short description>" # optional, recommended
-description: "<long description>" # optional, recommended
+baseline: "<short presentation>" # optional, recommended
+description: "<SEO description>" # optional, recommended
 author: # used by metatags, optional
   name: <author name>
   url: <url>
@@ -67,7 +67,7 @@ Edit file `pages/index.md` to:
 links:
   - title: <title>
     url: <url>
-    color: "<hexa_code>" # hexadecimal color code, optional (e.g. "#1DA1F2")
+    color: "<#hexa_code>" # hexadecimal color code, optional (e.g. "#1DA1F2")
     icon: <style>:<name> # Font Awesome icon (https://fontawesome.com/icons), optional (e.g. "brands:github")
 ---
 Content here.
