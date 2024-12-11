@@ -3,7 +3,7 @@ blocks:
   - name: content # page content
   - name: links   # page links
     options:
-      display: column # grid or column (column by default)
+      display: column # grid or column ('column' by default)
   - name: social  # social accounts
 links:
   - title: Cecil.app
