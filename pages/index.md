@@ -1,8 +1,8 @@
 ---
 blocks:
-  - type: social  # social links
-  - type: content # page content
-  - type: links   # page links
+  - name: social  # social accounts
+  - name: content # page content
+  - name: links   # page links
     options:
       display: column # grid or column (column by default)
 links:
