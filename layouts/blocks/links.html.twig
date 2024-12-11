@@ -26,7 +26,7 @@
               href="{{ link.url }}"
             >
               <span class="flex-none">{{ fontawesome.icon(link.icon|default('solid:link')|split(':')[1], link.icon|default('solid:link')|split(':')[0], 'lg') ~}}</span>
-              <span class="grow text-lg pr-5">{{ link.title }}<span>
+              <span class="grow text-lg pr-6">{{ link.title }}<span>
             </a>
           </li>
           {%- endfor ~%}
