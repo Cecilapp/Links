@@ -7,13 +7,13 @@
     {{- include('partials/metatags.html.twig', {page, site}, with_context = false) ~}}
     <style>{{ asset('styles.css')|inline }}</style>
     {{- include('partials/fontawesome.twig') ~}}
-    {%- if 'pwa' in site.theme|default({}) ~%}
+    {%- if 'pwa' in site.theme|default([]) ~%}
     <link rel="manifest" href="{{ url('manifest', {language: site.language}) }}" />
     {%- endif ~%}
     <meta name="theme-color" content="{{ site.manifest.theme_color }}" />
   </head>
   <body class="max-w-screen-lg mx-auto">
-    <div class="flex flex-col mx-auto px-4 sm:px-8 pt-16 sm:pt-8 pb-4">
+    <div class="flex flex-col mx-auto px-4 sm:px-8 pt-12 sm:pt-8 pb-4">
       {%- block share ~%}
       <button class="absolute top-3 right-4" id="share-button" type="button" title="{% trans %}Share{% endtrans %}">
         {{ fontawesome.icon('share-nodes', 'solid', 'xl') ~}}<span class="sr-only">{% trans %}Share{% endtrans %}</span>
@@ -23,9 +23,9 @@
         {%- block header ~%}
         {#- avatar ~#}
         {{ asset(site.avatar|default('avatar.png'))|resize(324)|html({class: 'max-w-24 rounded-full m-auto shadow-2xl dark:brightness-90', alt: 'Avatar of %name%'|trans({'%name%': site.title})}, {formats: ['webp']}) }}
-        {#- h1 ~#}
+        {#- name + baseline ~#}
         <h1>
-          <div class="text-xl font-bold pt-4 pb-2">{{ site.title }}</div>
+          <div class="text-xl font-bold pt-4 pb-1">{{ site.title }}</div>
           <div class="text-base font-medium">{{ site.baseline }}</div>
         </h1>
         {%- endblock header ~%}
@@ -53,6 +53,7 @@
     {%- block scripts ~%}
     <script>
       {%- apply minify_js ~%}
+      // share button
       const shareButton = document.getElementById('share-button');
       if (navigator.share) {
         shareButton.addEventListener('click', async () => {
