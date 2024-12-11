@@ -59,7 +59,7 @@
         shareButton.addEventListener('click', async () => {
           try {
             const shareData = {
-              text: '{{ site.title }} - {{ site.baseline }}',
+              text: '{{ site.title }}',
               url: '{{ url(page, {canonical: true}) }}',
             };
             await navigator.share(shareData);
