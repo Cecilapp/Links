@@ -1,10 +1,11 @@
 title: John Doe
 baseurl: https://cecil-links-demo.netlify.app/
-baseline: "Short description"
-description: "Long description."
+baseline: "Who I am."
+description: "SEO description."
 author:
   name: John Doe
   url: https://cecil.app
+  email: contact@domain.tld
 social:
   github:
     url: https://github.com/
@@ -30,10 +31,10 @@ social:
     site: John Doe
     creator: John Doe
 avatar: avatar.png
+image: avatar.png # Open Graph image
 metatags:
   favicon:
     image: avatar.png
-image: avatar.png # Open Graph image
 
 # PWA
 manifest:
