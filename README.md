@@ -40,6 +40,7 @@ description: "<long description>" # optional, recommended
 author: # used by metatags, optional
   name: <author name>
   url: <url>
+  email: <email> # used in social links block, optional
 social: # social links
   <name>: # github, linkedin, instagram, youtube, mastodon, bluesky, threads, twitter or x
     url: <url>
