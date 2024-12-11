@@ -88,7 +88,7 @@ You can change the [theme color](ttps://tailwindcss.com/docs/customizing-colors)
 
 ```bash
 npm install
-npx tailwindcss -i ./assets/tailwind.css -o ./assets/styles.css
+npx tailwindcss -i ./tailwind.css -o ./assets/styles.css
 ```
 
 ## Update
