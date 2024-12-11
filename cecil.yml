@@ -5,7 +5,7 @@ description: "SEO description."
 author:
   name: John Doe
   url: https://cecil.app
-  email: contact@domain.tld
+  email: john.doe@domain.tld
 social:
   github:
     url: https://github.com/
