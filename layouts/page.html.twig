@@ -13,7 +13,7 @@
     <meta name="theme-color" content="{{ site.manifest.theme_color }}" />
   </head>
   <body class="max-w-screen-lg mx-auto">
-    <div class="flex flex-col mx-auto px-4 sm:px-8 pt-12 sm:pt-8 pb-4">
+    <div class="max-w-[640px] flex flex-col mx-auto px-4 sm:px-8 pt-12 sm:pt-8 pb-4">
       {%- block share ~%}
       <button class="absolute top-3 right-4" id="share-button" type="button" title="{% trans %}Share{% endtrans %}">
         {{ fontawesome.icon('share-nodes', 'solid', 'xl') ~}}<span class="sr-only">{% trans %}Share{% endtrans %}</span>
