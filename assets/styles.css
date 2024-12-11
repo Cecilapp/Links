@@ -661,8 +661,8 @@ a:hover, button:hover {
   max-width: 6rem;
 }
 
-.max-w-lg {
-  max-width: 32rem;
+.max-w-\[640px\] {
+  max-width: 640px;
 }
 
 .max-w-screen-lg {
@@ -848,17 +848,10 @@ a:hover, button:hover {
   .sm\:pt-8 {
     padding-top: 2rem;
   }
-}
 
-@media (min-width: 768px) {
-  .md\:grid-cols-3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
-@media (min-width: 1024px) {
-  .lg\:grid-cols-4 {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+  .sm\:text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
 }
 
