@@ -1,4 +1,10 @@
 ---
+blocks:
+  - type: social  # social links
+  - type: content # page content
+  - type: links   # page links
+    options:
+      display: column # grid or column (column by default)
 links:
   #- title: Twitter
   #  url: https://twitter.com/Cecil_Static/
