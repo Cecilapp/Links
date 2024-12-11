@@ -2,6 +2,6 @@
 
         {%- block main ~%}
         {% for block in page.blocks %}
-          {{ include('blocks/' ~ block.type ~ '.html.twig', {options: block.options|default([])}) }}
+          {{ include('blocks/' ~ block.name ~ '.html.twig', {options: block.options|default([])}) }}
         {% endfor %}
         {%- endblock main ~%}
