@@ -10,7 +10,7 @@ module.exports = {
         // https://tailwindcss.com/docs/customizing-colors
         primary: colors.sky,
         neutral: colors.slate,
-        social: {
+        /*social: {
           github: '#333',
           linkedin: '#0077b5',
           instagram: '#c13584',
@@ -21,7 +21,7 @@ module.exports = {
           threads: '#000',
           twitter: '#1da1f2',
           x: '#000'
-        },
+        },*/
       },
     },
   },

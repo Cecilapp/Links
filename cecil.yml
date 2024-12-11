@@ -34,7 +34,6 @@ metatags:
   favicon:
     image: avatar.png
 image: avatar.png # Open Graph image
-source: https://github.com/Cecilapp/Links
 
 # PWA
 manifest:
@@ -50,7 +49,7 @@ languages:
     locale: en_US
     name: English
   - code: fr
-    enable: false # enbale with "true"
+    enabled: false # enable with "true"
     locale: fr
     name: Français
 
