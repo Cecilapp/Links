@@ -35,6 +35,8 @@ image: avatar.png # Open Graph image
 metatags:
   favicon:
     image: avatar.png
+  title:
+    only: true
 
 # PWA
 manifest:
