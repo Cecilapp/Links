@@ -44,6 +44,12 @@
         {#- social links ~#}
         {%- if site.social|default([]) ~%}
         <div class="mt-4 flex flex-row justify-center space-x-2">
+          {%- if site.author.email is defined ~%}
+          <a href="mailto:{{ site.author.email }}" title="{% trans %}Email me{% endtrans %}">
+            <span class="text-inherit dark:text-inherit">{{ fontawesome.icon('envelope', 'regular', 'xl') ~}}</span>
+            <span class="sr-only">{% trans %}Email me{% endtrans %}</span>
+          </a>
+          {%- endif ~%}
           {%- for social_name, social_values in site.social ~%}
             {%- if social_values['url'] is defined ~%}
               {%- set icon, color = social_icons[social_name]['icon']|default(social_name), social_icons[social_name]['color']|default('text-inherit') ~%}
