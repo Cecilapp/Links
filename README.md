@@ -93,12 +93,6 @@ npm install
 npx tailwindcss -i ./assets/tailwind.css -o ./assets/styles.css
 ```
 
-### Social links
-
-Out of the box, only the color of the following social providers are supported:
-
-Twitter, GitHub, LinkedIn, Instagram and YouTube.
-
 ## Update
 
 If you want to update _component themes_ (i.e.: _[fontawesome](https://github.com/Cecilapp/theme-fontawesome#readme)_, _[pwa](https://github.com/Cecilapp/theme-pwa#readme)_ and _[netlity](https://github.com/Cecilapp/theme-netlify#readme)_) you must run the following command:
