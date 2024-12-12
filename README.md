@@ -55,12 +55,16 @@ image: avatar.png # Open Graph image, optional, recommended
 
 From `pages/index.md` file you can:
 
-1. add links in _front matter_
-2. change page structure with _blocks_ array in _front matter_
+1. change page structure with _blocks_ array in _front matter_
+2. add links in _front matter_
 3. add rich content authoring in Markdown in page _body_ (optional)
 
 ```yaml
 ---
+blocks:
+  - name: content # page content
+  - name: links   # page links
+  - name: social  # social identities
 links:
   - title: <title>
     url: <url>
@@ -93,7 +97,7 @@ npx tailwindcss -i ./themes/links/tailwind.css -o ./assets/styles.css
 
 ## Update
 
-If you want to update _component themes_ (i.e.: _[links](https://github.com/Cecilapp/theme-links#readme)_, _[fontawesome](https://github.com/Cecilapp/theme-fontawesome#readme)_, _[pwa](https://github.com/Cecilapp/theme-pwa#readme)_ and _[netlity](https://github.com/Cecilapp/theme-netlify#readme)_) you must run the following command:
+If you want to update the [_links_](https://github.com/Cecilapp/theme-links#readme) theme and _component themes_ (i.e.: [_fontawesome_](https://github.com/Cecilapp/theme-fontawesome#readme), [_pwa_](https://github.com/Cecilapp/theme-pwa#readme) and [_netlity_](https://github.com/Cecilapp/theme-netlify#readme)) you must run the following command:
 
 ```bash
 composer update
