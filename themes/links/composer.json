@@ -1,0 +1,24 @@
+{
+  "name": "cecil/theme-links",
+  "type": "cecil-theme",
+  "description": "Cecil Links theme",
+  "keywords": ["Cecil", "theme", "Links"],
+  "license": "MIT",
+  "require": {
+    "cecil/theme-installer": "^1.4|^2.0",
+    "cecil/theme-fontawesome": "^1.3"
+  },
+  "extra": {
+    "name": "links",
+    "branch-alias": {
+      "dev-master": "2.x-dev"
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "config": {
+    "allow-plugins": {
+      "cecil/theme-installer": true
+    }
+  }
+}

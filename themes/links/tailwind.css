@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply bg-primary-50 dark:bg-primary-950 text-primary-900 dark:text-primary-200;
+    @apply text-lg;
+  }
+  a, button {
+    @apply text-primary-700 dark:text-primary-50;
+  }
+  a:hover, button:hover {
+    @apply underline text-primary-500 dark:text-primary-50;
+  }
+}

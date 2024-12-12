@@ -1,0 +1,21 @@
+metatags:
+  favicon:
+    image: favicon.png
+  title:
+    only: true
+theme:
+  - fontawesome
+taxonomies:
+  categories: disabled
+  tags: disabled
+pagination:
+  enabled: false
+pages:
+  default:
+    xsl/atom:
+      published: false
+    xsl/rss:
+      published: false
+output:
+  pagetypeformats:
+    homepage: html
