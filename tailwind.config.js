@@ -1,28 +1,20 @@
 const colors = require('tailwindcss/colors');
 
 module.exports = {
+  presets: [
+    require('./themes/links/tailwind.preset.js')
+  ],
   content: [
     './layouts/**/*.html.twig',
+    './themes/**/layouts/**/*.html.twig',
   ],
   theme: {
     extend: {
+      // https://tailwindcss.com/docs/customizing-colors
       colors: {
-        // https://tailwindcss.com/docs/customizing-colors
-        primary: colors.sky,
-        neutral: colors.slate,
-        /*social: {
-          github: '#333',
-          linkedin: '#0077b5',
-          instagram: '#c13584',
-          youtube: '#ff0000',
-          mastodon: '#6364FF',
-          steam: '#171A21',
-          bluesky: '#1285FE',
-          threads: '#000',
-          twitter: '#1da1f2',
-          x: '#000'
-        },*/
+        primary: colors.blue,
+        secondary: colors.slate,
       },
     },
-  },
+  }
 }

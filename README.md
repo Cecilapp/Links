@@ -87,13 +87,13 @@ Then just deploy the content of __site_ directory to your web hosting solution.
 You can change the [theme color](ttps://tailwindcss.com/docs/customizing-colors) through the file `tailwind.config.js`, then rebuild CSS:
 
 ```bash
-npm install
-npx tailwindcss -i ./tailwind.css -o ./assets/styles.css
+npm install -D tailwindcss
+npx tailwindcss -i ./themes/links/tailwind.css -o ./assets/styles.css
 ```
 
 ## Update
 
-If you want to update _component themes_ (i.e.: _[fontawesome](https://github.com/Cecilapp/theme-fontawesome#readme)_, _[pwa](https://github.com/Cecilapp/theme-pwa#readme)_ and _[netlity](https://github.com/Cecilapp/theme-netlify#readme)_) you must run the following command:
+If you want to update _component themes_ (i.e.: _[links](https://github.com/Cecilapp/theme-links#readme)_, _[fontawesome](https://github.com/Cecilapp/theme-fontawesome#readme)_, _[pwa](https://github.com/Cecilapp/theme-pwa#readme)_ and _[netlity](https://github.com/Cecilapp/theme-netlify#readme)_) you must run the following command:
 
 ```bash
 composer update

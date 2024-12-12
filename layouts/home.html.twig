@@ -1,7 +1,0 @@
-{% extends ['page.html.twig', '_default/page.html.twig'] %}
-
-        {%- block main ~%}
-        {%- for block in page.blocks ~%}
-          {{- include('blocks/' ~ block.name ~ '.html.twig', {options: block.options|default([])}) ~}}
-        {%- endfor ~%}
-        {%- endblock main ~%}

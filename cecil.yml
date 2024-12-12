@@ -1,7 +1,7 @@
 title: John Doe
 baseurl: https://cecil-links-demo.netlify.app/
 baseline: "Some links about me"
-description: "SEO description."
+description: "SEO/OG description."
 author:
   name: John Doe
   url: https://cecil.app
@@ -32,11 +32,6 @@ social:
     creator: John Doe
 avatar: avatar.png
 image: avatar.png # Open Graph image
-metatags:
-  favicon:
-    image: avatar.png
-  title:
-    only: true
 
 # PWA
 manifest:
@@ -56,22 +51,8 @@ languages:
     locale: fr
     name: Français
 
-# Cecil options
 theme:
   - fontawesome
+  - links
   - pwa
   - netlify
-taxonomies:
-  categories: disabled
-  tags: disabled
-pagination:
-  enabled: false
-pages:
-  default:
-    xsl/atom:
-      published: false
-    xsl/rss:
-      published: false
-output:
-  pagetypeformats:
-    homepage: html
