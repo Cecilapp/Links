@@ -35,8 +35,8 @@ image: avatar.png # Open Graph image
 
 # PWA
 manifest:
-  #background_color: '#fff'
-  theme_color: '#0369a1' # https://tailwindcss.com/docs/customizing-colors "700"
+  theme_color: "#0369a1" # https://tailwindcss.com/docs/customizing-colors "700"
+  #background_color: "#fff"
 serviceworker:
   enabled: false
 
