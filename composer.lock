@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6e689d0315bddc45fe83db514134d6a6",
+    "content-hash": "c133102ae0910831f37a0f067bb8a8f1",
     "packages": [
         {
             "name": "cecil/theme-fontawesome",
@@ -126,6 +126,57 @@
                 }
             ],
             "time": "2022-01-06T10:54:26+00:00"
+        },
+        {
+            "name": "cecil/theme-links",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Cecilapp/theme-links.git",
+                "reference": "56a2978960aac6bc3bca1399c60964258f278a0e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Cecilapp/theme-links/zipball/56a2978960aac6bc3bca1399c60964258f278a0e",
+                "reference": "56a2978960aac6bc3bca1399c60964258f278a0e",
+                "shasum": ""
+            },
+            "require": {
+                "cecil/theme-fontawesome": "^1.3",
+                "cecil/theme-installer": "^1.4|^2.0"
+            },
+            "type": "cecil-theme",
+            "extra": {
+                "name": "links",
+                "branch-alias": {
+                    "dev-master": "2.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Cecil Links theme",
+            "keywords": [
+                "cecil",
+                "links",
+                "theme"
+            ],
+            "support": {
+                "issues": "https://github.com/Cecilapp/theme-links/issues",
+                "source": "https://github.com/Cecilapp/theme-links/tree/1.0.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/ArnaudLigny",
+                    "type": "github"
+                },
+                {
+                    "url": "https://opencollective.com/cecil",
+                    "type": "open_collective"
+                }
+            ],
+            "time": "2024-12-12T10:29:18+00:00"
         },
         {
             "name": "cecil/theme-netlify",

@@ -30,43 +30,41 @@ php cecil.phar serve --open
 
 ### Configuration
 
-Define site configuration and social links in [`cecil.yml`](cecil.yml):
+Define site configuration and social identities in [`cecil.yml`](cecil.yml):
 
 ```yaml
 title: <main title>
 baseurl: <site URL, with a final backslash>
-baseline: "<short description>" # optional, recommended
-description: "<long description>" # optional, recommended
+baseline: "<short presentation>" # optional, recommended
+description: "<SEO description>" # optional, recommended
 author: # used by metatags, optional
   name: <author name>
   url: <url>
-social: # social links
+  email: <email> # used in social identities block, optional
+social: # social identities
   <name>: # github, linkedin, instagram, youtube, mastodon, bluesky, threads, twitter or x
     url: <url>
 avatar: avatar.png
-metatags:
-  favicon:
-    image: avatar.png # optional, recommended
 image: avatar.png # Open Graph image, optional, recommended
-source: https://github.com/Cecilapp/Links # GitHub repository
 ```
 
 > [!TIP]
 > The exhaustive [Cecil](https://cecil/app) documentation is available at [cecil.app](https://cecil.app/documentation/configuration/).
 
-### Manage links
+### Manage page
 
-Edit file `pages/index.md` to:
+From `pages/index.md` file you can:
 
 1. add links in _front matter_
-2. free content in _body_ (optional)
+2. change page structure with _blocks_ array in _front matter_
+3. add rich content authoring in Markdown in page _body_ (optional)
 
 ```yaml
 ---
 links:
   - title: <title>
     url: <url>
-    color: "<hexa_code>" # hexadecimal color code, optional (e.g. "#1DA1F2")
+    color: "<#hexa_code>" # hexadecimal color code, optional (e.g. "#1DA1F2")
     icon: <style>:<name> # Font Awesome icon (https://fontawesome.com/icons), optional (e.g. "brands:github")
 ---
 Content here.
@@ -89,19 +87,13 @@ Then just deploy the content of __site_ directory to your web hosting solution.
 You can change the [theme color](ttps://tailwindcss.com/docs/customizing-colors) through the file `tailwind.config.js`, then rebuild CSS:
 
 ```bash
-npm install
-npx tailwindcss -i ./assets/tailwind.css -o ./assets/styles.css
+npm install -D tailwindcss
+npx tailwindcss -i ./themes/links/tailwind.css -o ./assets/styles.css
 ```
-
-### Social links
-
-Out of the box, only the color of the following social providers are supported:
-
-Twitter, GitHub, LinkedIn, Instagram and YouTube.
 
 ## Update
 
-If you want to update _component themes_ (i.e.: _[fontawesome](https://github.com/Cecilapp/theme-fontawesome#readme)_, _[pwa](https://github.com/Cecilapp/theme-pwa#readme)_ and _[netlity](https://github.com/Cecilapp/theme-netlify#readme)_) you must run the following command:
+If you want to update _component themes_ (i.e.: _[links](https://github.com/Cecilapp/theme-links#readme)_, _[fontawesome](https://github.com/Cecilapp/theme-fontawesome#readme)_, _[pwa](https://github.com/Cecilapp/theme-pwa#readme)_ and _[netlity](https://github.com/Cecilapp/theme-netlify#readme)_) you must run the following command:
 
 ```bash
 composer update
