@@ -1,12 +1,12 @@
 # _Links_ theme
 
-Documentation theme for [Cecil](https://cecil.app), powered by [Tailwind CSS](https://tailwindcss.com) and [Font Awesome](https://fontawesome.com).
+Theme for [Cecil](https://cecil.app), powered by [Tailwind CSS](https://tailwindcss.com) and [Font Awesome](https://fontawesome.com).
 
 ![Screenshot](./docs/screenshot.png)
 
 ## Features
 
-- to do
+- _to complete_
 
 ## Installation
 
@@ -28,7 +28,7 @@ theme:
 ### Configuration
 
 ```yaml
-# to do
+# to complete
 ```
 
 ### Customize styles
@@ -36,7 +36,7 @@ theme:
 Create the [Tailwind configuration](https://tailwindcss.com/docs/configuration) file `tailwind.config.js`:
 
 ```javascript
-/* to do */
+/* to complete */
 ```
 
 Run the following command:
