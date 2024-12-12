@@ -46,6 +46,11 @@ social: # social identities
     url: <url>
 avatar: avatar.png
 image: avatar.png # Open Graph image, optional, recommended
+manifest:
+  theme_color: "#0369a1"   # theme color
+  background_color: "#fff" # PWA background color
+serviceworker:
+  enabled: false           # turns on PWA
 ```
 
 > [!TIP]
