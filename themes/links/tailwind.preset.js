@@ -9,7 +9,7 @@ module.exports = {
       colors: {
         // https://tailwindcss.com/docs/customizing-colors
         primary: colors.sky,
-        neutral: colors.slate,
+        secondary: colors.teal,
         /*social: {
           github: '#333',
           linkedin: '#0077b5',
