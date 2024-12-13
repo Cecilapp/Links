@@ -3,11 +3,12 @@
 @tailwind utilities;
 
 @layer base {
-  /* background and text */
   html {
-    @apply bg-primary-50 dark:bg-primary-950 text-primary-900 dark:text-primary-200 text-lg;
-    /* gradient */
-    @apply bg-gradient-to-r from-primary-400 to-secondary-400 dark:from-primary-950 dark:to-secondary-950;
+    @apply text-lg;
+  }
+  /* background and text */
+  body {
+    @apply bg-primary-50 dark:bg-primary-950 text-primary-900 dark:text-primary-200;
   }
   /* links */
   a, button {
@@ -19,16 +20,47 @@
   }
   /* links buttons */
   .button {
-    @apply bg-primary-50 dark:bg-primary-950 text-primary-700 dark:text-primary-50;
+    @apply bg-primary-50 dark:bg-primary-950 text-primary-700;
     @apply dark:brightness-90;
     @apply font-semibold;
-    /* style 1 */
-    @apply rounded-md;
-    @apply transition ease-in-out hover:scale-[102%] duration-300;
-    /* style 2 */
-    /*@apply rounded-3xl;
     @apply border-2 border-primary-700;
-    @apply shadow-[8px_8px_0px_0px];
-    @apply hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px];*/
+  }
+  [data-theme="default"] {
+    .button {
+      @apply rounded-md;
+      @apply transition ease-in-out hover:scale-[102%] duration-300;
+    }
+  }
+  [data-theme="gradient-1"] {
+    body {
+      @apply bg-primary-50 dark:bg-primary-950 text-primary-900 dark:text-primary-200;
+      @apply bg-gradient-to-r from-primary-500 to-secondary-500 dark:from-primary-950 dark:to-secondary-950;
+    }
+    a, button {
+      @apply text-primary-700 dark:text-primary-50;
+    }
+    a:hover:not(.button), button:hover {
+      @apply text-primary-900 dark:text-primary-200;
+    }
+    .button {
+      @apply shadow-[8px_8px_0px_0px];
+      @apply hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px];
+    }
+  }
+  [data-theme="gradient-2"] {
+    body {
+      @apply bg-gradient-to-r from-primary-500 to-secondary-500 dark:from-primary-950 dark:to-secondary-950;
+    }
+    a, button {
+      @apply text-primary-700 dark:text-primary-50;
+    }
+    a:hover:not(.button), button:hover {
+      @apply text-primary-900 dark:text-primary-200;
+    }
+    .button {
+      @apply rounded-3xl;
+      @apply shadow-[8px_8px_0px_0px];
+      @apply hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px];
+    }
   }
 }

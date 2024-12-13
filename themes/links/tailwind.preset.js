@@ -8,7 +8,7 @@ module.exports = {
     extend: {
       colors: {
         // https://tailwindcss.com/docs/customizing-colors
-        primary: colors.sky,
+        primary: colors.blue,
         secondary: colors.teal,
         /*social: {
           github: '#333',
