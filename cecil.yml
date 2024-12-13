@@ -32,6 +32,12 @@ social:
     creator: John Doe
 avatar: avatar.png
 image: avatar.png # Open Graph image
+# CSS theme and buttons colors
+links:
+  theme: default
+  buttons:
+    display: column # column or grid ('column' by default)
+    color: page     # page or css ('page' by default)
 
 # PWA
 manifest:

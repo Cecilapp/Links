@@ -22,7 +22,7 @@
             </style>
             <a id="button-{{ loop.index }}"
               class="button flex justify-center items-center space-x-2.5 p-3 px-5"
-              {%- if options.color|default('page') == 'page' ~%}style="background-color: {{ link.color|default('#' ~ hex) }}; color: rgb(var(--button-{{ loop.index }}-color), var(--button-{{ loop.index }}-color), var(--button-{{ loop.index }}-color))"{%- endif ~%}
+              {%- if options.color|default == 'page' ~%}style="background-color: {{ link.color|default('#' ~ hex) }}; color: rgb(var(--button-{{ loop.index }}-color), var(--button-{{ loop.index }}-color), var(--button-{{ loop.index }}-color))"{%- endif ~%}
               href="{{ link.url }}"
             >
               <span class="flex-none">{{ fontawesome.icon(link.icon|default('solid:link')|split(':')[1], link.icon|default('solid:link')|split(':')[0], 'lg') ~}}</span>

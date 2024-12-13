@@ -13,7 +13,7 @@ module.exports = {
       // https://tailwindcss.com/docs/customizing-colors
       colors: {
         primary: colors.blue,
-        secondary: colors.slate,
+        secondary: colors.teal,
       },
     },
   }

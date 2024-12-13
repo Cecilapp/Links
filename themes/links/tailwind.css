@@ -7,7 +7,7 @@
   html {
     @apply bg-primary-50 dark:bg-primary-950 text-primary-900 dark:text-primary-200 text-lg;
     /* gradient */
-    /*@apply bg-gradient-to-r from-primary-500 to-secondary-500 dark:from-primary-950 dark:to-secondary-500;*/
+    @apply bg-gradient-to-r from-primary-400 to-secondary-400 dark:from-primary-950 dark:to-secondary-950;
   }
   /* links */
   a, button {
@@ -19,7 +19,7 @@
   }
   /* links buttons */
   .button {
-    @apply bg-primary-50 dark:bg-primary-950 text-primary-700;
+    @apply bg-primary-50 dark:bg-primary-950 text-primary-700 dark:text-primary-50;
     @apply dark:brightness-90;
     @apply font-semibold;
     /* style 1 */

@@ -51,6 +51,12 @@ manifest:
   background_color: "#fff" # PWA background color
 serviceworker:
   enabled: false           # turns on PWA
+# CSS theme and buttons colors
+links:
+  theme: default
+  buttons:
+    display: column # column or grid ('column' by default)
+    color: page     # page or css ('page' by default)
 ```
 
 > [!TIP]

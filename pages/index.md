@@ -2,9 +2,6 @@
 blocks:
   - name: content # page content
   - name: links   # page links
-    options:
-      display: column # column or grid ('column' by default)
-      color: page     # page or css ('page' by default)
   - name: social  # social accounts
 links:
   - title: Cecil.app
