@@ -3,7 +3,7 @@
 {%- set options = options|merge(site.links.buttons) -%}
         {#- page links ~#}
         {%- if page.links|default|length > 0 ~%}
-        <ol class="mx-auto mt-4 grid items-center gap-4{% if options.display|default == 'grid' %} sm:grid-cols-2{% endif %}">
+        <ol id="buttons" class="mx-auto mt-4 grid items-center gap-4">
           {%- for link in page.links|default ~%}
             {#- button background color (randomized) ~#}
             {%- set hex = '' -%}

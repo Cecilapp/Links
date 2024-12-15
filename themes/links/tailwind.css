@@ -4,7 +4,7 @@
 
 @layer base {
   html {
-    @apply text-lg;
+    @apply min-h-dvh text-lg;
   }
   /* background and text */
   body {
@@ -33,8 +33,7 @@
   }
   [data-theme="gradient-1"] {
     body {
-      @apply bg-primary-50 dark:bg-primary-950 text-primary-900 dark:text-primary-200;
-      @apply bg-gradient-to-r from-primary-500 to-secondary-500 dark:from-primary-950 dark:to-secondary-950;
+      @apply bg-gradient-to-b from-primary-400 to-secondary-400 dark:from-primary-950 dark:to-secondary-950;
     }
     a, button {
       @apply text-primary-700 dark:text-primary-50;
@@ -56,6 +55,9 @@
     }
     a:hover:not(.button), button:hover {
       @apply text-primary-900 dark:text-primary-200;
+    }
+    #buttons {
+      @apply sm:grid-cols-2;
     }
     .button {
       @apply rounded-3xl;
