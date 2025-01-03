@@ -34,7 +34,7 @@ avatar: avatar.png
 image: avatar.png # Open Graph image
 # CSS theme and buttons colors
 links:
-  theme: default
+  theme: default # default, gradient-1, gradient-2
   buttons:
     color: page # page or css ('page' by default)
 

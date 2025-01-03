@@ -8,22 +8,22 @@
   }
   /* background and text */
   body {
-    @apply bg-primary-50 dark:bg-primary-950 text-primary-900 dark:text-primary-200;
+    @apply bg-primary-50 text-primary-900 dark:bg-primary-950 dark:text-primary-200;
   }
   /* links */
   a, button {
-    @apply text-primary-700 dark:text-primary-50;
+    @apply text-primary-900 dark:text-primary-50;
   }
   /* links hover */
   a:hover:not(.button), button:hover {
-    @apply text-primary-900 dark:text-primary-200;
+    @apply text-primary-700 dark:text-primary-200;
   }
   /* links buttons */
   .button {
-    @apply bg-primary-50 dark:bg-primary-950 text-primary-700;
+    @apply bg-primary-50 text-primary-900 dark:bg-primary-950;
     @apply dark:brightness-90;
     @apply font-semibold;
-    @apply border-2 border-primary-700;
+    @apply border-2 border-primary-900;
   }
   [data-theme="default"] {
     .button {
@@ -33,36 +33,42 @@
   }
   [data-theme="gradient-1"] {
     body {
-      @apply bg-gradient-to-b from-primary-400 to-secondary-400 dark:from-primary-950 dark:to-secondary-950;
+      @apply bg-primary-50 text-primary-50 dark:bg-primary-950 dark:text-primary-200;
+      @apply bg-gradient-to-b from-primary-500 to-secondary-500 dark:from-primary-950 dark:to-secondary-950;
     }
     a, button {
-      @apply text-primary-700 dark:text-primary-50;
+      @apply text-primary-50 dark:text-primary-50;
     }
     a:hover:not(.button), button:hover {
-      @apply text-primary-900 dark:text-primary-200;
+      @apply text-primary-50/75 dark:text-primary-200;
     }
     .button {
+      @apply text-primary-700 dark:text-primary-50;
       @apply shadow-[8px_8px_0px_0px];
       @apply hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px];
+      @apply mr-2;
     }
   }
   [data-theme="gradient-2"] {
     body {
-      @apply bg-gradient-to-r from-primary-500 to-secondary-500 dark:from-primary-950 dark:to-secondary-950;
+      @apply bg-primary-50 text-primary-50 dark:bg-primary-950 dark:text-primary-200;
+      @apply bg-gradient-to-b from-primary-500 to-secondary-500 dark:from-primary-950 dark:to-secondary-950;
     }
     a, button {
-      @apply text-primary-700 dark:text-primary-50;
+      @apply text-primary-50 dark:text-primary-50;
     }
     a:hover:not(.button), button:hover {
-      @apply text-primary-900 dark:text-primary-200;
+      @apply text-primary-50/75 dark:text-primary-200;
     }
     #buttons {
       @apply sm:grid-cols-2;
     }
     .button {
-      @apply rounded-3xl;
+      @apply text-primary-700 dark:text-primary-50;
+      @apply rounded-3xl border-primary-700;
       @apply shadow-[8px_8px_0px_0px];
       @apply hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px];
+      @apply mr-2;
     }
   }
 }
