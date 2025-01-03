@@ -13,7 +13,7 @@
   ],
   "require": {
     "cecil/theme-links": "^1.3",
-    "cecil/theme-pwa": "^2.10",
+    "cecil/theme-pwa": "^2.14",
     "cecil/theme-netlify": "^2.1"
   },
   "scripts": {
