@@ -14,16 +14,16 @@
   </head>
   <body class="max-w-screen-lg mx-auto">
     <div class="max-w-[640px] flex flex-col mx-auto px-4 sm:px-8 pt-12 sm:pt-8 pb-4">
-      {%- block theme ~%}
-      {#- theme button ~#}
-      {{ include('partials/selector-theme-icon.html.twig') }}
-      {%- endblock theme ~%}
-      {%- block share ~%}
+      {#- color scheme button ~#}
+      <div class="absolute top-3.5 left-4 opacity-50 hover:opacity-100">
+        {{ include('partials/selector-theme-icon.html.twig') }}
+      </div>
       {#- share button ~#}
-      <button class="absolute top-3 right-4" id="share-button" type="button" title="{% trans %}Share{% endtrans %}">
-        {{ fontawesome.icon('share-nodes', 'solid', 'lg') ~}}<span class="sr-only">{% trans %}Share{% endtrans %}</span>
-      </button>
-      {%- endblock share ~%}
+      <div class="absolute top-3 right-4 opacity-50 hover:opacity-100">
+        <button id="share-button" type="button" title="{% trans %}Share{% endtrans %}">
+          {{ fontawesome.icon('share-nodes', 'solid', 'lg') ~}}<span class="sr-only">{% trans %}Share{% endtrans %}</span>
+        </button>
+      </div>
       <header class="text-center">
         {%- block header ~%}
         {#- avatar ~#}

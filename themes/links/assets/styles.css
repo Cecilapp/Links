@@ -839,8 +839,8 @@ a:hover:not(.button):is(.dark *), button:hover:is(.dark *) {
   position: absolute;
 }
 
-.right-11 {
-  right: 2.75rem;
+.left-4 {
+  left: 1rem;
 }
 
 .right-4 {
@@ -1042,10 +1042,18 @@ a:hover:not(.button):is(.dark *), button:hover:is(.dark *) {
   color: inherit;
 }
 
+.opacity-50 {
+  opacity: 0.5;
+}
+
 .shadow-2xl {
   --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
   --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.hover\:opacity-100:hover {
+  opacity: 1;
 }
 
 .dark\:text-inherit:is(.dark *) {
