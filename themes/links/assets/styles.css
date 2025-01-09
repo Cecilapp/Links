@@ -569,13 +569,11 @@ body {
   color: rgb(30 58 138 / var(--tw-text-opacity, 1));
 }
 
-@media (prefers-color-scheme: dark) {
-  body {
-    --tw-bg-opacity: 1;
-    background-color: rgb(23 37 84 / var(--tw-bg-opacity, 1));
-    --tw-text-opacity: 1;
-    color: rgb(191 219 254 / var(--tw-text-opacity, 1));
-  }
+body:is(.dark *) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(23 37 84 / var(--tw-bg-opacity, 1));
+  --tw-text-opacity: 1;
+  color: rgb(191 219 254 / var(--tw-text-opacity, 1));
 }
 
 /* links */
@@ -585,11 +583,9 @@ a, button {
   color: rgb(30 58 138 / var(--tw-text-opacity, 1));
 }
 
-@media (prefers-color-scheme: dark) {
-  a, button {
-    --tw-text-opacity: 1;
-    color: rgb(239 246 255 / var(--tw-text-opacity, 1));
-  }
+a:is(.dark *), button:is(.dark *) {
+  --tw-text-opacity: 1;
+  color: rgb(239 246 255 / var(--tw-text-opacity, 1));
 }
 
 /* links hover */
@@ -599,11 +595,9 @@ a:hover:not(.button), button:hover {
   color: rgb(29 78 216 / var(--tw-text-opacity, 1));
 }
 
-@media (prefers-color-scheme: dark) {
-  a:hover:not(.button), button:hover {
-    --tw-text-opacity: 1;
-    color: rgb(191 219 254 / var(--tw-text-opacity, 1));
-  }
+a:hover:not(.button):is(.dark *), button:hover:is(.dark *) {
+  --tw-text-opacity: 1;
+  color: rgb(191 219 254 / var(--tw-text-opacity, 1));
 }
 
 /* links buttons */
@@ -615,13 +609,11 @@ a:hover:not(.button), button:hover {
   color: rgb(30 58 138 / var(--tw-text-opacity, 1));
 }
 
-@media (prefers-color-scheme: dark) {
-  .button {
-    --tw-bg-opacity: 1;
-    background-color: rgb(23 37 84 / var(--tw-bg-opacity, 1));
-    --tw-brightness: brightness(.9);
-    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
-  }
+.button:is(.dark *) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(23 37 84 / var(--tw-bg-opacity, 1));
+  --tw-brightness: brightness(.9);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .button {
@@ -631,7 +623,7 @@ a:hover:not(.button), button:hover {
   border-color: rgb(30 58 138 / var(--tw-border-opacity, 1));
 }
 
-[data-theme="default"] {
+[data-css-theme="default"] {
   .button {
     border-radius: 0.375rem;
   }
@@ -655,7 +647,7 @@ a:hover:not(.button), button:hover {
   }
 }
 
-[data-theme="gradient-1"] {
+[data-css-theme="gradient-1"] {
   body {
     --tw-bg-opacity: 1;
     background-color: rgb(239 246 255 / var(--tw-bg-opacity, 1));
@@ -664,17 +656,13 @@ a:hover:not(.button), button:hover {
     --tw-text-opacity: 1;
     color: rgb(239 246 255 / var(--tw-text-opacity, 1));
   }
-  @media (prefers-color-scheme: dark) {
-    body {
-      --tw-bg-opacity: 1;
-      background-color: rgb(23 37 84 / var(--tw-bg-opacity, 1));
-    }
+  body:is(.dark *) {
+    --tw-bg-opacity: 1;
+    background-color: rgb(23 37 84 / var(--tw-bg-opacity, 1));
   }
-  @media (prefers-color-scheme: dark) {
-    body {
-      --tw-text-opacity: 1;
-      color: rgb(191 219 254 / var(--tw-text-opacity, 1));
-    }
+  body:is(.dark *) {
+    --tw-text-opacity: 1;
+    color: rgb(191 219 254 / var(--tw-text-opacity, 1));
   }
   body {
     background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
@@ -687,46 +675,36 @@ a:hover:not(.button), button:hover {
   body {
     --tw-gradient-to: #14b8a6 var(--tw-gradient-to-position);
   }
-  @media (prefers-color-scheme: dark) {
-    body {
-      --tw-gradient-from: #172554 var(--tw-gradient-from-position);
-      --tw-gradient-to: rgb(23 37 84 / 0) var(--tw-gradient-to-position);
-      --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-    }
+  body:is(.dark *) {
+    --tw-gradient-from: #172554 var(--tw-gradient-from-position);
+    --tw-gradient-to: rgb(23 37 84 / 0) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
   }
-  @media (prefers-color-scheme: dark) {
-    body {
-      --tw-gradient-to: #042f2e var(--tw-gradient-to-position);
-    }
+  body:is(.dark *) {
+    --tw-gradient-to: #042f2e var(--tw-gradient-to-position);
   }
   a, button {
     --tw-text-opacity: 1;
     color: rgb(239 246 255 / var(--tw-text-opacity, 1));
   }
-  @media (prefers-color-scheme: dark) {
-    a, button {
-      --tw-text-opacity: 1;
-      color: rgb(239 246 255 / var(--tw-text-opacity, 1));
-    }
+  a:is(.dark *), button:is(.dark *) {
+    --tw-text-opacity: 1;
+    color: rgb(239 246 255 / var(--tw-text-opacity, 1));
   }
   a:hover:not(.button), button:hover {
     color: rgb(239 246 255 / 0.75);
   }
-  @media (prefers-color-scheme: dark) {
-    a:hover:not(.button), button:hover {
-      --tw-text-opacity: 1;
-      color: rgb(191 219 254 / var(--tw-text-opacity, 1));
-    }
+  a:hover:not(.button):is(.dark *), button:hover:is(.dark *) {
+    --tw-text-opacity: 1;
+    color: rgb(191 219 254 / var(--tw-text-opacity, 1));
   }
   .button {
     --tw-text-opacity: 1;
     color: rgb(29 78 216 / var(--tw-text-opacity, 1));
   }
-  @media (prefers-color-scheme: dark) {
-    .button {
-      --tw-text-opacity: 1;
-      color: rgb(239 246 255 / var(--tw-text-opacity, 1));
-    }
+  .button:is(.dark *) {
+    --tw-text-opacity: 1;
+    color: rgb(239 246 255 / var(--tw-text-opacity, 1));
   }
   .button {
     --tw-shadow: 8px 8px 0px 0px;
@@ -751,7 +729,7 @@ a:hover:not(.button), button:hover {
   }
 }
 
-[data-theme="gradient-2"] {
+[data-css-theme="gradient-2"] {
   body {
     --tw-bg-opacity: 1;
     background-color: rgb(239 246 255 / var(--tw-bg-opacity, 1));
@@ -760,17 +738,13 @@ a:hover:not(.button), button:hover {
     --tw-text-opacity: 1;
     color: rgb(239 246 255 / var(--tw-text-opacity, 1));
   }
-  @media (prefers-color-scheme: dark) {
-    body {
-      --tw-bg-opacity: 1;
-      background-color: rgb(23 37 84 / var(--tw-bg-opacity, 1));
-    }
+  body:is(.dark *) {
+    --tw-bg-opacity: 1;
+    background-color: rgb(23 37 84 / var(--tw-bg-opacity, 1));
   }
-  @media (prefers-color-scheme: dark) {
-    body {
-      --tw-text-opacity: 1;
-      color: rgb(191 219 254 / var(--tw-text-opacity, 1));
-    }
+  body:is(.dark *) {
+    --tw-text-opacity: 1;
+    color: rgb(191 219 254 / var(--tw-text-opacity, 1));
   }
   body {
     background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
@@ -783,36 +757,28 @@ a:hover:not(.button), button:hover {
   body {
     --tw-gradient-to: #14b8a6 var(--tw-gradient-to-position);
   }
-  @media (prefers-color-scheme: dark) {
-    body {
-      --tw-gradient-from: #172554 var(--tw-gradient-from-position);
-      --tw-gradient-to: rgb(23 37 84 / 0) var(--tw-gradient-to-position);
-      --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-    }
+  body:is(.dark *) {
+    --tw-gradient-from: #172554 var(--tw-gradient-from-position);
+    --tw-gradient-to: rgb(23 37 84 / 0) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
   }
-  @media (prefers-color-scheme: dark) {
-    body {
-      --tw-gradient-to: #042f2e var(--tw-gradient-to-position);
-    }
+  body:is(.dark *) {
+    --tw-gradient-to: #042f2e var(--tw-gradient-to-position);
   }
   a, button {
     --tw-text-opacity: 1;
     color: rgb(239 246 255 / var(--tw-text-opacity, 1));
   }
-  @media (prefers-color-scheme: dark) {
-    a, button {
-      --tw-text-opacity: 1;
-      color: rgb(239 246 255 / var(--tw-text-opacity, 1));
-    }
+  a:is(.dark *), button:is(.dark *) {
+    --tw-text-opacity: 1;
+    color: rgb(239 246 255 / var(--tw-text-opacity, 1));
   }
   a:hover:not(.button), button:hover {
     color: rgb(239 246 255 / 0.75);
   }
-  @media (prefers-color-scheme: dark) {
-    a:hover:not(.button), button:hover {
-      --tw-text-opacity: 1;
-      color: rgb(191 219 254 / var(--tw-text-opacity, 1));
-    }
+  a:hover:not(.button):is(.dark *), button:hover:is(.dark *) {
+    --tw-text-opacity: 1;
+    color: rgb(191 219 254 / var(--tw-text-opacity, 1));
   }
   @media (min-width: 640px) {
     #buttons {
@@ -823,11 +789,9 @@ a:hover:not(.button), button:hover {
     --tw-text-opacity: 1;
     color: rgb(29 78 216 / var(--tw-text-opacity, 1));
   }
-  @media (prefers-color-scheme: dark) {
-    .button {
-      --tw-text-opacity: 1;
-      color: rgb(239 246 255 / var(--tw-text-opacity, 1));
-    }
+  .button:is(.dark *) {
+    --tw-text-opacity: 1;
+    color: rgb(239 246 255 / var(--tw-text-opacity, 1));
   }
   .button {
     border-radius: 1.5rem;
@@ -875,12 +839,20 @@ a:hover:not(.button), button:hover {
   position: absolute;
 }
 
+.right-11 {
+  right: 2.75rem;
+}
+
 .right-4 {
   right: 1rem;
 }
 
 .top-3 {
   top: 0.75rem;
+}
+
+.top-3\.5 {
+  top: 0.875rem;
 }
 
 .m-auto {
@@ -914,6 +886,18 @@ a:hover:not(.button), button:hover {
 
 .grid {
   display: grid;
+}
+
+.hidden {
+  display: none;
+}
+
+.h-6 {
+  height: 1.5rem;
+}
+
+.w-6 {
+  width: 1.5rem;
 }
 
 .max-w-24 {
@@ -1064,6 +1048,15 @@ a:hover:not(.button), button:hover {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.dark\:text-inherit:is(.dark *) {
+  color: inherit;
+}
+
+.dark\:brightness-90:is(.dark *) {
+  --tw-brightness: brightness(.9);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
 @media (min-width: 640px) {
   .sm\:px-8 {
     padding-left: 2rem;
@@ -1077,16 +1070,5 @@ a:hover:not(.button), button:hover {
   .sm\:text-base {
     font-size: 1rem;
     line-height: 1.5rem;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .dark\:text-inherit {
-    color: inherit;
-  }
-
-  .dark\:brightness-90 {
-    --tw-brightness: brightness(.9);
-    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
   }
 }

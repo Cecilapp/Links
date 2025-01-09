@@ -25,13 +25,13 @@
     @apply font-semibold;
     @apply border-2 border-primary-900;
   }
-  [data-theme="default"] {
+  [data-css-theme="default"] {
     .button {
       @apply rounded-md;
       @apply transition ease-in-out hover:scale-[102%] duration-300;
     }
   }
-  [data-theme="gradient-1"] {
+  [data-css-theme="gradient-1"] {
     body {
       @apply bg-primary-50 text-primary-50 dark:bg-primary-950 dark:text-primary-200;
       @apply bg-gradient-to-b from-primary-500 to-secondary-500 dark:from-primary-950 dark:to-secondary-950;
@@ -49,7 +49,7 @@
       @apply mr-2;
     }
   }
-  [data-theme="gradient-2"] {
+  [data-css-theme="gradient-2"] {
     body {
       @apply bg-primary-50 text-primary-50 dark:bg-primary-950 dark:text-primary-200;
       @apply bg-gradient-to-b from-primary-500 to-secondary-500 dark:from-primary-950 dark:to-secondary-950;

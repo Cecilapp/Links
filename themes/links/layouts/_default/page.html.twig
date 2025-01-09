@@ -1,6 +1,6 @@
 {% import 'macros/fontawesome.twig' as fontawesome -%}
 <!DOCTYPE html>
-<html lang="{{ site.language }}" data-theme="{{ site.links.theme|default('default') }}">
+<html lang="{{ site.language }}" data-css-theme="{{ site.links.theme|default('default') }}">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,9 +14,14 @@
   </head>
   <body class="max-w-screen-lg mx-auto">
     <div class="max-w-[640px] flex flex-col mx-auto px-4 sm:px-8 pt-12 sm:pt-8 pb-4">
+      {%- block theme ~%}
+      {#- theme button ~#}
+      {{ include('partials/selector-theme-icon.html.twig') }}
+      {%- endblock theme ~%}
       {%- block share ~%}
+      {#- share button ~#}
       <button class="absolute top-3 right-4" id="share-button" type="button" title="{% trans %}Share{% endtrans %}">
-        {{ fontawesome.icon('share-nodes', 'solid', 'xl') ~}}<span class="sr-only">{% trans %}Share{% endtrans %}</span>
+        {{ fontawesome.icon('share-nodes', 'solid', 'lg') ~}}<span class="sr-only">{% trans %}Share{% endtrans %}</span>
       </button>
       {%- endblock share ~%}
       <header class="text-center">
