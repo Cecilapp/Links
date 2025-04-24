@@ -43,7 +43,7 @@
 } -%}
         {#- social identities ~#}
         {%- if site.social|default([]) ~%}
-        <div class="mt-4 flex flex-row justify-center space-x-2">
+        <div class="mt-4 flex flex-row justify-center space-x-3">
           {%- if site.author.email is defined ~%}
           <a href="mailto:{{ site.author.email }}" title="{% trans %}Email me{% endtrans %}">
             <span class="text-inherit dark:text-inherit">{{ fontawesome.icon('envelope', 'regular', 'xl') ~}}</span>

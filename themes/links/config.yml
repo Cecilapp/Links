@@ -8,9 +8,9 @@ theme:
 taxonomies:
   categories: disabled
   tags: disabled
-pagination:
-  enabled: false
 pages:
+  pagination:
+    enabled: false
   default:
     xsl/atom:
       published: false
