@@ -27,7 +27,12 @@
       <header class="text-center">
         {%- block header ~%}
         {#- avatar ~#}
-        {{ asset(site.avatar|default('avatar.png'))|resize(324)|html({class: 'max-w-24 rounded-full m-auto shadow-2xl dark:brightness-90', alt: 'Avatar of %name%'|trans({'%name%': site.title})}, {formats: ['webp']}) }}
+        {{ html(
+            asset(site.avatar|default('avatar.png'))|resize(324),
+            attributes={class: 'max-w-24 rounded-full m-auto shadow-2xl dark:brightness-90', alt: 'Avatar of %name%'|trans({'%name%': site.title})},
+            options={formats: ['webp']}
+          )
+        }}
         {#- name + baseline ~#}
         <h1>
           <div class="text-xl font-bold pt-4 pb-1">{{ site.title }}</div>

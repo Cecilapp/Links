@@ -12,9 +12,9 @@
     }
   ],
   "require": {
-    "cecil/theme-links": "^1.6",
-    "cecil/theme-pwa": "^2.14",
-    "cecil/theme-netlify": "^2.1"
+    "cecil/theme-links": "^1.7",
+    "cecil/theme-pwa": "^2.20",
+    "cecil/theme-netlify": "^2.2"
   },
   "scripts": {
     "post-create-project-cmd": "curl -LO https://cecil.app/cecil.phar"
