@@ -25,27 +25,6 @@ theme:
   - links
 ```
 
-### Configuration
-
-```yaml
-# to complete
-```
-
-### Customize styles
-
-Create the [Tailwind configuration](https://tailwindcss.com/docs/configuration) file `tailwind.config.js`:
-
-```javascript
-/* to complete */
-```
-
-Run the following command:
-
-```bash
-npm install -D tailwindcss
-npx tailwindcss -i ./themes/links/tailwind.css -o ./assets/styles.css
-```
-
 ## Development
 
 ### Install deps
@@ -57,7 +36,7 @@ npm install
 ### Rebuild CSS
 
 ```bash
-npx tailwindcss -c ./tailwind.preset.js -i ./tailwind.css -o ./assets/styles.css
+npm run css:build
 ```
 
 ## License

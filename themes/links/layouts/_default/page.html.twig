@@ -2,17 +2,17 @@
 <!DOCTYPE html>
 <html lang="{{ site.language }}" data-css-theme="{{ site.links.theme|default('default') }}">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {{- include('partials/metatags.html.twig', {page, site}, with_context = false) ~}}
     <style>{{ asset('styles.css')|inline }}</style>
     {{- include('partials/fontawesome.twig') ~}}
     {%- if 'pwa' in site.theme|default([]) ~%}
-    <link rel="manifest" href="{{ url('manifest', {language: site.language}) }}" />
+    <link rel="manifest" href="{{ url('manifest', {language: site.language}) }}">
     {%- endif ~%}
-    <meta name="theme-color" content="{{ site.manifest.theme_color }}" />
+    <meta name="theme-color" content="{{ site.manifest.theme_color }}">
   </head>
-  <body class="max-w-screen-lg mx-auto">
+  <body class="max-w-(--breakpoint-lg) mx-auto">
     <div class="max-w-[640px] flex flex-col mx-auto px-4 sm:px-8 pt-12 sm:pt-8 pb-4">
       {#- color scheme button ~#}
       <div class="absolute top-3.5 left-4 opacity-50 hover:opacity-100">

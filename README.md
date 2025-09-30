@@ -96,7 +96,7 @@ Then just deploy the content of __site_ directory to your web hosting solution.
 
 ## Customize
 
-You can disable buttons custom color:
+You can disable buttons custom color and use CSS color instead:
 
 _cecil.yml:_
 
@@ -108,30 +108,24 @@ links:
 
 ### Theme
 
-[Tailwind CSS](https://tailwindcss.com) is required:
+You can select another built-in theme: `default`, `gradient-1` or `gradient-2`.
 
-```bash
-npm install -D tailwindcss
+_cecil.yml:_
+
+```yaml
+links:
+  theme: default # default, gradient-1, gradient-2
 ```
 
-#### Theme colors
+### CSS
 
-You can change [theme colors](ttps://tailwindcss.com/docs/customizing-colors) through the file `tailwind.config.js`, then rebuild CSS:
-
-```bash
-npx tailwindcss -i ./themes/links/tailwind.css -o ./assets/styles.css
-```
-
-#### Theme CSS
-
-You can change theme CSS through the file `tailwind.css`:
-
-1. Copy `./theme/links/tailwind.css` to `./tailwind.css`
-2. Rebuild CSS:
+You can customize theme through the file `./assets/tailwind.css`, then rebuild CSS:
 
 ```bash
-npx tailwindcss -i ./tailwind.css -o ./assets/styles.css
+npm run css:build
 ```
+
+> [Tailwind CSS](https://tailwindcss.com) is required.
 
 ## Update
 
