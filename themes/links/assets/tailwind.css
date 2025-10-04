@@ -68,9 +68,6 @@
     a:hover:not(.button), button:hover {
       @apply text-primary-50/75 dark:text-primary-200;
     }
-    #buttons {
-      @apply mb-6;
-    }
     .button {
       @apply text-primary-700 dark:text-primary-50;
       @apply shadow-[8px_8px_0px_0px];
@@ -90,7 +87,6 @@
       @apply text-primary-50/75 dark:text-primary-200;
     }
     #buttons {
-      @apply mb-6;
       @apply sm:grid-cols-2;
     }
     .button {
