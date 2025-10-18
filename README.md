@@ -117,16 +117,6 @@ links:
   theme: default # default, gradient-1, gradient-2
 ```
 
-### CSS
-
-You can customize theme through the file `./assets/tailwind.css`, then rebuild CSS:
-
-```bash
-npm run css:build
-```
-
-> [Tailwind CSS](https://tailwindcss.com) is required.
-
 ## Update
 
 If you want to update the [_links_](https://github.com/Cecilapp/theme-links#readme) theme and _component themes_ (i.e.: [_fontawesome_](https://github.com/Cecilapp/theme-fontawesome#readme), [_pwa_](https://github.com/Cecilapp/theme-pwa#readme) and [_netlity_](https://github.com/Cecilapp/theme-netlify#readme)) you must run the following command:

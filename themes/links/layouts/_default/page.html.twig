@@ -12,14 +12,14 @@
     {%- endif ~%}
     <meta name="theme-color" content="{{ site.manifest.theme_color }}">
   </head>
-  <body class="max-w-(--breakpoint-lg) mx-auto">
-    <div class="max-w-[640px] flex flex-col mx-auto px-4 sm:px-8 pt-12 sm:pt-8 pb-4">
+  <body>
+    <div class="h-screen max-w-md flex flex-col mx-auto md:my-8 px-4 md:px-8 pt-8 md:pt-12 pb-4 md:rounded-3xl md:shadow-xl relative">
       {#- color scheme button ~#}
-      <div class="absolute top-3.5 left-4 opacity-50 hover:opacity-100">
+      <div class="absolute top-6.5 left-4 md:left-8 opacity-50 hover:opacity-100">
         {{ include('partials/selector-theme-icon.html.twig') }}
       </div>
       {#- share button ~#}
-      <div class="absolute top-3 right-4 opacity-50 hover:opacity-100">
+      <div class="absolute top-6 right-4 md:right-8 opacity-50 hover:opacity-100">
         <button id="share-button" type="button" title="{% trans %}Share{% endtrans %}">
           {{ fontawesome.icon('arrow-up-from-bracket', 'solid', 'lg') ~}}<span class="sr-only">{% trans %}Share{% endtrans %}</span>
         </button>

@@ -34,6 +34,9 @@
   }
   /* background and text */
   body {
+    @apply bg-primary-50 dark:bg-primary-950 md:bg-primary-50/50 md:text-primary-900/50 md:dark:bg-primary-950/50 md:dark:text-primary-200/50;
+  }
+  body > div {
     @apply bg-primary-50 text-primary-900 dark:bg-primary-950 dark:text-primary-200;
   }
   /* links */
