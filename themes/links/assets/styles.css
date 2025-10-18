@@ -265,8 +265,8 @@
   .h-6 {
     height: calc(var(--spacing) * 6);
   }
-  .h-screen {
-    height: 100vh;
+  .h-auto {
+    height: auto;
   }
   .w-6 {
     width: calc(var(--spacing) * 6);

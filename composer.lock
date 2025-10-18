@@ -125,16 +125,16 @@
         },
         {
             "name": "cecil/theme-links",
-            "version": "2.1.1",
+            "version": "2.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Cecilapp/theme-links.git",
-                "reference": "8d9a6843cd385ca2053f98248e4d7be9c8d267b1"
+                "reference": "47d5bb6dfd78a9ed259c57415275294ba7e1eafb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Cecilapp/theme-links/zipball/8d9a6843cd385ca2053f98248e4d7be9c8d267b1",
-                "reference": "8d9a6843cd385ca2053f98248e4d7be9c8d267b1",
+                "url": "https://api.github.com/repos/Cecilapp/theme-links/zipball/47d5bb6dfd78a9ed259c57415275294ba7e1eafb",
+                "reference": "47d5bb6dfd78a9ed259c57415275294ba7e1eafb",
                 "shasum": ""
             },
             "require": {
@@ -160,7 +160,7 @@
             ],
             "support": {
                 "issues": "https://github.com/Cecilapp/theme-links/issues",
-                "source": "https://github.com/Cecilapp/theme-links/tree/2.1.1"
+                "source": "https://github.com/Cecilapp/theme-links/tree/2.1.2"
             },
             "funding": [
                 {
@@ -172,7 +172,7 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2025-10-18T23:11:49+00:00"
+            "time": "2025-10-18T23:27:51+00:00"
         },
         {
             "name": "cecil/theme-netlify",
