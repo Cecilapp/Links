@@ -61,7 +61,7 @@
     }
   }
   [data-css-theme="gradient-1"] {
-    body {
+    body > div {
       @apply bg-primary-50 text-primary-50 dark:bg-primary-950 dark:text-primary-200;
       @apply bg-linear-to-b from-primary-500 to-secondary-500 dark:from-primary-950 dark:to-secondary-950;
     }
@@ -79,7 +79,7 @@
     }
   }
   [data-css-theme="gradient-2"] {
-    body {
+    body > div {
       @apply bg-primary-50 text-primary-50 dark:bg-primary-950 dark:text-primary-200;
       @apply bg-linear-to-b from-primary-500 to-secondary-500 dark:from-primary-950 dark:to-secondary-950;
     }

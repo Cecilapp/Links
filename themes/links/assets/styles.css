@@ -226,11 +226,11 @@
   .relative {
     position: relative;
   }
-  .top-6 {
-    top: calc(var(--spacing) * 6);
+  .top-3 {
+    top: calc(var(--spacing) * 3);
   }
-  .top-6\.5 {
-    top: calc(var(--spacing) * 6.5);
+  .top-3\.5 {
+    top: calc(var(--spacing) * 3.5);
   }
   .right-4 {
     right: calc(var(--spacing) * 4);
@@ -393,6 +393,16 @@
       line-height: var(--tw-leading, var(--text-base--line-height));
     }
   }
+  .md\:top-6 {
+    @media (width >= 48rem) {
+      top: calc(var(--spacing) * 6);
+    }
+  }
+  .md\:top-6\.5 {
+    @media (width >= 48rem) {
+      top: calc(var(--spacing) * 6.5);
+    }
+  }
   .md\:right-8 {
     @media (width >= 48rem) {
       right: calc(var(--spacing) * 8);
@@ -537,7 +547,7 @@
     }
   }
   [data-css-theme="gradient-1"] {
-    body {
+    body > div {
       background-color: var(--color-primary-50);
       color: var(--color-primary-50);
       &:where(.dark, .dark *) {
@@ -607,7 +617,7 @@
     }
   }
   [data-css-theme="gradient-2"] {
-    body {
+    body > div {
       background-color: var(--color-primary-50);
       color: var(--color-primary-50);
       &:where(.dark, .dark *) {
