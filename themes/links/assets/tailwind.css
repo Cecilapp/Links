@@ -1,6 +1,5 @@
 @import 'tailwindcss';
 @source './layouts/**/*.html.twig';
-
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
@@ -47,6 +46,9 @@
   a:hover:not(.button), button:hover {
     @apply text-primary-700 dark:text-primary-200;
   }
+}
+
+@layer components {
   /* links buttons */
   .button {
     @apply bg-primary-50 text-primary-900 dark:bg-primary-950 dark:text-primary-50;
