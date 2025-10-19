@@ -1,4 +1,4 @@
-_Links_ is a Linktree alternative powered by [Cecil](https://cecil.app), [Tailwind CSS](https://tailwindcss.com) and [Font Awesome](https://fontawesome.com).
+_Links_ is an open source Linktree alternative powered by [Cecil](https://cecil.app), [Tailwind CSS](https://tailwindcss.com) and [Font Awesome](https://fontawesome.com).
 
 [![Links website](docs/screenshot.png)](https://links.cecil.app)
 
@@ -51,7 +51,7 @@ manifest:
   background_color: "#fff" # PWA background color
 serviceworker:
   enabled: false           # turns on PWA
-# buttons colors
+# buttons color
 links:
   buttons:
     color: page # page or css ('page' by default)
@@ -97,7 +97,7 @@ Then just deploy the content of __site_ directory to your web hosting solution.
 
 ### Buttons color
 
-You can disable buttons custom color and use CSS color instead:
+You can disable page's buttons color and use CSS color instead:
 
 _cecil.yml:_
 
