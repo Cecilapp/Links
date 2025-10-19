@@ -49,55 +49,11 @@
   }
   /* links buttons */
   .button {
-    @apply bg-primary-50 text-primary-900 dark:bg-primary-950;
+    @apply bg-primary-50 text-primary-900 dark:bg-primary-950 dark:text-primary-50;
     @apply dark:brightness-90;
     @apply font-semibold;
     @apply border-2 border-primary-900;
-  }
-  [data-css-theme="default"] {
-    .button {
-      @apply rounded-md;
-      @apply transition ease-in-out hover:scale-[102%] duration-300;
-    }
-  }
-  [data-css-theme="gradient-1"] {
-    body > div {
-      @apply bg-primary-50 text-primary-50 dark:bg-primary-950 dark:text-primary-200;
-      @apply bg-linear-to-b from-primary-500 to-secondary-500 dark:from-primary-950 dark:to-secondary-950;
-    }
-    a, button {
-      @apply text-primary-50 dark:text-primary-50;
-    }
-    a:hover:not(.button), button:hover {
-      @apply text-primary-50/75 dark:text-primary-200;
-    }
-    .button {
-      @apply text-primary-700 dark:text-primary-50;
-      @apply shadow-[8px_8px_0px_0px];
-      @apply hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px];
-      @apply mr-2;
-    }
-  }
-  [data-css-theme="gradient-2"] {
-    body > div {
-      @apply bg-primary-50 text-primary-50 dark:bg-primary-950 dark:text-primary-200;
-      @apply bg-linear-to-b from-primary-500 to-secondary-500 dark:from-primary-950 dark:to-secondary-950;
-    }
-    a, button {
-      @apply text-primary-50 dark:text-primary-50;
-    }
-    a:hover:not(.button), button:hover {
-      @apply text-primary-50/75 dark:text-primary-200;
-    }
-    #buttons {
-      @apply sm:grid-cols-2;
-    }
-    .button {
-      @apply text-primary-700 dark:text-primary-50;
-      @apply rounded-3xl border-primary-700;
-      @apply shadow-[8px_8px_0px_0px];
-      @apply hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px];
-      @apply mr-2;
-    }
+    @apply rounded-md;
+    @apply transition ease-in-out hover:scale-[102%] duration-300;
   }
 }

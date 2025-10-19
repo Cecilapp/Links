@@ -5,6 +5,7 @@
   },
   "scripts": {
     "build": "curl -sSOL https://cecil.app/build.sh && bash ./build.sh",
-    "css:build": "npx @tailwindcss/cli -i ./assets/tailwind.css -o ./assets/styles.css"
+    "css:build": "npx @tailwindcss/cli -i ./assets/tailwind.css -o ./assets/styles.css",
+    "css:watch": "npx @tailwindcss/cli -i ./assets/tailwind.css -o ./assets/styles.css --watch"
   }
 }

@@ -51,9 +51,8 @@ manifest:
   background_color: "#fff" # PWA background color
 serviceworker:
   enabled: false           # turns on PWA
-# CSS theme and buttons colors
+# buttons colors
 links:
-  theme: default # "default, "gradient-1" or "gradient-2"
   buttons:
     color: page # page or css ('page' by default)
 ```
@@ -96,6 +95,8 @@ Then just deploy the content of __site_ directory to your web hosting solution.
 
 ## Customize
 
+### Buttons color
+
 You can disable buttons custom color and use CSS color instead:
 
 _cecil.yml:_
@@ -106,16 +107,15 @@ links:
     color: css
 ```
 
-### Theme
+### CSS theme
 
-You can select another built-in theme: `default`, `gradient-1` or `gradient-2`.
+You can customize theme through the file `./assets/tailwind.css`, then rebuild CSS:
 
-_cecil.yml:_
-
-```yaml
-links:
-  theme: default # default, gradient-1, gradient-2
+```bash
+npm run css:build
 ```
+
+> [Tailwind CSS](https://tailwindcss.com) is required.
 
 ## Update
 

@@ -12,7 +12,7 @@
     }
   ],
   "require": {
-    "cecil/theme-links": "^2.1",
+    "cecil/theme-links": "^2.2",
     "cecil/theme-pwa": "^2.20",
     "cecil/theme-netlify": "^2.2"
   },
