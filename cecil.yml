@@ -37,14 +37,12 @@ links:
   theme: default # default, gradient-1, gradient-2
   buttons:
     color: page # page or css ('page' by default)
-
 # PWA
 manifest:
   theme_color: "#0369a1" # https://tailwindcss.com/docs/customizing-colors "700"
   #background_color: "#fff"
 serviceworker:
   enabled: false
-
 # languages
 language: en
 languages:
@@ -55,7 +53,7 @@ languages:
     enabled: false # enable with "true"
     locale: fr
     name: Français
-
+# themes
 theme:
   - fontawesome
   - links
