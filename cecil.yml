@@ -37,6 +37,12 @@ links:
   theme: default # default, gradient-1, gradient-2
   buttons:
     color: page # page or css ('page' by default)
+# pages configuration
+pages:
+  body:
+    links:
+      external:
+        blank: true # open in new tab
 # PWA
 manifest:
   theme_color: "#0369a1" # https://tailwindcss.com/docs/customizing-colors "700"
