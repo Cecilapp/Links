@@ -29,11 +29,11 @@
 
 @layer base {
   html {
-    @apply min-h-dvh text-lg;
+    @apply text-lg;
   }
   /* background and text */
   body {
-    @apply bg-primary-50 md:bg-secondary-200 dark:bg-primary-950 md:dark:bg-secondary-950;
+    @apply bg-secondary-200 dark:bg-secondary-950;
   }
   body > div {
     @apply bg-primary-50 dark:bg-primary-950 text-primary-900 dark:text-primary-200;

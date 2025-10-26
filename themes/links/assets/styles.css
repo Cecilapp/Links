@@ -1,4 +1,4 @@
-/*! tailwindcss v4.1.15 | MIT License | https://tailwindcss.com */
+/*! tailwindcss v4.1.16 | MIT License | https://tailwindcss.com */
 @layer properties;
 @layer theme, base, components, utilities;
 @layer theme {
@@ -168,9 +168,7 @@
     ::placeholder {
       color: currentcolor;
       @supports (color: color-mix(in lab, red, red)) {
-        & {
-          color: color-mix(in oklab, currentcolor 50%, transparent);
-        }
+        color: color-mix(in oklab, currentcolor 50%, transparent);
       }
     }
   }
@@ -266,8 +264,8 @@
   .h-6 {
     height: calc(var(--spacing) * 6);
   }
-  .h-auto {
-    height: auto;
+  .min-h-screen {
+    min-height: 100vh;
   }
   .w-6 {
     width: calc(var(--spacing) * 6);
@@ -419,6 +417,11 @@
       margin-block: calc(var(--spacing) * 8);
     }
   }
+  .md\:min-h-full {
+    @media (width >= 48rem) {
+      min-height: 100%;
+    }
+  }
   .md\:rounded-3xl {
     @media (width >= 48rem) {
       border-radius: var(--radius-3xl);
@@ -454,22 +457,13 @@
 }
 @layer base {
   html {
-    min-height: 100dvh;
     font-size: var(--text-lg);
     line-height: var(--tw-leading, var(--text-lg--line-height));
   }
   body {
-    background-color: var(--color-primary-50);
-    @media (width >= 48rem) {
-      background-color: var(--color-secondary-200);
-    }
+    background-color: var(--color-secondary-200);
     &:where(.dark, .dark *) {
-      background-color: var(--color-primary-950);
-    }
-    @media (width >= 48rem) {
-      &:where(.dark, .dark *) {
-        background-color: var(--color-secondary-950);
-      }
+      background-color: var(--color-secondary-950);
     }
   }
   body > div {
