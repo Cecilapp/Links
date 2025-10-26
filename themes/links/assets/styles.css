@@ -31,6 +31,7 @@
     --color-blue-950: oklch(28.2% 0.091 267.935);
     --spacing: 0.25rem;
     --container-md: 28rem;
+    --container-lg: 32rem;
     --text-sm: 0.875rem;
     --text-sm--line-height: calc(1.25 / 0.875);
     --text-base: 1rem;
@@ -273,8 +274,8 @@
   .max-w-24 {
     max-width: calc(var(--spacing) * 24);
   }
-  .max-w-md {
-    max-width: var(--container-md);
+  .max-w-lg {
+    max-width: var(--container-lg);
   }
   .flex-none {
     flex: none;
