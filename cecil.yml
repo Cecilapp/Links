@@ -60,7 +60,7 @@ languages:
     name: Français
 # themes
 theme:
-  - fontawesome
   - links
+  - fontawesome
   - pwa
   - netlify
