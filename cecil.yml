@@ -44,8 +44,9 @@ pages:
         blank: true # open in new tab
 # PWA
 manifest:
-  theme_color: "#0369a1" # https://tailwindcss.com/docs/customizing-colors "700"
-  #background_color: "#fff"
+  background_color: "#EFF6FF"
+  theme_color: "#EFF6FF"
+  theme_color_dark: "#162556"
 serviceworker:
   enabled: false
 # languages
@@ -63,4 +64,5 @@ theme:
   - links
   - fontawesome
   - pwa
-  - netlify
+  - redirects
+  - headers

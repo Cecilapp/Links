@@ -47,8 +47,8 @@ social: # social identities
 avatar: avatar.png
 image: avatar.png # Open Graph image, optional, recommended
 manifest:
-  theme_color: "#0369a1"   # theme color
   background_color: "#fff" # PWA background color
+  theme_color: "#0369a1"   # theme color
 serviceworker:
   enabled: false           # turns on PWA
 # buttons color
