@@ -42,6 +42,16 @@ pages:
     links:
       external:
         blank: true # open in new tab
+  default:
+    sitemap:
+      published: false
+    xsl/sitemap:
+      published: false
+    xsl/atom:
+      published: false
+output:
+  pagetypeformats:
+    homepage: html
 # PWA
 manifest:
   background_color: "#EFF6FF"

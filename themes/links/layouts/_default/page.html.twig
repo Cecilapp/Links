@@ -7,10 +7,7 @@
     {{- include('partials/metatags.html.twig', {page, site}, with_context = false) ~}}
     <style>{{ asset('styles.css')|inline }}</style>
     {{- include('partials/fontawesome.twig') ~}}
-    {%- if 'pwa' in site.theme|default([]) ~%}
-    <link rel="manifest" href="{{ url('manifest', {language: site.language}) }}">
-    {%- endif ~%}
-    <meta name="theme-color" content="{{ site.manifest.theme_color }}">
+    {{- include('partials/pwa.html.twig', {site}, with_context = false) ~}}
   </head>
   <body>
     <div class="min-h-screen md:min-h-full max-w-lg flex flex-col mx-auto md:my-8 px-4 md:px-8 pt-8 md:pt-12 pb-4 md:rounded-3xl md:shadow-xl relative">
@@ -61,8 +58,7 @@
       </footer>
     </div>
     {%- block scripts ~%}
-    <script>
-      {%- apply minify_js ~%}
+    <script>{% apply minify_js ~%}
       // share button
       const shareButton = document.getElementById('share-button');
       if (navigator.share) {
@@ -81,9 +77,7 @@
         console.log('`navigator.share` not supported.');
         shareButton.remove();
       }
-      {%- endapply ~%}
-    </script>
-    {{- include('partials/regsw.js.twig', {site}, ignore_missing = true, with_context = false) ~}}
+    {% endapply %}</script>
     {%- endblock scripts ~%}
   </body>
 </html>

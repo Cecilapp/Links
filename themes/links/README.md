@@ -6,7 +6,9 @@ Theme for [Cecil](https://cecil.app), powered by [Tailwind CSS](https://tailwind
 
 ## Features
 
-- _to complete_
+- Template blocks
+- Dark mode
+- Etc.
 
 ## Installation
 

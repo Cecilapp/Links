@@ -15,21 +15,14 @@
           <li>
             {#- button text color (auto contrast) ~#}
             {%- if options.color|default('page') == 'page' ~%}
-            <style>
-              {%- apply minify_css ~%}
+            <style>{% apply minify_css ~%}
               :root {
                 --button-{{ loop.index }}-color: calc((((({{ rgb.red }} * 299) + ({{ rgb.green }} * 587) + ({{ rgb.blue }} * 114)) / 1000) - 128) * -1000);
               }
-              {%- endapply ~%}
-            </style>
+            {% endapply ~%}</style>
             {%- endif ~%}
-            <a id="button-{{ loop.index }}"
-              class="button flex justify-center items-center space-x-2.5 p-3 px-5"
-              {%- if options.color|default('page') == 'page' ~%}style="border:0;background-color:{{ link.color|default('#' ~ hex) }};color:rgb(var(--button-{{ loop.index }}-color),var(--button-{{ loop.index }}-color),var(--button-{{ loop.index }}-color))"{%- endif ~%}
-              href="{{ link.url }}"
-              target="_blank"
-            >
-              <span class="flex-none">{{ fontawesome.icon(link.icon|default('solid:link')|split(':')[1], link.icon|default('solid:link')|split(':')[0], 'lg') ~}}</span>
+            <a id="button-{{ loop.index }}" href="{{ link.url }}" target="_blank" class="button flex justify-center items-center space-x-2.5 p-3 px-5"{% if options.color|default('page') == 'page' %} style="border:0;background-color:{{ link.color|default('#' ~ hex) }};color:rgb(var(--button-{{ loop.index }}-color),var(--button-{{ loop.index }}-color),var(--button-{{ loop.index }}-color))"{% endif %}>
+              <span class="flex-none">{{ fontawesome.icon(link.icon|default('solid:link')|split(':')[1], link.icon|default('solid:link')|split(':')[0], 'lg') }}</span>
               <span class="grow text-lg sm:text-base pr-6">{{ link.title }}</span>
             </a>
           </li>
