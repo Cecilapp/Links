@@ -25,9 +25,16 @@
         {%- block header ~%}
         {#- avatar ~#}
         {{ html(
-            asset(site.avatar|default('avatar.png'))|resize(324),
-            attributes={class: 'max-w-24 rounded-full m-auto shadow-2xl dark:brightness-90', alt: 'Avatar of %name%'|trans({'%name%': site.title})},
-            options={formats: ['webp']}
+            asset(site.avatar|default('avatar.png')),
+            attributes={
+              width: 128,
+              class: 'max-w-24 rounded-full m-auto shadow-2xl dark:brightness-90',
+              alt: 'Avatar of %name%'|trans({'%name%': site.title})
+            },
+            options={
+              responsive: 'density',
+              formats: ['webp']
+            }
           )
         }}
         {#- name + baseline ~#}
