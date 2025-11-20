@@ -25,18 +25,18 @@
         {%- block header ~%}
         {#- avatar ~#}
         {{ html(
-            asset(site.avatar|default('avatar.png')),
-            attributes={
-              width: 128,
-              class: 'max-w-24 rounded-full m-auto shadow-2xl dark:brightness-90',
-              alt: 'Avatar of %name%'|trans({'%name%': site.title})
-            },
-            options={
-              responsive: 'density',
-              formats: ['webp']
-            }
-          )
-        }}
+          asset(site.avatar|default('avatar.png')),
+          attributes={
+            width: 128,
+            class: 'max-w-24 rounded-full m-auto shadow-2xl dark:brightness-90',
+            alt: 'Avatar of %name%'|trans({'%name%': site.title}),
+            fetchpriority: 'high'
+          },
+          options={
+            responsive: 'density',
+            formats: ['webp']
+          }
+        ) }}
         {#- name + baseline ~#}
         <h1>
           <div class="text-xl font-bold pt-4 pb-1">{{ site.title }}</div>

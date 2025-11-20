@@ -42,15 +42,19 @@
   a, button {
     @apply text-primary-900 dark:text-primary-50;
   }
-  /* links hover */
   a:hover:not(.button), button:hover {
     @apply text-primary-700 dark:text-primary-200;
+  }
+  /* buttons pointer */
+  button {
+    @apply cursor-pointer;
   }
 }
 
 @layer components {
   /* links buttons */
   .button {
+    @apply overflow-hidden;
     @apply bg-primary-50 text-primary-900 dark:bg-primary-950 dark:text-primary-50;
     @apply dark:brightness-90;
     @apply font-semibold;

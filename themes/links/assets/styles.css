@@ -249,6 +249,9 @@
   .mt-6 {
     margin-top: calc(var(--spacing) * 6);
   }
+  .mr-2\.5 {
+    margin-right: calc(var(--spacing) * 2.5);
+  }
   .block {
     display: block;
   }
@@ -297,13 +300,6 @@
   .gap-4 {
     gap: calc(var(--spacing) * 4);
   }
-  .space-x-2\.5 {
-    :where(& > :not(:last-child)) {
-      --tw-space-x-reverse: 0;
-      margin-inline-start: calc(calc(var(--spacing) * 2.5) * var(--tw-space-x-reverse));
-      margin-inline-end: calc(calc(var(--spacing) * 2.5) * calc(1 - var(--tw-space-x-reverse)));
-    }
-  }
   .space-x-3 {
     :where(& > :not(:last-child)) {
       --tw-space-x-reverse: 0;
@@ -313,6 +309,9 @@
   }
   .rounded-full {
     border-radius: calc(infinity * 1px);
+  }
+  .object-contain {
+    object-fit: contain;
   }
   .p-3 {
     padding: calc(var(--spacing) * 3);
@@ -488,9 +487,13 @@
       color: var(--color-primary-200);
     }
   }
+  button {
+    cursor: pointer;
+  }
 }
 @layer components {
   .button {
+    overflow: hidden;
     background-color: var(--color-primary-50);
     color: var(--color-primary-900);
     &:where(.dark, .dark *) {

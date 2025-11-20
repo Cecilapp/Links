@@ -5,27 +5,73 @@
         {%- if page.links|default|length > 0 ~%}
         <ol id="buttons" class="mx-auto mt-4 grid items-center gap-4">
           {%- for link in page.links|default ~%}
-            {#- button background color (randomized) ~#}
-            {%- set hex = '' -%}
-            {%- for i in 1..6 -%}
-              {%- set hex = hex ~ random(hex_array) -%}
-            {%- endfor -%}
-            {%- set rgb = link.color|default('#' ~ hex)|hex_to_rgb ~%}
-          {#- button ~#}
           <li>
-            {#- button text color (auto contrast) ~#}
+            {#- background color (randomized) + text color (auto contrast) ~#}
             {%- if options.color|default('page') == 'page' ~%}
+              {%- if link.color|default -%}
+                {%- set hex = '' -%}
+                {%- for i in 1..6 -%}
+                  {%- set hex = hex ~ random(hex_array) -%}
+                {%- endfor -%}
+                {%- set rgb = link.color|default('#' ~ hex)|hex_to_rgb -%}
+              {%- endif ~%}
             <style>{% apply minify_css ~%}
               :root {
                 --button-{{ loop.index }}-color: calc((((({{ rgb.red }} * 299) + ({{ rgb.green }} * 587) + ({{ rgb.blue }} * 114)) / 1000) - 128) * -1000);
               }
             {% endapply ~%}</style>
+              {%- set button_style = ' style="border:0;background-color:' ~ link.color|default('#' ~ hex) ~ ';color:rgb(var(--button-' ~ loop.index ~ '-color),var(--button-' ~ loop.index ~ '-color),var(--button-' ~ loop.index ~ '-color))"' ~%}
             {%- endif ~%}
-            <a id="button-{{ loop.index }}" href="{{ link.url }}" target="_blank" class="button flex justify-center items-center space-x-2.5 p-3 px-5"{% if options.color|default('page') == 'page' %} style="border:0;background-color:{{ link.color|default('#' ~ hex) }};color:rgb(var(--button-{{ loop.index }}-color),var(--button-{{ loop.index }}-color),var(--button-{{ loop.index }}-color))"{% endif %}>
-              <span class="flex-none">{{ fontawesome.icon(link.icon|default('solid:link')|split(':')[1], link.icon|default('solid:link')|split(':')[0], 'lg') }}</span>
-              <span class="grow text-lg sm:text-base pr-6">{{ link.title }}</span>
+            {#- link ~#}
+            <a id="button-{{ loop.index }}"{% if link.url|default %} href="{{ link.url }}"{% endif %} target="_blank">
+              {#- video ~#}
+              {%- if link.video|default ~%}
+              <div class="button" style="background-color:inherit;">
+                <video controls class="object-contain">
+                  <source src="{{ asset(link.video) }}" type="{{ asset(link.video).subtype }}">
+                </video>
+                <div>{{ link.title|default }}</div>
+              </div>
+              {#- image ~#}
+              {%- elseif link.image|default ~%}
+              <div class="button" style="background-color:inherit;">
+                {{ html(
+                  asset(link.image),
+                  attributes={
+                    class: 'object-contain',
+                    alt: link.title|default,
+                    fetchpriority: 'high'
+                  },
+                  options={
+                    responsive: true,
+                    formats: ['webp']
+                  }
+                ) }}
+                <div>{{ link.title|default }}</div>
+              </div>
+              {#- button ~#}
+              {%- else ~%}
+              <div class="button flex justify-center items-center p-3 px-5"{{ button_style|default }}>
+                {%- if link.icon|default ~%}
+                <span class="flex-none mr-2.5">{{ fontawesome.icon(link.icon|default('solid:link')|split(':')[1], link.icon|default('solid:link')|split(':')[0], 'lg') }}</span>
+                {%- endif ~%}
+                {%- if link.title|default ~%}
+                <span class="grow text-lg sm:text-base{% if link.icon|default %} pr-6{% endif %}">{{ link.title }}</span>
+                {%- endif ~%}
+              </div>
+              {%- endif ~%}
             </a>
           </li>
           {%- endfor ~%}
         </ol>
+        <script>
+          function videosControls() {
+            for (const video of document.querySelectorAll('video')) {
+              video.controls = false
+              video.addEventListener('mouseover', () => { video.controls = 'controls' })
+              video.addEventListener('mouseout', () => { video.controls = false })
+            }
+          }
+          window.addEventListener('load', videosControls, false)
+        </script>
         {%- endif ~%}
