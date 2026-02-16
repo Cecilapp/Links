@@ -6,7 +6,7 @@
   "license": "MIT",
   "require": {
     "cecil/theme-installer": "^1.4|^2.0",
-    "cecil/theme-fontawesome": "^1.4"
+    "cecil/theme-fontawesome": "^1.5"
   },
   "extra": {
     "name": "links",

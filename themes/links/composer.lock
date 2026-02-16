@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6b892209e09c4534f5fab99040b0c43e",
+    "content-hash": "e8c419eecb13e55ed2b693763a834b9d",
     "packages": [
         {
             "name": "cecil/theme-fontawesome",
-            "version": "1.4.0",
+            "version": "1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Cecilapp/theme-fontawesome.git",
-                "reference": "5ba3be935d1394b09743a3fe4f8f184a93495b1d"
+                "reference": "03d6cc4337820993c37d854737dc46b2279302da"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Cecilapp/theme-fontawesome/zipball/5ba3be935d1394b09743a3fe4f8f184a93495b1d",
-                "reference": "5ba3be935d1394b09743a3fe4f8f184a93495b1d",
+                "url": "https://api.github.com/repos/Cecilapp/theme-fontawesome/zipball/03d6cc4337820993c37d854737dc46b2279302da",
+                "reference": "03d6cc4337820993c37d854737dc46b2279302da",
                 "shasum": ""
             },
             "require": {
@@ -43,7 +43,7 @@
             ],
             "support": {
                 "issues": "https://github.com/Cecilapp/theme-fontawesome/issues",
-                "source": "https://github.com/Cecilapp/theme-fontawesome/tree/1.4.0"
+                "source": "https://github.com/Cecilapp/theme-fontawesome/tree/1.5.0"
             },
             "funding": [
                 {
@@ -55,7 +55,7 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2025-09-25T13:01:31+00:00"
+            "time": "2025-12-15T18:43:10+00:00"
         },
         {
             "name": "cecil/theme-installer",
@@ -132,5 +132,5 @@
     "prefer-lowest": false,
     "platform": {},
     "platform-dev": {},
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.9.0"
 }

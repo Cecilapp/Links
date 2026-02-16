@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "cecil/theme-fontawesome",
-            "version": "1.5.0",
+            "version": "1.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Cecilapp/theme-fontawesome.git",
-                "reference": "03d6cc4337820993c37d854737dc46b2279302da"
+                "reference": "74f64342963fa11419f6cf6df7718b88ff947897"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Cecilapp/theme-fontawesome/zipball/03d6cc4337820993c37d854737dc46b2279302da",
-                "reference": "03d6cc4337820993c37d854737dc46b2279302da",
+                "url": "https://api.github.com/repos/Cecilapp/theme-fontawesome/zipball/74f64342963fa11419f6cf6df7718b88ff947897",
+                "reference": "74f64342963fa11419f6cf6df7718b88ff947897",
                 "shasum": ""
             },
             "require": {
@@ -43,7 +43,7 @@
             ],
             "support": {
                 "issues": "https://github.com/Cecilapp/theme-fontawesome/issues",
-                "source": "https://github.com/Cecilapp/theme-fontawesome/tree/1.5.0"
+                "source": "https://github.com/Cecilapp/theme-fontawesome/tree/1.5.1"
             },
             "funding": [
                 {
@@ -55,7 +55,7 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2025-12-15T18:43:10+00:00"
+            "time": "2026-02-16T08:50:05+00:00"
         },
         {
             "name": "cecil/theme-headers",
@@ -175,20 +175,20 @@
         },
         {
             "name": "cecil/theme-links",
-            "version": "2.5.1",
+            "version": "2.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Cecilapp/theme-links.git",
-                "reference": "57e059cfdb3bc723867ca5a98bb97fec268b123b"
+                "reference": "3b767461e8223985750ec615e64daef8f8a22139"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Cecilapp/theme-links/zipball/57e059cfdb3bc723867ca5a98bb97fec268b123b",
-                "reference": "57e059cfdb3bc723867ca5a98bb97fec268b123b",
+                "url": "https://api.github.com/repos/Cecilapp/theme-links/zipball/3b767461e8223985750ec615e64daef8f8a22139",
+                "reference": "3b767461e8223985750ec615e64daef8f8a22139",
                 "shasum": ""
             },
             "require": {
-                "cecil/theme-fontawesome": "^1.4",
+                "cecil/theme-fontawesome": "^1.5",
                 "cecil/theme-installer": "^1.4|^2.0"
             },
             "type": "cecil-theme",
@@ -210,7 +210,7 @@
             ],
             "support": {
                 "issues": "https://github.com/Cecilapp/theme-links/issues",
-                "source": "https://github.com/Cecilapp/theme-links/tree/2.5.1"
+                "source": "https://github.com/Cecilapp/theme-links/tree/2.5.2"
             },
             "funding": [
                 {
@@ -222,7 +222,7 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2025-11-20T00:06:58+00:00"
+            "time": "2026-02-16T08:48:04+00:00"
         },
         {
             "name": "cecil/theme-pwa",
