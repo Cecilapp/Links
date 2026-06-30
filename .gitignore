@@ -2,4 +2,3 @@ _site/
 .cache/
 .cecil/
 vendor/
-node_modules/
