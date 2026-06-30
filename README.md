@@ -112,7 +112,7 @@ links:
 You can customize theme through the file `./assets/tailwind.css`, then rebuild CSS:
 
 ```bash
-vendor/bin/tailwind-builder assets/tailwind.css --minify
+composer run css:build
 ```
 
 > [Tailwind CSS](https://tailwindcss.com) is required.
