@@ -6,7 +6,8 @@
   "license": "MIT",
   "require": {
     "cecil/theme-installer": "^1.4|^2.0",
-    "cecil/theme-fontawesome": "^1.5"
+    "cecil/theme-fontawesome": "^1.5",
+    "aligny/tailwind-builder": "^1.1"
   },
   "extra": {
     "name": "links",

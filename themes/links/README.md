@@ -29,16 +29,16 @@ theme:
 
 ## Development
 
-### Install deps
+### Install `tailwind-builder`
 
 ```bash
-npm install
+composer require aligny/tailwind-builder
 ```
 
 ### Rebuild CSS
 
 ```bash
-npm run css:build
+vendor/bin/tailwind-builder assets/tailwind.css --minify
 ```
 
 ## License
