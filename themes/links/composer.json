@@ -9,6 +9,9 @@
     "cecil/theme-fontawesome": "^1.5",
     "aligny/tailwind-builder": "^1.1"
   },
+  "scripts": {
+    "css:build": "vendor/bin/tailwind-builder assets/tailwind.css --minify"
+  },
   "extra": {
     "name": "links",
     "branch-alias": {
