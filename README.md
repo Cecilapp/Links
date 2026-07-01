@@ -7,7 +7,7 @@ Demo: <https://cecil-links-demo.netlify.app>
 ## Install
 
 > [!IMPORTANT]
-> PHP 8.1 and [Composer](https://getcomposer.org) are required.
+> PHP 8.2 and [Composer](https://getcomposer.org) are required.
 
 The easiest way to create a new Links project is using Composer:
 
