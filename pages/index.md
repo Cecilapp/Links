@@ -25,6 +25,6 @@ links:
     color: '#FED13C'
     icon: brands:paypal
   - title: Example
-    url: http://localhost/
+    url: https://example.com
 ---
 Authoring optional rich content in _Markdown_ here 👋
