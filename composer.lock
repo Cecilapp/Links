@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "889ac6742df1eee0d4190a518554c22b",
+    "content-hash": "3257f5b7c0f250af4da9c982e0a05d1c",
     "packages": [
         {
             "name": "aligny/tailwind-builder",
-            "version": "1.2.0",
+            "version": "1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ArnaudLigny/tailwind-builder.git",
-                "reference": "f13e583628c5cf801ea5a3d4e4a9da121d0c1542"
+                "reference": "da6dfb30e651964d8e1e79ccef401b5e09b9dfd8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ArnaudLigny/tailwind-builder/zipball/f13e583628c5cf801ea5a3d4e4a9da121d0c1542",
-                "reference": "f13e583628c5cf801ea5a3d4e4a9da121d0c1542",
+                "url": "https://api.github.com/repos/ArnaudLigny/tailwind-builder/zipball/da6dfb30e651964d8e1e79ccef401b5e09b9dfd8",
+                "reference": "da6dfb30e651964d8e1e79ccef401b5e09b9dfd8",
                 "shasum": ""
             },
             "require": {
@@ -53,7 +53,7 @@
             ],
             "support": {
                 "issues": "https://github.com/ArnaudLigny/tailwind-builder/issues",
-                "source": "https://github.com/ArnaudLigny/tailwind-builder/tree/1.2.0"
+                "source": "https://github.com/ArnaudLigny/tailwind-builder/tree/1.2.1"
             },
             "funding": [
                 {
@@ -61,7 +61,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-06-30T23:09:12+00:00"
+            "time": "2026-07-01T21:42:05+00:00"
         },
         {
             "name": "cecil/theme-fontawesome",
@@ -284,16 +284,16 @@
         },
         {
             "name": "cecil/theme-pwa",
-            "version": "2.20.0",
+            "version": "2.21.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Cecilapp/theme-pwa.git",
-                "reference": "4579664d6525c7eea8f649c01ea17264e10c244f"
+                "reference": "8c2d820b9dd201df42be607015eb7c026245d462"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Cecilapp/theme-pwa/zipball/4579664d6525c7eea8f649c01ea17264e10c244f",
-                "reference": "4579664d6525c7eea8f649c01ea17264e10c244f",
+                "url": "https://api.github.com/repos/Cecilapp/theme-pwa/zipball/8c2d820b9dd201df42be607015eb7c026245d462",
+                "reference": "8c2d820b9dd201df42be607015eb7c026245d462",
                 "shasum": ""
             },
             "require": {
@@ -318,7 +318,7 @@
                 "theme"
             ],
             "support": {
-                "source": "https://github.com/Cecilapp/theme-pwa/tree/2.20.0"
+                "source": "https://github.com/Cecilapp/theme-pwa/tree/2.21.0"
             },
             "funding": [
                 {
@@ -330,7 +330,7 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2025-08-06T15:16:06+00:00"
+            "time": "2026-07-10T02:24:09+00:00"
         },
         {
             "name": "cecil/theme-redirects",
