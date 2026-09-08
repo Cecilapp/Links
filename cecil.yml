@@ -49,9 +49,6 @@ pages:
       published: false
     xsl/atom:
       published: false
-output:
-  pagetypeformats:
-    homepage: html
 # PWA
 manifest:
   background_color: "#EFF6FF"
