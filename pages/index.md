@@ -24,7 +24,9 @@ links:
     url: https://www.paypal.com/donate/?hosted_button_id=B93F9MKHFX7T6
     color: '#FED13C'
     icon: brands:paypal
-  - title: Example
-    url: https://example.com
+  - url: https://unsplash.com/photos/a-star-forming-region-in-the-sky-IjEtFjxXweE
+    image: https://images.unsplash.com/photo-1739614621579-8f8f396c7412
+  - title: Instagram
+    url: https://www.instagram.com/vscode_love/
 ---
 Authoring optional rich content in _Markdown_ here 👋

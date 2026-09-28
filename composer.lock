@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "93e9c2e1c5566af08912aaba12bd4df4",
+    "content-hash": "1f669bf2db6ad6036fc8546126ec8561",
     "packages": [
         {
             "name": "aligny/tailwind-builder",
@@ -232,16 +232,16 @@
         },
         {
             "name": "cecil/theme-links",
-            "version": "2.7.0",
+            "version": "2.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Cecilapp/theme-links.git",
-                "reference": "6dce355858986f8dfb8c38419e2b7a02a56b0e42"
+                "reference": "e9b6695167cef45c442d3cb83888ef71992c7965"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Cecilapp/theme-links/zipball/6dce355858986f8dfb8c38419e2b7a02a56b0e42",
-                "reference": "6dce355858986f8dfb8c38419e2b7a02a56b0e42",
+                "url": "https://api.github.com/repos/Cecilapp/theme-links/zipball/e9b6695167cef45c442d3cb83888ef71992c7965",
+                "reference": "e9b6695167cef45c442d3cb83888ef71992c7965",
                 "shasum": ""
             },
             "require": {
@@ -268,7 +268,7 @@
             ],
             "support": {
                 "issues": "https://github.com/Cecilapp/theme-links/issues",
-                "source": "https://github.com/Cecilapp/theme-links/tree/2.7.0"
+                "source": "https://github.com/Cecilapp/theme-links/tree/2.8.0"
             },
             "funding": [
                 {
@@ -280,7 +280,7 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2026-08-12T12:51:14+00:00"
+            "time": "2026-09-28T16:46:36+00:00"
         },
         {
             "name": "cecil/theme-pwa",

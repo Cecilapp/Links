@@ -51,12 +51,19 @@
               </div>
               {#- button ~#}
               {%- else ~%}
-              <div class="button flex justify-center items-center p-3 px-5"{{ button_style|default }}>
+              <div class="button flex justify-center items-center min-h-14"{{ button_style|default }}>
+                {%- set website_image = null -%}
                 {%- if link.icon|default ~%}
-                <span class="flex-none mr-2.5">{{ fontawesome.icon(link.icon|default('solid:link')|split(':')[1], link.icon|default('solid:link')|split(':')[0], 'lg') }}</span>
+                <span class="flex-none ml-5">{{ fontawesome.icon(link.icon|default('solid:link')|split(':')[1], link.icon|default('solid:link')|split(':')[0], 'xl') }}</span>
+                {%- elseif link.url|default -%}
+                  {#- website image as icon fallback ~#}
+                  {%- set website_image = image_from_website(link.url, {class: 'size-10 object-contain rounded', alt: '', loading: 'lazy'}) -%}
+                  {%- if website_image ~%}
+                <span class="flex-none ml-2">{{ website_image|raw }}</span>
+                  {%- endif ~%}
                 {%- endif ~%}
                 {%- if link.title|default ~%}
-                <span class="grow text-lg sm:text-base{% if link.icon|default %} pr-6{% endif %}">{{ link.title }}</span>
+                <span class="grow text-lg sm:text-base{% if link.icon|default or website_image %} pr-12{% endif %}">{{ link.title }}</span>
                 {%- endif ~%}
               </div>
               {%- endif ~%}
