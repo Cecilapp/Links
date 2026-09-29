@@ -7,29 +7,25 @@ author:
   url: https://cecil.app
   email: john.doe@domain.tld
 social:
-  github:
-    url: https://github.com
-    username: John Doe
-  linkedin:
-    url: https://linkedin.com
-  instagram:
-    url: https://instagram.com
-  youtube:
-    url: https://youtube.com
   mastodon:
     url: https://mastodon.social
   bluesky:
     url: https://bsky.app
   threads:
     url: https://threads.net
-  twitter:
-    url: https://twitter.com
-    site: John Doe
-    creator: John Doe
   x:
     url: https://x.com
     site: John Doe
     creator: John Doe
+  instagram:
+    url: https://instagram.com
+  youtube:
+    url: https://youtube.com
+  linkedin:
+    url: https://linkedin.com
+  github:
+    url: https://github.com
+    username: John Doe
 avatar: avatar.png
 image: avatar.png # Open Graph image
 # CSS theme and buttons colors
