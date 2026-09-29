@@ -2,3 +2,4 @@ _site/
 .cache/
 .cecil/
 vendor/
+themes/
