@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "396c4dc648dba011908693eb34ffa873",
+    "content-hash": "90988dc94379f31daea2a3d022c779cd",
     "packages": [
         {
             "name": "aligny/tailwind-builder",
@@ -232,16 +232,16 @@
         },
         {
             "name": "cecil/theme-links",
-            "version": "v3.x-dev",
+            "version": "3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Cecilapp/theme-links.git",
-                "reference": "ecca7f0b177353d6bd4d9bb8ed2d2cc919a497fa"
+                "reference": "c5c4e257a8f25d0b5b103a407026a16987368bca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Cecilapp/theme-links/zipball/ecca7f0b177353d6bd4d9bb8ed2d2cc919a497fa",
-                "reference": "ecca7f0b177353d6bd4d9bb8ed2d2cc919a497fa",
+                "url": "https://api.github.com/repos/Cecilapp/theme-links/zipball/c5c4e257a8f25d0b5b103a407026a16987368bca",
+                "reference": "c5c4e257a8f25d0b5b103a407026a16987368bca",
                 "shasum": ""
             },
             "require": {
@@ -268,7 +268,7 @@
             ],
             "support": {
                 "issues": "https://github.com/Cecilapp/theme-links/issues",
-                "source": "https://github.com/Cecilapp/theme-links/tree/v3"
+                "source": "https://github.com/Cecilapp/theme-links/tree/3.0.0"
             },
             "funding": [
                 {
@@ -280,7 +280,7 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2026-09-29T21:54:16+00:00"
+            "time": "2026-09-29T23:31:38+00:00"
         },
         {
             "name": "cecil/theme-pwa",
@@ -1186,9 +1186,7 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "cecil/theme-links": 20
-    },
+    "stability-flags": {},
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {},
