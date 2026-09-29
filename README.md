@@ -65,23 +65,49 @@ links:
 From `pages/index.md` file you can:
 
 1. change page structure with _blocks_ array in _front matter_
-2. add links in _front matter_
+2. add links in the `items` of a `links` block
 3. add rich content authoring in Markdown in page _body_ (optional)
 
 ```yaml
 ---
 blocks:
   - name: content # page content
-  - name: links   # page links
+  - name: links   # links block
+    items:
+      - title: <title>
+        url: <url>
+        color: "<#hexa_code>" # hexadecimal color code, optional (e.g. "#1DA1F2")
+        icon: <style>:<name>  # Font Awesome icon (https://fontawesome.com/icons), optional (e.g. "brands:github")
+      - title: <title>
+        url: <url>
+        image: <path or URL> # displays an image instead of a button, optional
+      - title: <title>
+        video: <path>        # displays a video instead of a button, optional
   - name: social  # social identities
-links:
-  - title: <title>
-    url: <url>
-    color: "<#hexa_code>" # hexadecimal color code, optional (e.g. "#1DA1F2")
-    icon: <style>:<name> # Font Awesome icon (https://fontawesome.com/icons), optional (e.g. "brands:github")
 ---
 Content here.
 ```
+
+> [!TIP]
+> You can add as many `links` blocks as you want, e.g. to group links by topic:
+>
+> ```yaml
+> blocks:
+>   - name: links
+>     items:
+>       - title: My website
+>         url: https://example.com
+>   - name: content
+>   - name: links
+>     items:
+>       - title: My blog
+>         url: https://example.com/blog/
+> ```
+
+Each `links` block is displayed as a separate list of buttons.
+
+> [!NOTE]
+> Links defined in the `links` variable of the _front matter_ (previous format) are still supported as a fallback when a `links` block has no `items`.
 
 ## Publish
 
